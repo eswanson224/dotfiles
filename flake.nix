@@ -9,6 +9,7 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     {
+      modules = import ./modules;
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
