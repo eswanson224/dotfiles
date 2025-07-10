@@ -43,6 +43,7 @@
   programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
+    fish
     emacs
     helix
     alacritty
