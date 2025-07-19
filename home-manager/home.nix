@@ -17,5 +17,7 @@
     '';
   };
 
+  home.file.".config/i3/config".source = ./i3/config;
+  
   home.stateVersion = "25.05";
 }
