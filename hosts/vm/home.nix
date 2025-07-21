@@ -8,7 +8,7 @@
 
   imports =
     [
-      ../../home-manager
+      ../../modules/home-manager
     ];
 
   programs.bash = {

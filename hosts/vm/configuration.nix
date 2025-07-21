@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../../modules/nixos
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes"  ];
@@ -15,9 +16,6 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/Denver";
-
-  services.xserver.enable = true;
-  services.xserver.windowManager.i3.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -39,6 +37,10 @@
     extraGroups = [ "wheel" ];
   };
 
+  services.xserver.enable = true;
+  services.xserver.windowManager.i3.enable = true;
+
+  # programs.hyprland.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.git.enable = true;
@@ -48,6 +50,8 @@
     emacs
     helix
     alacritty
+    nil
+    kitty
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
