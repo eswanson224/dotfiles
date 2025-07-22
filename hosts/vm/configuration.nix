@@ -7,7 +7,7 @@
       ../../modules/nixos
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -18,7 +18,7 @@
   time.timeZone = "America/Denver";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound.
   # hardware.pulseaudio.enable = true;
@@ -41,11 +41,9 @@
   services.xserver.windowManager.i3.enable = true;
 
   # programs.hyprland.enable = true;
-  programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
-    helix
-    nil
+    nil # nix language server
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?

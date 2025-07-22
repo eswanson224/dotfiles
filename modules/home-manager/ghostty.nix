@@ -11,6 +11,7 @@
   programs = {
     git.enable = true;
     fish.enable = true;
+    helix.enable = true;
     tmux.enable = true;
     eza.enable = true;
   };
