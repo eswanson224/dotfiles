@@ -41,7 +41,6 @@
   services.xserver.windowManager.i3.enable = true;
 
   # programs.hyprland.enable = true;
-  programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.git.enable = true;
 

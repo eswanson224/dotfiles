@@ -4,7 +4,7 @@
   imports =
     [
       ./i3
-      ./terminal
       # ./hyprland
+      ./ghostty.nix
     ];
 }
