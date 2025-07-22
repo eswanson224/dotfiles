@@ -42,15 +42,10 @@
 
   # programs.hyprland.enable = true;
   programs.fish.enable = true;
-  programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
-    fish
-    emacs
     helix
-    alacritty
     nil
-    kitty
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
