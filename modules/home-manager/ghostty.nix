@@ -10,12 +10,16 @@
 
   programs = {
     git.enable = true;
-    fish.enable = true;
     helix.enable = true;
     tmux.enable = true;
     eza.enable = true;
   };
-  
+
+  programs.fish = {
+    enable = true;
+    shellInit = "set -g fish_greeting";
+  };
+   
   programs.bash = {
     enable = true;
     initExtra = ''
