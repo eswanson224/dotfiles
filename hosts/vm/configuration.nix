@@ -51,6 +51,7 @@
     removeConflictingFiles = {
       text = ''
         rm -f /home/erik/.mozilla/firefox/dev-edition-default/search.json.mozlz4.backup
+        rm -f /home/erik/.mozilla/firefox/dev-edition-default/containers.json.backup
       '';
     };
   };
