@@ -7,9 +7,13 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
     {
       nixosConfigurations = {
         vm = nixpkgs.lib.nixosSystem {
@@ -23,6 +27,7 @@
               home-manager.backupFileExtension = "backup";
               home-manager.users.erik = ./hosts/vm/home.nix;
             }
+            nur.modules.nixos.default
           ];
         };
         # nixos = nixpkgs.lib.nixosSystem {

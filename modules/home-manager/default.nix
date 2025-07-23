@@ -6,5 +6,6 @@
       ./i3
       # ./hyprland
       ./ghostty.nix
+      ./firefox.nix
     ];
 }
