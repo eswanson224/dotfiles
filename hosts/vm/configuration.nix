@@ -40,6 +40,8 @@
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
 
+  services.tailscale.enable = true;
+
   # programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [
