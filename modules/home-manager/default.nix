@@ -7,6 +7,6 @@
       # ./hyprland
       ./ghostty.nix
       ./firefox
-      ./mpv.nix
+      ./mpv
     ];
 }
