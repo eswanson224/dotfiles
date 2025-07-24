@@ -42,6 +42,7 @@
 
   services.tailscale.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
   # programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [

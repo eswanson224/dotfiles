@@ -1,5 +1,10 @@
 { ... }:
 
 {
-  programs.emacs.enable = true;
+  programs = {
+    emacs.enable = true;
+    fzf.enable = true;
+    ripgrep.enable = true;
+    fd.enable = true;
+  };
 }
