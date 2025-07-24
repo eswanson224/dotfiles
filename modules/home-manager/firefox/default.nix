@@ -8,8 +8,10 @@
       search = {
         default = "ddg";
         engines = {
-          "SearXNG" = {
-            
+          searxng = {
+            name = "SearXNG";
+            urls = [{ template = "http://192.168.4.23:8080/search?q={searchTerms}&language=en-US"; }];
+            definedAliases = [ "@s" ];
           };
         };
       };
@@ -38,11 +40,10 @@
           ublock-origin
           bitwarden
           multi-account-containers
+          violentmonkey
         ];
       };
     };
   };
   home.file.".mozilla/firefox/dev-edition-default/user.js".source = ./user.js;
-  # HACK: replace a file that causes builde error
-  # home.file.".mozilla/firefox/dev-edition-default/search.json.mozlz4".force = lib.mkDefault true;
 }

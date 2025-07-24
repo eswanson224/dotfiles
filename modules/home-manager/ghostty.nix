@@ -19,7 +19,12 @@
     enable = true;
     shellInit = "set -g fish_greeting";
   };
-   
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+  
   programs.bash = {
     enable = true;
     initExtra = ''
