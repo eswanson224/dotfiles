@@ -10,5 +10,6 @@
       ./hyprland
       # ./i3
       ./mpv
+      ./vesktop.nix
     ];
 }

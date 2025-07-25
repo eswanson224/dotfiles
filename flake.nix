@@ -11,9 +11,10 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, ... }@inputs:
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
@@ -28,6 +29,7 @@
               home-manager.users.erik = ./hosts/laptop/home.nix;
             }
             nur.modules.nixos.default
+            nixos-hardware.nixosModules.lenovo-legion-15ach6h
           ];
         };
         vm = nixpkgs.lib.nixosSystem {

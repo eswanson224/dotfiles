@@ -3,12 +3,25 @@
 {
   programs.kitty.enable = true;
   programs.wofi.enable = true;
-  wayland.windowManager.hyprland = {
+
+  services.hyprpaper = {
     enable = true;
     settings = {
+      splash = false;
+      preload = "/etc/nixos/mia.jpg";
+      wallpaper = ", /etc/nixos/mia.jpg";
+    };
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = null;
+    portalPackage = null;
+    settings = {
       "$mod" = "SUPER";
+      exec-once = "hyprpaper";
       bind = [
-        "$mod, D, exec, wofi"
+        "$mod, D, exec, wofi --show drun"
       ]
       ++ (
         # workspaces
