@@ -9,15 +9,23 @@
   };
 
   programs = {
-    git.enable = true;
     helix.enable = true;
     tmux.enable = true;
     eza.enable = true;
   };
 
+  programs.git = {
+    enable = true;
+    userName = "eswanson224";
+    userEmail = "eswanson224@proton.me";
+  };
+  
   programs.fish = {
     enable = true;
-    shellInit = "set -g fish_greeting";
+    shellInit = ''
+      set -g fish_greeting
+      fish_add_path -P ~/.config/emacs/bin
+    '';
   };
 
   programs.zoxide = {

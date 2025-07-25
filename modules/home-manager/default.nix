@@ -7,8 +7,8 @@
       ./emacs.nix
       ./firefox
       ./ghostty.nix
-      # ./hyprland
-      ./i3
+      ./hyprland
+      # ./i3
       ./mpv
     ];
 }
