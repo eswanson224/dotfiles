@@ -33,6 +33,7 @@
         "$mod, D, exec, wofi --show drun"
         "$mod, E, exec, emacsclient"
         "$mod, V, togglefloating,"
+        "$mod, F, fullscreen,"
         "$mod, return, exec, ghostty"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"

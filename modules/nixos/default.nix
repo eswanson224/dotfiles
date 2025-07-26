@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./mounts.nix
+  ];
   programs.dconf.enable = true;
   programs.steam.enable = true;
   programs.gamescope = {
