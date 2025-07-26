@@ -29,7 +29,17 @@
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
       bind = [
+        "$mod, Q, killactive,"
         "$mod, D, exec, wofi --show drun"
+        "$mod, E, exec, emacsclient"
+        "$mod, V, togglefloating,"
+        "$mod, enter, exec, ghostty"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        "$mod, S, togglespecialworkspace, magic"
+        "$mod SHIFT, S, movetoworkspace, special:magic"
       ]
       ++ (
         # workspaces
@@ -43,6 +53,10 @@
           )
           9)
       );
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
     };
   };
 }
