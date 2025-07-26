@@ -29,7 +29,7 @@
               home-manager.users.erik = ./hosts/laptop/home.nix;
             }
             nur.modules.nixos.default
-            nixos-hardware.nixosModules.lenovo-legion-15ach6h
+            nixos-hardware.nixosModules.lenovo-legion-16ach6h-nvidia
           ];
         };
         vm = nixpkgs.lib.nixosSystem {

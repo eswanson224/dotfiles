@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  programs.kitty.enable = true;
   programs.wofi.enable = true;
 
   services.hyprpaper = {
@@ -17,9 +16,18 @@
     enable = true;
     package = null;
     portalPackage = null;
+    xwayland.enable = true;
+    systemd.enable = true;
     settings = {
       "$mod" = "SUPER";
       exec-once = "hyprpaper";
+      monitor = "DP-2, 1920x1080@165, 0x0, 1";
+      # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
+      "debug:full_cm_proto" = "true";
+      env = [
+        "LIBVA_DRIVER_NAME,nvidia"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+      ];
       bind = [
         "$mod, D, exec, wofi --show drun"
       ]

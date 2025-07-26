@@ -9,6 +9,7 @@
   };
 
   programs = {
+    btop.enable = true;
     helix.enable = true;
     tmux.enable = true;
     eza.enable = true;
