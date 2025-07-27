@@ -9,7 +9,10 @@
   };
 
   programs = {
-    btop.enable = true;
+    btop = {
+      enable = true;
+      package = pkgs.btop-cuda;
+    };
     helix.enable = true;
     tmux.enable = true;
     eza.enable = true;

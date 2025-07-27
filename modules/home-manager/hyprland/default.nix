@@ -1,7 +1,13 @@
 { ... }:
 
 {
-  programs.wofi.enable = true;
+  imports =
+    [
+      ./waybar.nix
+    ];
+  programs = {
+    wofi.enable = true;
+  };
 
   services.hyprpaper = {
     enable = true;
@@ -20,10 +26,13 @@
     systemd.enable = true;
     settings = {
       "$mod" = "SUPER";
-      exec-once = "hyprpaper";
+      exec-once = [
+        "hyprpaper"
+        "waybar"
+      ];
       monitor = "DP-2, 1920x1080@165, 0x0, 1";
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
-      "debug:full_cm_proto" = "true";
+      # "debug:full_cm_proto" = "true";
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"

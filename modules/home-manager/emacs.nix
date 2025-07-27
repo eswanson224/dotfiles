@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs = {
@@ -7,7 +7,10 @@
     fd.enable = true;
   };
 
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
 
   programs.emacs = {
     enable = true;
