@@ -7,7 +7,16 @@
       ../../modules/nixos
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+  };
+
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,7 +42,9 @@
   };
 
   services.tailscale.enable = true;
+
   nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     nil # nix language server
   ];
