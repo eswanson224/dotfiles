@@ -1,9 +1,13 @@
 { pkgs, ... }:
 
 pkgs.appimageTools.wrapType2 rec {
-  pname = "cider";
+  pname = "Cider";
   version = "3.0.2";
-  src = ./cider-v3.0.2-linux-x64.AppImage;
+  src = pkgs.fetchurl {
+    url = "file://${./cider-v3.0.2-linux-x64.AppImage}";
+    sha256 = "sha256-XVBhMgSNJAYTRpx5GGroteeOx0APIzuHCbf+kINT2eU=";
+  };
+  # src = ./cider-v3.0.2-linux-x64.AppImage;
 
   extraInstallCommands =
     let
