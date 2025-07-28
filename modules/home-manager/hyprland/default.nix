@@ -5,6 +5,7 @@
     [
       ./waybar.nix
     ];
+
   programs = {
     wofi.enable = true;
   };
@@ -30,7 +31,6 @@
         "hyprpaper"
         "waybar"
       ];
-      monitor = "DP-2, 1920x1080@165, 0x0, 1";
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
       "debug:full_cm_proto" = "true";
       env = [
@@ -38,6 +38,10 @@
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
+      monitor = "DP-2, 1920x1080@165, 0x0, 1";
+      input = {
+        accel_profile = "flat";
+      };
       bind = [
         "$mod, Q, killactive,"
         "$mod, D, exec, wofi --show drun"
