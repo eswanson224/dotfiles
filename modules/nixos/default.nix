@@ -6,6 +6,7 @@ in
 {
   imports = [
     ./mounts.nix
+    ./langs
   ];
 
   programs.appimage.enable = true;
