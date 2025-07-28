@@ -1,10 +1,14 @@
 { pkgs, ... }:
 
+let
+  cider = import ./cider.nix { inherit pkgs; };
+in
 {
   imports = [
     ./mounts.nix
   ];
 
+  programs.appimage.enable = true;
   programs.dconf.enable = true;
   programs.steam.enable = true;
 
