@@ -29,24 +29,24 @@
         ];
       tray.spacing = 10;
       clock = {
+        format = "{:%a, %b %d  %r}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt = "{:%Y-%m-%d}";
+        interval = 1;
       };
       cpu = {
-        format = "{usage}% ";
+        format = "CPU {usage}%";
         tooltip = false;
       };
       memory = {
-        format = "{}% ";
+        format = "RAM {}%";
       };
       temperature = {
         hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
         critical-threshold = 80;
-        format = "{temperatureC}°C {icon}";
-        format-icons = [ "" "" "" ];
+        format = "CPU {temperatureC}°C";
       };
       "custom/gpu-temp" = {
-        format = "{text}°C";
+        format = "GPU {text}°C";
         exec = "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits";
         interval = 10;
       };
