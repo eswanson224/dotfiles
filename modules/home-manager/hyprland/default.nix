@@ -1,10 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [
       ./waybar.nix
     ];
+
+  home.packages = with pkgs; [
+    pavucontrol
+  ];
 
   programs = {
     wofi.enable = true;

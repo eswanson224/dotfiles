@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    libtool
+    nixfmt-classic
+  ];
+
   programs = {
     fzf.enable = true;
     ripgrep.enable = true;
