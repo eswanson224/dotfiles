@@ -49,16 +49,6 @@
     nil # nix language server
   ];
 
-  # HACK: remove conflicting file for firefox, no clue why this happens
-  system.userActivationScripts = {
-    removeConflictingFiles = {
-      text = ''
-        rm -f /home/erik/.mozilla/firefox/dev-edition-default/search.json.mozlz4.backup
-        rm -f /home/erik/.mozilla/firefox/dev-edition-default/containers.json.backup
-      '';
-    };
-  };
-  
   system.stateVersion = "24.11"; # Did you read the comment?
 }
 

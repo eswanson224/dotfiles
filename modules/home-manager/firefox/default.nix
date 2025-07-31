@@ -14,33 +14,37 @@
             definedAliases = [ "@s" ];
           };
         };
+        force = true;
       };
       containers = {
-        personal = {
+        "1personal" = {
           color = "blue";
           icon = "fingerprint";
           id = 1;
           name = "Personal";
         };
-        work = {
+        "2work" = {
           color = "red";
           icon = "briefcase";
           id = 2;
           name = "Work";
         };
-        alt = {
+        "3alt" = {
           color = "purple";
           icon = "pet";
           id = 3;
           name = "Alt";
         };
       };
+      containersForce = true;
       extensions = {
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           bitwarden
           multi-account-containers
           violentmonkey
+          old-reddit-redirect
+          sponsorblock
         ];
       };
     };
