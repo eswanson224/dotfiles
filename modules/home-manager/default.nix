@@ -12,6 +12,7 @@
       # ./i3
       ./lutris.nix
       ./mpv
+      ./thunderbird.nix
       ./vesktop.nix
     ];
 }
