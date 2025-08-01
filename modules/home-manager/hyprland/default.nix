@@ -8,10 +8,17 @@
 
   home.packages = with pkgs; [
     pavucontrol
+    grim
+    slurp
+    wl-clipboard
   ];
 
   programs = {
     wofi.enable = true;
+  };
+
+  services = {
+    dunst.enable = true;
   };
 
   services.hyprpaper = {
@@ -59,6 +66,7 @@
         "$mod, down, movefocus, d"
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
+        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
       ]
       ++ (
         # workspaces
@@ -75,6 +83,14 @@
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+      windowrule = [
+        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+        "noanim, class:^(xwaylandvideobridge)$"
+        "noinitialfocus, class:^(xwaylandvideobridge)$"
+        "maxsize 1 1, class:^(xwaylandvideobridge)$"
+        "noblur, class:^(xwaylandvideobridge)$"
+        "nofocus, class:^(xwaylandvideobridge)$"
       ];
     };
   };

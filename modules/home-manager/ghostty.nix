@@ -29,6 +29,7 @@
     shellInit = ''
       set -g fish_greeting
       fish_add_path -P ~/.config/emacs/bin
+      set -x PKG_CONFIG_PATH "${pkgs.openssl.dev}/lib/pkgconfig"
     '';
   };
 

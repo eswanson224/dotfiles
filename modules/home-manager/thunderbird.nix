@@ -2,7 +2,7 @@
 
 {
   programs.thunderbird = {
-    enable = true;
+    enable = false;
     profiles = {
       erik = {
         isDefault = true;
