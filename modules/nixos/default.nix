@@ -8,6 +8,7 @@ in
     ./langs
     ./mounts.nix
     ./steam.nix
+    ./flatpak.nix
   ];
 
   programs.appimage.enable = true;

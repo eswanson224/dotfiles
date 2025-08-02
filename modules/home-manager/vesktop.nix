@@ -14,6 +14,16 @@
             enabled = true;
             ignoreSelf = true;
           };
+          TextReplace = {
+            enabled = true;
+            regexRules = [
+              {
+                find = "(?<=https:\/\/)x(?=.com\/.+)";
+                replace = "fixupx";
+                onlyIfIncludes = "";
+              }
+            ];
+          };
           FakeNitro.enabled = true;
           CallTimer.enabled = true;
           VolumeBooster.enabled = true;
