@@ -41,8 +41,7 @@
         format = "RAM {}%";
       };
       temperature = {
-        hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
-        critical-threshold = 80;
+        hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
         format = "CPU {temperatureC}°C";
       };
       "custom/gpu-temp" = {
