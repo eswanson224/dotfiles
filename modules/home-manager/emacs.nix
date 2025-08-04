@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     libtool
     nixfmt-classic
+    nodejs_24
   ];
 
   programs = {

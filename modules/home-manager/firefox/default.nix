@@ -16,6 +16,45 @@
         };
         force = true;
       };
+      bookmarks = {
+        settings = [
+          # {
+          #   name = "home manager";
+          #   url = "https://home-manager-options.extranix.com/?query=&release=master";
+          # }
+          # {
+          #   name = "nixpkgs";
+          #   url = "https://search.nixos.org/packages?channel=unstable&size=50&sort=relevance&type=packages";
+          # }
+            {
+              name = "wikipedia";
+              tags = [ "wiki" ];
+              keyword = "wiki";
+              url = "https://en.wikipedia.org/wiki/Special:Search?search=%s&go=Go";
+            }
+            {
+              name = "kernel.org";
+              url = "https://www.kernel.org";
+            }
+            "separator"
+            {
+              name = "Nix sites";
+              toolbar = true;
+              bookmarks = [
+                {
+                  name = "homepage";
+                  url = "https://nixos.org/";
+                }
+                {
+                  name = "wiki";
+                  tags = [ "wiki" "nix" ];
+                  url = "https://wiki.nixos.org/";
+                }
+              ];
+            }
+        ];
+        force = true;
+      };
       containers = {
         "1personal" = {
           color = "blue";

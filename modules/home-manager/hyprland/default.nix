@@ -59,7 +59,7 @@
         "$mod, E, exec, emacsclient"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
-        "$mod, return, exec, ghostty"
+        "$mod, return, exec, alacritty"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"

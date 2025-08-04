@@ -3,6 +3,7 @@
 {
   imports =
     [
+      # ./alacritty.nix
       ./brave.nix
       ./easyeffects.nix
       ./emacs.nix

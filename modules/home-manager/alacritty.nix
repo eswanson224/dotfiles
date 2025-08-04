@@ -1,12 +1,8 @@
 { pkgs, ... }:
 
 {
-  programs.ghostty = {
+  programs.alacritty = {
     enable = true;
-    settings = {
-      window-decoration = "none";
-      gtk-single-instance = true;
-    };
   };
 
   programs = {
@@ -24,7 +20,7 @@
     userName = "eswanson224";
     userEmail = "eswanson224@proton.me";
   };
-  
+
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -38,7 +34,7 @@
     enable = true;
     enableFishIntegration = true;
   };
-  
+
   programs.bash = {
     enable = true;
     initExtra = ''
