@@ -5,5 +5,6 @@
     cmake
     gcc15
     gnumake
+    glib
   ];
 }

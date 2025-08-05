@@ -34,12 +34,11 @@
     enable = true;
     package = null;
     portalPackage = null;
-    xwayland.enable = true;
-    systemd.enable = true;
     settings = {
       "$mod" = "SUPER";
       exec-once = [
-        "hyprpaper"
+        # HACK idk why using "hyprpaper" causes wallpaper to not load on initial ly signin
+        "systemctl --user enable --now hyprpaper.service"
         "waybar"
       ];
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
@@ -49,7 +48,14 @@
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
-      monitor = "DP-2, 1920x1080@165, 0x0, 1";
+      monitor = [
+        "DP-2, 1920x1080@165, 0x0, 1"
+        "eDP-1, 2560x1600@60, 1920x0, 1.6"
+        ", preferred, auto, 1"
+      ];
+      workspace = [
+        "9, monitor:eDP-1, default:true"
+      ];
       input = {
         accel_profile = "flat";
       };
@@ -59,7 +65,7 @@
         "$mod, E, exec, emacsclient"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
-        "$mod, return, exec, alacritty"
+        "$mod, return, exec, ghostty"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"

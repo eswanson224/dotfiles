@@ -7,7 +7,6 @@
       modules-left =
         [
           "hyprland/workspaces"
-          "custom/media"
         ];
       modules-center =
         [
@@ -19,8 +18,8 @@
           "network"
           "cpu"
           "memory"
-          "temperature"
-          "custom/gpu-temp"
+          # "temperature"
+          # "custom/gpu-temp"
           "backlight"
           "battery"
           "clock"
