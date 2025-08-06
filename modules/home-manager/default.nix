@@ -15,5 +15,6 @@
       ./mpv
       ./thunderbird.nix
       ./vesktop.nix
+      ./prismlauncher.nix
     ];
 }
