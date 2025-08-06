@@ -16,15 +16,10 @@
         [
           "pulseaudio"
           "network"
-          "cpu"
-          "memory"
-          # "temperature"
-          # "custom/gpu-temp"
           "backlight"
           "battery"
           "clock"
           "tray"
-          "custom/power"
         ];
       tray.spacing = 10;
       clock = {

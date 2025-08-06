@@ -40,10 +40,15 @@
         # HACK idk why using "hyprpaper" causes wallpaper to not load on initial ly signin
         "systemctl --user enable --now hyprpaper.service"
         "waybar"
+        "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
       "debug:full_cm_proto" = "true";
       env = [
+        "HYPRCURSOR_THEME,Posy_Cursor"
+        "HYPRCURSOR_SIZE,32"
+        "XCURSOR_THEME,Posy_Cursor"
+        "XCURSOR_SIZE,32"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
