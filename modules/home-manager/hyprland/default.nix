@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  wallpaper = "/etc/nixos/mia.jpg";
+in
 {
   imports =
     [
@@ -25,8 +28,8 @@
     enable = true;
     settings = {
       splash = false;
-      preload = "/etc/nixos/mia.jpg";
-      wallpaper = ", /etc/nixos/mia.jpg";
+      preload = wallpaper;
+      wallpaper = ", ${wallpaper}";
     };
   };
 

@@ -10,21 +10,12 @@
   };
 
   programs = {
-    btop = {
-      enable = true;
-      package = pkgs.btop-cuda;
-    };
     helix.enable = true;
     tmux.enable = true;
     eza.enable = true;
   };
 
-  programs.git = {
-    enable = true;
-    userName = "eswanson224";
-    userEmail = "eswanson224@proton.me";
-  };
-  
+
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -36,7 +27,6 @@
 
   programs.zoxide = {
     enable = true;
-    enableFishIntegration = true;
   };
   
   programs.bash = {

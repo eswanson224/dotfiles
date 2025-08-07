@@ -8,7 +8,6 @@
       ./easyeffects.nix
       ./emacs.nix
       ./firefox
-      ./ghostty.nix
       ./hyprland
       # ./i3
       ./lutris.nix
@@ -16,5 +15,6 @@
       ./thunderbird.nix
       ./vesktop.nix
       ./prismlauncher.nix
+      ./terminal
     ];
 }
