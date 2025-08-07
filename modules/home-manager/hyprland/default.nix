@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  wallpaper = "/etc/nixos/mia.jpg";
+  wallpaper = "/etc/nixos/wallpaper.jpg";
 in
 {
   imports =

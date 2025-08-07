@@ -5,6 +5,7 @@
     libtool
     nixfmt-classic
     nodejs_24
+    nil
   ];
 
   programs = {
