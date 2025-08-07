@@ -45,10 +45,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    nil # nix language server
-  ];
-
   system.stateVersion = "24.11"; # Did you read the comment?
 }
 
