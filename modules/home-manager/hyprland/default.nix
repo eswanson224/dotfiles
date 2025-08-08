@@ -74,6 +74,7 @@ in
         "$mod, E, exec, emacsclient"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
+        "$mod, C, pin"
         "$mod, return, exec, ghostty"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"

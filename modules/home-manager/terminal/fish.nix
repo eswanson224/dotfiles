@@ -8,6 +8,9 @@
       fish_add_path -P ~/.config/emacs/bin
       set -x PKG_CONFIG_PATH "${pkgs.openssl.dev}/lib/pkgconfig"
     '';
+    plugins = [
+      { name = "tide"; src = pkgs.fishPlugins.tide; }
+    ];
   };
 
   programs.bash = {
