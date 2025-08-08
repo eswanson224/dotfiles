@@ -13,6 +13,7 @@ in
 
   programs.appimage.enable = true;
   programs.dconf.enable = true;
+  programs.fish.enable = true;
 
   programs.hyprland = {
     enable = true;

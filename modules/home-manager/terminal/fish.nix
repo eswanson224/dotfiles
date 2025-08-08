@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  home.packages = [
+    pkgs.fishPlugins.tide
+  ];
   programs.fish = {
     enable = true;
     shellInit = ''
