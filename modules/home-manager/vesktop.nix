@@ -6,6 +6,9 @@
     settings = {
       minimizeToTray = false;
       tray = false;
+      hardwareAcceleration = true;
+      hardwareVideoAcceleration = true;
+      arRPC = true;
     };
     vencord = {
       settings = {
