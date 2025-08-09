@@ -34,6 +34,11 @@ in
     };
   };
 
+  home.file.".icons/Posy_Cursor" = {
+    source = ./Posy_Cursor;
+    recursive = true;
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;

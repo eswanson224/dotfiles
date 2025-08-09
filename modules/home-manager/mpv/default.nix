@@ -2,5 +2,8 @@
 
 {
   programs.mpv.enable = true;
-  home.file.".config/mpv".source = ./mpv;
+  home.file.".config/mpv" = {
+    source = ./mpv;
+    recursive = true;
+  };
 }
