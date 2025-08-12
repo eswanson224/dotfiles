@@ -6,6 +6,7 @@
     nixfmt-classic
     nodejs_24
     nil
+    multimarkdown
   ];
 
   programs = {

@@ -63,6 +63,7 @@
           violentmonkey
           old-reddit-redirect
           sponsorblock
+          frankerfacez
         ];
       };
     };
