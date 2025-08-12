@@ -6,6 +6,7 @@ in
 {
   imports =
     [
+      ./hyprlock.nix
       ./waybar.nix
     ];
 

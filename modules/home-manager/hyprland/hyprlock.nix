@@ -1,9 +1,7 @@
 { ... }:
 
 {
-  security.pam.services.hyprlock = {};
-
-  services.hyprlock = {
+  programs.hyprlock = {
     enable = true;
     settings = {
       general = {

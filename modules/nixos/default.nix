@@ -9,17 +9,19 @@ in
     ./mounts.nix
     ./steam.nix
     ./flatpak.nix
+    ./ly.nix
   ];
 
-  programs.appimage.enable = true;
-  programs.dconf.enable = true;
-  programs.fish.enable = true;
-
-  programs.hyprland = {
-    enable = true;
+  programs = {
+    appimage.enable = true;
+    dconf.enable = true;
+    fish.enable = true;
+    hyprland.enable = true;
   };
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  # services.displayManager.ly.enable = true;
+
+  security.pam.services.hyprlock = {};
 
   users.users.erik.packages = with pkgs; [
     cider
