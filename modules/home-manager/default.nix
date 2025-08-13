@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports =
@@ -10,9 +10,10 @@
       ./hyprland
       ./lutris.nix
       ./mpv
-      ./thunderbird.nix
-      ./vesktop.nix
       ./prismlauncher.nix
       ./terminal
+      ./thunderbird.nix
+      ./vesktop.nix
+      ./virt-manager.nix
     ];
 }

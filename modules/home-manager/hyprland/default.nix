@@ -78,6 +78,7 @@ in
         "$mod, Q, killactive,"
         "$mod, D, exec, wofi --show drun"
         "$mod, E, exec, emacsclient"
+        "$mod, L, exec, hyprlock"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
         "$mod, C, pin"

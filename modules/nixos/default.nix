@@ -10,6 +10,7 @@ in
     ./steam.nix
     ./flatpak.nix
     ./ly.nix
+    ./virt-manager.nix
   ];
 
   programs = {

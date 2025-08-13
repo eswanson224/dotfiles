@@ -4,6 +4,7 @@
   programs.hyprlock = {
     enable = true;
     settings = {
+      "$font" = "Monospace";
       general = {
         hide_cursor = true;
         ignore_empty_input = true;
@@ -25,23 +26,36 @@
         {
           path = "/etc/nixos/wallpaper.jpg";
           blur_passes = 3;
-          blur_size = 8;
         }
       ];
 
       input-field = [
         {
-          size = "200, 50";
-          position = "0, -80";
           monitor = "";
-          dots_center = true;
+          size = "300, 40";
+          outline_thickness = 3;
+          inner_color = "rgb(f2f2f2)";
+          outer_color = "rgba(a5a5a5ee)";
+          font_color = "rgb(595959)";
           fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
-          outline_thickness = 5;
-          placeholder_text = "password";
-          shadow_passes = 2;
+          rounding = 20;
+          font_family = "$font";
+          placeholder_text = "whats da password";
+          fail_text = "$PAMFAIL";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+
+      label = [
+        {
+          monitor = "";
+          text = "$TIME12";
+          font_size = 40;
+          font_family = "$font";
+          position = "0, 70";
+          halign = "center";
+          valign = "center";
         }
       ];
     };
