@@ -40,7 +40,7 @@
           fade_on_empty = false;
           rounding = 20;
           font_family = "$font";
-          placeholder_text = "whats da password";
+          placeholder_text = "<i>whats da password</i>";
           fail_text = "$PAMFAIL";
           halign = "center";
           valign = "center";

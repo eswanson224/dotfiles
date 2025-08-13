@@ -18,7 +18,7 @@ in
   ];
 
   programs = {
-    wofi.enable = true;
+    rofi.enable = true;
   };
 
   services = {
@@ -76,7 +76,7 @@ in
       };
       bind = [
         "$mod, Q, killactive,"
-        "$mod, D, exec, wofi --show drun"
+        "$mod, D, exec, rofi -show drun"
         "$mod, E, exec, emacsclient"
         "$mod, L, exec, hyprlock"
         "$mod, V, togglefloating,"
