@@ -7,6 +7,8 @@
     nodejs_24
     nil
     multimarkdown
+    texlive.combined.scheme-medium
+    shellcheck
   ];
 
   programs = {

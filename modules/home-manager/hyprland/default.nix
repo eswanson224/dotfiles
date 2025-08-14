@@ -22,7 +22,14 @@ in
   };
 
   services = {
-    dunst.enable = true;
+    dunst = {
+      enable = true;
+      settings = {
+        global = {
+          follow = "mouse";
+        };
+      };
+    };
     playerctld.enable = true;
   };
 
