@@ -24,7 +24,7 @@
 
       background = [
         {
-          path = "/etc/nixos/wallpaper.jpg";
+          path = "/etc/nixos/wallpaper.png";
           blur_passes = 3;
         }
       ];

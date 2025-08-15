@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  wallpaper = "/etc/nixos/wallpaper.jpg";
+  wallpaper = "/etc/nixos/wallpaper.png";
 in
 {
   imports =
@@ -15,6 +15,7 @@ in
     pavucontrol
     slurp
     wl-clipboard
+    rofimoji
   ];
 
   programs = {
@@ -86,6 +87,7 @@ in
         "$mod, D, exec, rofi -show drun"
         "$mod, E, exec, emacsclient"
         "$mod, L, exec, hyprlock"
+        "$mod, period, exec, rofimoji"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
         "$mod, C, pin"

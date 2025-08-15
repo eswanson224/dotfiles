@@ -14,6 +14,5 @@
       ./terminal
       ./thunderbird.nix
       ./vesktop.nix
-      ./virt-manager.nix
     ];
 }
