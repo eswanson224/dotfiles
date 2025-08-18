@@ -10,7 +10,7 @@
         ];
       modules-center =
         [
-          "hyprland/window"
+          "clock"
         ];
       modules-right =
         [
@@ -18,7 +18,6 @@
           "network"
           "backlight"
           "battery"
-          "clock"
           "tray"
         ];
       tray.spacing = 10;
