@@ -4,7 +4,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "catppuccino_mocha";
+      theme = "catppuccin_mocha";
     };
   };
 }

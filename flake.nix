@@ -12,9 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, catppuccin, ... }@inputs:
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
@@ -26,10 +27,16 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.erik = ./hosts/laptop/home.nix;
+              home-manager.users.erik = {
+                imports = [
+                  ./hosts/laptop/home.nix
+                  catppuccin.homeModules.catppuccin
+                ];
+              };
             }
             nur.modules.nixos.default
             nixos-hardware.nixosModules.lenovo-legion-16ach6h-nvidia
+            catppuccin.nixosModules.catppuccin
           ];
         };
         vm = nixpkgs.lib.nixosSystem {

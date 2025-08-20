@@ -4,6 +4,7 @@
   home.packages = [
     pkgs.fishPlugins.tide
   ];
+
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -11,6 +12,16 @@
       fish_add_path -P ~/.config/emacs/bin
       set -x PKG_CONFIG_PATH "${pkgs.openssl.dev}/lib/pkgconfig"
     '';
+    functions = {
+      y = ''
+      	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+      	yazi $argv --cwd-file="$tmp"
+      	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+      		builtin cd -- "$cwd"
+      	end
+      	rm -f -- "$tmp"
+      '';
+     };
     plugins = [
       { name = "tide"; src = pkgs.fishPlugins.tide; }
     ];
