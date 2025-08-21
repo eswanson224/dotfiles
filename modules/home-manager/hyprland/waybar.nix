@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  catppuccin.waybar.mode = "createLink";
   programs.waybar = {
     enable = true;
     settings.mainBar = {

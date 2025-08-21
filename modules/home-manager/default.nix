@@ -4,6 +4,7 @@
   imports =
     [
       ./brave.nix
+      ./cappuccin.nix
       ./easyeffects.nix
       ./emacs.nix
       ./firefox

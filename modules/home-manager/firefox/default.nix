@@ -1,10 +1,11 @@
 { pkgs, lib, ... }:
 
+let profile = "default";
+in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
-    profiles.dev-edition-default = {
+    profiles.${profile} = {
       search = {
         force = true;
         default = "ddg";
@@ -56,6 +57,7 @@
         };
       };
       extensions = {
+        force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           bitwarden
@@ -68,5 +70,5 @@
       };
     };
   };
-  home.file.".mozilla/firefox/dev-edition-default/user.js".source = ./user.js;
+  home.file.".mozilla/firefox/${profile}/user.js".source = ./user.js;
 }
