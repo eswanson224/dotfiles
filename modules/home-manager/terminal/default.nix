@@ -9,7 +9,7 @@
      ./ghostty.nix
      ./git.nix
      ./helix.nix
-     ./yazi.nix
+     ./yazi
      ./zellij.nix
      ./zoxide.nix
    ];
