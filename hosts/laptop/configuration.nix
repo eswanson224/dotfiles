@@ -41,7 +41,13 @@
     extraGroups = [ "wheel" ];
   };
 
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    extraSetFlags = [
+      "--operator=erik"
+      "--accept-routes"
+    ];
+  };
 
   nixpkgs.config.allowUnfree = true;
 

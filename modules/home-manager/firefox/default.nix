@@ -59,13 +59,14 @@ in
       extensions = {
         force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
           bitwarden
+          firefox-color
+          frankerfacez
           multi-account-containers
-          violentmonkey
           old-reddit-redirect
           sponsorblock
-          frankerfacez
+          ublock-origin
+          violentmonkey
         ];
       };
     };
