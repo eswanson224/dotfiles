@@ -82,6 +82,9 @@ in
       ];
       input = {
         accel_profile = "flat";
+        touchpad = {
+          tap-to-click = false;
+        };
       };
       bind = [
         "$mod, Q, killactive,"
