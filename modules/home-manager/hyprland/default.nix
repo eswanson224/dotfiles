@@ -74,7 +74,7 @@ in
       ];
       monitor = [
         "DP-2, 1920x1080@165, 0x0, 1"
-        "eDP-1, 2560x1600@60, 1920x0, 1.6"
+        "eDP-1, 1920x1200@60, 1920x0, 1.6"
         ", preferred, auto, 1"
       ];
       workspace = [
@@ -84,6 +84,7 @@ in
         accel_profile = "flat";
         touchpad = {
           tap-to-click = false;
+          scroll_factor = 0.3;
         };
       };
       bind = [
