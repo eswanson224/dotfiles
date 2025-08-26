@@ -36,10 +36,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
 
   services.libinput.enable = true;
 

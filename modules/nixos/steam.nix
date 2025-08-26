@@ -7,7 +7,7 @@
       gamescope
     ];
     extraCompatPackages = with pkgs; [
-      # proton-ge-bin
+      proton-ge-bin
     ];
   };
 
