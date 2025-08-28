@@ -1,6 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let profile = "default";
+let
+  profile = "default";
 in
 {
   programs.firefox = {
@@ -67,6 +68,7 @@ in
           sponsorblock
           ublock-origin
           violentmonkey
+          dearrow
         ];
       };
     };
