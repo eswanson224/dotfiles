@@ -23,8 +23,8 @@
       efi.canTouchEfiVariables = true;
     };
     kernelParams = [
-      "clocksource=tsc"
-      "tsc=reliable"
+      "clocksource=hpet"
+      # "tsc=reliable"
     ];
   };
 
