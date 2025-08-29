@@ -67,16 +67,21 @@ in
         "HYPRCURSOR_SIZE,32"
         "XCURSOR_THEME,Posy_Cursor"
         "XCURSOR_SIZE,32"
+        "GDK_SCALE,1"
         "GRIM_DEFAULT_DIR,~/Pictures/screenshots"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
       monitor = [
         "DP-2, 1920x1080@165, 0x0, 1"
-        "eDP-1, 1920x1200@60, 1920x0, 1.6"
+        "eDP-1, 2560x1600@60, auto, 1.6"
         ", preferred, auto, 1"
       ];
+      xwayland = {
+        force_zero_scaling = true;
+      };
       workspace = [
         "9, monitor:eDP-1, default:true"
       ];
@@ -84,6 +89,7 @@ in
         accel_profile = "flat";
         touchpad = {
           tap-to-click = false;
+          clickfinger_behavior = true;
           scroll_factor = 0.3;
         };
       };

@@ -35,7 +35,7 @@
               };
             }
             nur.modules.nixos.default
-            nixos-hardware.nixosModules.lenovo-legion-16ach6h-hybrid
+            nixos-hardware.nixosModules.lenovo-legion-16ach6h
             catppuccin.nixosModules.catppuccin
           ];
         };
