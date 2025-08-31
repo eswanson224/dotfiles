@@ -11,11 +11,12 @@ in
     ];
 
   home.packages = with pkgs; [
+    brightnessctl
     grim
     pavucontrol
+    rofimoji
     slurp
     wl-clipboard
-    rofimoji
   ];
 
   programs = {
@@ -132,6 +133,8 @@ in
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"

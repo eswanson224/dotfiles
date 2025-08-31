@@ -9,12 +9,24 @@ in
     profiles.${profile} = {
       search = {
         force = true;
-        default = "ddg";
+        default = "startpage";
         engines = {
           searxng = {
             name = "SearXNG";
             urls = [{ template = "http://192.168.4.23:8080/search?q={searchTerms}&language=en-US"; }];
             definedAliases = [ "@s" ];
+          };
+          startpage = {
+            name = "Startpage";
+            urls = [{
+              template = "https://www.startpage.com/sp/search";
+              method = "POST";
+              params = [
+                { name = "query"; value = "{searchTerms}"; }
+                { name = "lui"; value = "english"; }
+                { name = "prfe"; value = "81856aecb621ea0908790d713c61f3cd41b10b29cb2605f7c5bffc973fc648a49b621c82999bf659ebefcbb649ffa3c95353a443cf4c652921c7b832d7953100212c008cce9727253314eea4"; }
+              ];
+            }];
           };
         };
       };

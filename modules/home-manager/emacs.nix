@@ -2,13 +2,15 @@
 
 {
   home.packages = with pkgs; [
+    cmake
+    gnumake
     libtool
+    multimarkdown
+    nil
     nixfmt-classic
     nodejs_24
-    nil
-    multimarkdown
-    texlive.combined.scheme-medium
     shellcheck
+    texlive.combined.scheme-medium
   ];
 
   programs = {
