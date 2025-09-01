@@ -5,6 +5,7 @@ let
 in
 {
   imports = [
+    ./docker.nix
     ./langs
     ./mounts.nix
     ./steam.nix

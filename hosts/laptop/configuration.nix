@@ -24,7 +24,7 @@
     };
     kernelParams = [
       "clocksource=hpet"
-      # "tsc=reliable"
+      "tsc=reliable"
     ];
   };
 
