@@ -15,9 +15,9 @@
             args = {
               pulse.min.req = "32/48000";
               pulse.default.req = "64/48000";
-              pulse.max.req = "256/48000";
+              pulse.max.req = "512/48000";
               pulse.min.quantum = "32/48000";
-              pulse.max.quantum = "256/48000";
+              pulse.max.quantum = "512/48000";
             };
           }
         ];
@@ -31,7 +31,7 @@
           "default.clock.rate" = 48000;
           "default.clock.quantum" = 64;
           "default.clock.min-quantum" = 32;
-          "default.clock.max-quantum" = 256;
+          "default.clock.max-quantum" = 512;
         };
       };
     };
