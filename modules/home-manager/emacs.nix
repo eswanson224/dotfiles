@@ -10,7 +10,8 @@
     nixfmt-classic
     nodejs_24
     shellcheck
-    texlive.combined.scheme-medium
+    # texlive.combined.scheme-medium
+    texliveFull
   ];
 
   programs = {

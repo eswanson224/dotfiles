@@ -13,6 +13,8 @@ in
   home.packages = with pkgs; [
     brightnessctl
     grim
+    hyprpicker
+    hyprshot
     pavucontrol
     rofimoji
     slurp
@@ -64,6 +66,7 @@ in
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
       "debug:full_cm_proto" = "true";
       env = [
+        "HYPRSHOT_DIR,~/Pictures/screenshots"
         "HYPRCURSOR_THEME,Posy_Cursor"
         "HYPRCURSOR_SIZE,32"
         "XCURSOR_THEME,Posy_Cursor"
@@ -110,7 +113,8 @@ in
         "$mod, down, movefocus, d"
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
-        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
+        # ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
+        ", Print, exec, hyprshot -m region"
       ]
       ++ (
         # workspaces
