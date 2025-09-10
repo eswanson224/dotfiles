@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  cider = import ./cider.nix { inherit pkgs; };
+  cider = import ./cider { inherit pkgs; };
 in
 {
   imports = [
