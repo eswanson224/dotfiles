@@ -66,7 +66,7 @@ in
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
       "debug:full_cm_proto" = "true";
       env = [
-        "HYPRSHOT_DIR,~/Pictures/screenshots"
+        "HYPRSHOT_DIR,Pictures/screenshots"
         "HYPRCURSOR_THEME,Posy_Cursor"
         "HYPRCURSOR_SIZE,32"
         "XCURSOR_THEME,Posy_Cursor"
