@@ -11,6 +11,7 @@
       ./hyprland
       ./lutris.nix
       ./mpv
+      ./obs.nix
       ./prismlauncher.nix
       ./terminal
       ./thunderbird.nix
