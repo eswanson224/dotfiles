@@ -9,7 +9,7 @@ in
     profiles.${profile} = {
       search = {
         force = true;
-        default = "startpage";
+        default = "kagi";
         engines = {
           searxng = {
             name = "SearXNG";
@@ -32,6 +32,15 @@ in
                 { name = "query"; value = "{searchTerms}"; }
                 { name = "lui"; value = "english"; }
                 { name = "prfe"; value = "81856aecb621ea0908790d713c61f3cd41b10b29cb2605f7c5bffc973fc648a49b621c82999bf659ebefcbb649ffa3c95353a443cf4c652921c7b832d7953100212c008cce9727253314eea4"; }
+              ];
+            }];
+          };
+          kagi = {
+            name = "Kagi";
+            urls = [{
+              template = "https://kagi.com/search";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
               ];
             }];
           };
