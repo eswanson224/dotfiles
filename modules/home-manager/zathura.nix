@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.eza = {
+  programs.zathura = {
     enable = true;
   };
 }

@@ -14,7 +14,7 @@
       ./obs.nix
       ./prismlauncher.nix
       ./terminal
-      ./thunderbird.nix
       ./vesktop.nix
+      ./zathura.nix
     ];
 }
