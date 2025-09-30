@@ -7,6 +7,7 @@
       language = [{
         name = "latex";
         soft-wrap.enable = true;
+        language-servers = ["texlab"];
       }];
       language-server.texlab.config.texlab.chktex = {
         onOpenAndSave = true;
@@ -34,5 +35,6 @@
       mkdir -p build
       tectonic -X compile --synctex --keep-logs --keep-intermediates --outdir=build --only-cached $1
     '')
+    pkgs.texlab
   ];
 }

@@ -7,6 +7,7 @@
     settings.mainBar = {
       modules-left =
         [
+          "hyprland/submap"
           "hyprland/workspaces"
         ];
       modules-center =

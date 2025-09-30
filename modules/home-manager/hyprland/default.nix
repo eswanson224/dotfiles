@@ -55,6 +55,17 @@ in
     enable = true;
     package = null;
     portalPackage = null;
+    submaps.resize.settings = {
+      binde = [
+       ", L, resizeactive, 10 0"
+       ", H, resizeactive, -10 0"
+       ", K, resizeactive, 0 -10"
+       ", J, resizeactive, 0 10"
+      ];
+      bind = [
+        ", escape, submap, reset"
+      ];
+    };
     settings = {
       "$mod" = "SUPER";
       exec-once = [
@@ -100,21 +111,24 @@ in
       bind = [
         "$mod, Q, killactive,"
         "$mod, D, exec, rofi -show drun"
-        "$mod, E, exec, emacsclient"
-        "$mod, L, exec, hyprlock"
+        "CTRL ALT, L, exec, hyprlock"
         "$mod, period, exec, rofimoji"
+        "$mod, return, exec, ghostty"
+        ", Print, exec, hyprshot -m region"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
         "$mod, C, pin"
-        "$mod, return, exec, ghostty"
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
+        "$mod, H, movefocus, l"
+        "$mod, L, movefocus, r"
+        "$mod, K, movefocus, u"
+        "$mod, J, movefocus, d"
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
-        # ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-        ", Print, exec, hyprshot -m region"
+        "$mod, R, submap, resize"
       ]
       ++ (
         # workspaces
@@ -139,10 +153,6 @@ in
         ", XF86AudioNext, exec, playerctl next"
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
-      ];
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
       ];
       windowrule = [
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
