@@ -67,6 +67,9 @@ in
       ];
     };
     settings = {
+      general = {
+        "col.active_border" = "$mauve";
+      };
       "$mod" = "SUPER";
       exec-once = [
         # HACK idk why using "hyprpaper" causes wallpaper to not load on initial ly signin
