@@ -12,6 +12,7 @@
       ./lutris.nix
       ./mpv
       ./obs.nix
+      ./obsidian.nix
       ./prismlauncher.nix
       ./terminal
       ./vesktop.nix

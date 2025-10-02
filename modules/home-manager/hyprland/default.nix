@@ -70,6 +70,7 @@ in
       general = {
         "col.active_border" = "$mauve";
         "col.inactive_border" = "$crust";
+        layout = "master";
       };
       "$mod" = "SUPER";
       exec-once = [
