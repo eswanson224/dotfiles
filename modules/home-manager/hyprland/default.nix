@@ -69,6 +69,7 @@ in
     settings = {
       general = {
         "col.active_border" = "$mauve";
+        "col.inactive_border" = "$crust";
       };
       "$mod" = "SUPER";
       exec-once = [
@@ -117,7 +118,7 @@ in
         "CTRL ALT, L, exec, hyprlock"
         "$mod, period, exec, rofimoji"
         "$mod, return, exec, ghostty"
-        ", Print, exec, hyprshot -m region"
+        ", Print, exec, hyprshot -m region --freeze"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
         "$mod, C, pin"

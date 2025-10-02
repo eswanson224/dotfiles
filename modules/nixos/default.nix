@@ -11,6 +11,7 @@ in
     ./steam.nix
     ./flatpak.nix
     ./ly.nix
+    ./niri.nix
     ./pipewire.nix
   ];
 
