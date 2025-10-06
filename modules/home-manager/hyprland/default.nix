@@ -159,6 +159,9 @@ in
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
       ];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+      ];
       windowrule = [
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
         "noanim, class:^(xwaylandvideobridge)$"
