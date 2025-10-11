@@ -41,13 +41,12 @@
   };
 
   # networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Denver";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
 
   services.libinput.enable = true;
 
