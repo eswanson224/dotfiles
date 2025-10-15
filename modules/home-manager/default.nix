@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./anki.nix
       ./brave.nix
       ./catppuccin.nix
       ./easyeffects.nix
@@ -14,6 +15,7 @@
       ./obs.nix
       ./obsidian.nix
       ./prismlauncher.nix
+      ./syncthing.nix
       ./terminal
       ./vesktop.nix
       ./zathura.nix

@@ -12,6 +12,8 @@
     };
     vencord = {
       settings = {
+        autoUpdate = false;
+        autoUpdateNotification = false;
         plugins = {
           MessageLogger = {
             enabled = true;
