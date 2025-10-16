@@ -80,7 +80,7 @@ in
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
       # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
-      "debug:full_cm_proto" = "true";
+      # "debug:full_cm_proto" = "true";
       env = [
         "HYPRSHOT_DIR,Pictures/screenshots"
         "HYPRCURSOR_THEME,Posy_Cursor"
