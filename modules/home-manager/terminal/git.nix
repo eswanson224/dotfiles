@@ -3,11 +3,15 @@
 {
   programs.git = {
     enable = true;
-    userName = "eswanson224";
-    userEmail = "eswanson224@proton.me";
-    extraConfig = {
-      init = { defaultBranch = "master"; };
-      push = { autoSetupRemote = true; };
+    settings = {
+      user = {
+        name = "eswanson224";
+        email = "eswanson224@proton.me";
+      };
+      extraConfig = {
+        init = { defaultBranch = "master"; };
+        push = { autoSetupRemote = true; };
+      };
     };
   };
 }
