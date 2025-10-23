@@ -9,6 +9,7 @@
       ./easyeffects.nix
       ./emacs.nix
       ./firefox
+      ./fuzzel.nix
       ./hyprland
       ./lutris.nix
       ./mpv

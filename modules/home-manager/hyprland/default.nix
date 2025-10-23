@@ -96,7 +96,7 @@ in
       ];
       monitor = [
         "DP-2, 1920x1080@165, 0x0, 1"
-        "eDP-1, 2560x1600@60, auto, 1.6"
+        "eDP-1, 2560x1600@165, auto, 1.6"
         ", preferred, auto, 1"
       ];
       xwayland = {
