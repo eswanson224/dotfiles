@@ -13,6 +13,7 @@
       ./hyprland
       ./lutris.nix
       ./mpv
+      # ./niri.nix
       ./obs.nix
       ./obsidian.nix
       ./prismlauncher.nix

@@ -13,6 +13,7 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
+    # niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, catppuccin, ... }@inputs:
@@ -37,6 +38,7 @@
             nur.modules.nixos.default
             nixos-hardware.nixosModules.lenovo-legion-16ach6h
             catppuccin.nixosModules.catppuccin
+            # niri.nixosModules.niri
           ];
         };
         vm = nixpkgs.lib.nixosSystem {
