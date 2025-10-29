@@ -79,8 +79,6 @@ in
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
-      # https://github.com/ValveSoftware/gamescope/issues/1825#issuecomment-2883202415
-      # "debug:full_cm_proto" = "true";
       env = [
         "HYPRSHOT_DIR,Pictures/screenshots"
         "HYPRCURSOR_THEME,Posy_Cursor"
@@ -96,7 +94,7 @@ in
       ];
       monitor = [
         "DP-2, 1920x1080@165, 0x0, 1"
-        "eDP-1, 2560x1600@165, auto, 1.6"
+        "eDP-1, 2560x1600@60, auto, 1.6"
         ", preferred, auto, 1"
       ];
       xwayland = {
@@ -169,6 +167,10 @@ in
         "maxsize 1 1, class:^(xwaylandvideobridge)$"
         "noblur, class:^(xwaylandvideobridge)$"
         "nofocus, class:^(xwaylandvideobridge)$"
+      ];
+      animation = [
+        "windows, 0"
+        "workspaces, 0"
       ];
     };
   };
