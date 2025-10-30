@@ -169,8 +169,7 @@ in
         "nofocus, class:^(xwaylandvideobridge)$"
       ];
       animation = [
-        "windows, 0"
-        "workspaces, 0"
+        "global, 0"
       ];
     };
   };

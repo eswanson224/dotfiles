@@ -11,7 +11,7 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:eswanson224/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     # niri.url = "github:sodiboo/niri-flake";
   };
