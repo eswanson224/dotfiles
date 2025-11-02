@@ -89,14 +89,18 @@ in
         force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
+          dearrow
           firefox-color
           frankerfacez
+          indie-wiki-buddy
+          kagi-translate
+          mal-sync
           multi-account-containers
           old-reddit-redirect
           sponsorblock
           ublock-origin
+          vimium
           violentmonkey
-          dearrow
         ];
       };
     };
