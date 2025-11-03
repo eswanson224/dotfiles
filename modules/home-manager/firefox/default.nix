@@ -58,7 +58,7 @@ in
               }
               {
                 name = "nixpkgs";
-                url = "https://search.nixos.org/packages?channel=unstable&size=50&sort=relevance&type=packages";
+                url = "https://search.nixos.org/packages?channel=25.05&size=50&sort=relevance&type=packages";
               }
             ];
           }
