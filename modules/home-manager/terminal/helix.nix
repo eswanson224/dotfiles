@@ -7,8 +7,11 @@
       language = [{
         name = "latex";
         soft-wrap.enable = true;
-        language-servers = ["texlab"];
+        language-servers = [ "texlab" "vale" ];
       }];
+      language-server.vale = {
+        command = "vale-ls";
+      };
       language-server.texlab.config.texlab.chktex = {
         onOpenAndSave = true;
         onEdit = true;
@@ -28,13 +31,15 @@
       };
     };
   };
-  home.packages = [
-    (pkgs.writeShellScriptBin "helix-tectonic" ''
+  home.packages = with pkgs; [
+    (writeShellScriptBin "helix-tectonic" ''
       #!/bin/sh
 
       mkdir -p build
       tectonic -X compile --synctex --keep-logs --keep-intermediates --outdir=build --only-cached $1
     '')
-    pkgs.texlab
+    texlab
+    (vale.withStyles (s: [ s.alex s.google ]))
+    vale-ls
   ];
 }
