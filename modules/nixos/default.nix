@@ -42,6 +42,11 @@ in
   #     osu-lazer-bin = updated-nixpkgs.osu-lazer-bin;
   #   })
   # ];
+    
+  programs.nix-ld = {
+    enable = true;
+    libraries = pkgs.steam-run.args.multiPkgs pkgs;
+  };
 
   users.users.erik.packages = with pkgs; [
     cider
