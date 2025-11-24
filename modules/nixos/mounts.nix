@@ -21,8 +21,8 @@
     in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
 
-  fileSystems."/mnt/windows" = {
-    device = "/dev/disk/by-uuid/F4523CC1523C89FE";
-    fsType = "ntfs";
-  };
+  # fileSystems."/mnt/windows" = {
+  #   device = "/dev/disk/by-uuid/F4523CC1523C89FE";
+  #   fsType = "ntfs";
+  # };
 }
