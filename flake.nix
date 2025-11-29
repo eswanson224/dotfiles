@@ -19,19 +19,6 @@
   outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, catppuccin, ... }@inputs:
     {
       nixosConfigurations = {
-        nixpkgs.config.cudaSupport = true;
-        nixpkgs.config.allowUnfreePredicate =
-          p:
-          builtins.all (
-            license:
-            license.free
-            || builtins.elem license.shortName [
-              "CUDA EULA"
-              "cuDNN EULA"
-              "cuTENSOR EULA"
-              "NVidia OptiX EULA"
-            ]
-          ) (if builtins.isList p.meta.license then p.meta.license else [ p.meta.license ]);
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
