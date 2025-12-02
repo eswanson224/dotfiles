@@ -88,7 +88,7 @@ in
       extensions = {
         force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          bitwarden
+          # bitwarden # HACK: uncomment when extension is fixed, older version needed atm
           dearrow
           firefox-color
           frankerfacez
