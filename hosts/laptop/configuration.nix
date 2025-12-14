@@ -48,7 +48,8 @@
   # networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/Denver";
+  # time.timeZone = "America/Denver";
+  services.automatic-timezoned.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
