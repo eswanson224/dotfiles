@@ -35,6 +35,8 @@
           BlurNSFW.enabled = true;
           FixYoutubeEmbeds.enabled = true;
           NoReplyMention.enabled = true;
+          Dearrow.enabled = true;
+          YoutubeAdblock.enabled = true;
         };
       };
     };
