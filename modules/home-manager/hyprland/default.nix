@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  wallpaper = "/etc/nixos/wallpaper.png";
+  wallpaper = "/home/erik/nixconf/wallpaper.png";
 in
 {
   imports =
@@ -74,7 +74,6 @@ in
       };
       "$mod" = "SUPER";
       exec-once = [
-        # HACK idk why using "hyprpaper" causes wallpaper to not load on initial ly signin
         "systemctl --user enable --now hyprpaper.service"
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
