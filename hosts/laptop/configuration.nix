@@ -58,7 +58,7 @@
 
   users.users.erik = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
   services.tailscale = {

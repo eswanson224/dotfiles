@@ -44,21 +44,21 @@ in
   # ];
 
 
-  nixpkgs.overlays = [
-    (final: prev: let
-      updated-nixpkgs = import (prev.fetchFromGitHub {
-        owner = "NixOS";
-        repo = "nixpkgs";
-        rev = "32433fc6c958de688770092a5adada94898876ca";
-        sha256 = "sha256-ysivbzjsbL9QIaKeF6849X4mzISg45HhGBgtVmf6B0I=";
-      }) { 
-        system = prev.system;
-        config.allowUnfree = true;  # Add this!
-      };
-    in {
-      proton-vpn-cli = updated-nixpkgs.proton-vpn-cli;
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: let
+  #     updated-nixpkgs = import (prev.fetchFromGitHub {
+  #       owner = "NixOS";
+  #       repo = "nixpkgs";
+  #       rev = "32433fc6c958de688770092a5adada94898876ca";
+  #       sha256 = "sha256-ysivbzjsbL9QIaKeF6849X4mzISg45HhGBgtVmf6B0I=";
+  #     }) { 
+  #       system = prev.system;
+  #       config.allowUnfree = true;  # Add this!
+  #     };
+  #   in {
+  #     proton-vpn-cli = updated-nixpkgs.proton-vpn-cli;
+  #   })
+  # ];
     
   programs.nix-ld = {
     enable = true;
@@ -68,6 +68,8 @@ in
   users.users.erik.packages = with pkgs; [
     cider
     osu-lazer-bin
-    proton-vpn-cli
+    protonvpn-gui
+    networkmanager-openvpn
+    wireguard-tools
   ];
 }

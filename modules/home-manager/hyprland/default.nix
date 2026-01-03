@@ -81,7 +81,7 @@ in
         };
       };
       misc = {
-        vrr = 1;
+        vrr = 0;
       };
       xwayland = {
         force_zero_scaling = true;
@@ -107,7 +107,7 @@ in
       ];
       monitor = [
         "DP-2, 2560x1440@240, 0x0, 1.25"
-        "eDP-1, 2560x1600@165, auto, 1.6"
+        "eDP-1, 2560x1600@60, auto, 1.6"
         ", preferred, auto, 1"
       ];
       workspace = [
@@ -163,14 +163,14 @@ in
       bindm = [
         "$mod, mouse:272, movewindow"
       ];
-      windowrule = [
-        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        "noanim, class:^(xwaylandvideobridge)$"
-        "noinitialfocus, class:^(xwaylandvideobridge)$"
-        "maxsize 1 1, class:^(xwaylandvideobridge)$"
-        "noblur, class:^(xwaylandvideobridge)$"
-        "nofocus, class:^(xwaylandvideobridge)$"
-      ];
+      # windowrule = [
+      #   "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+      #   "noanim, class:^(xwaylandvideobridge)$"
+      #   "noinitialfocus, class:^(xwaylandvideobridge)$"
+      #   "maxsize 1 1, class:^(xwaylandvideobridge)$"
+      #   "noblur, class:^(xwaylandvideobridge)$"
+      #   "nofocus, class:^(xwaylandvideobridge)$"
+      # ];
       animation = [
         "global, 0"
       ];
