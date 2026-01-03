@@ -26,40 +26,6 @@ in
 
   security.pam.services.hyprlock = {};
 
-  # For when osu! updates and nixpkgs master is behind
-  # nixpkgs.overlays = [
-  #   (final: prev: let
-  #     updated-nixpkgs = import (prev.fetchFromGitHub {
-  #       owner = "NixOS";
-  #       repo = "nixpkgs";
-  #       rev = "1d989da6d794e9487d135a48045385846f7cb0d1";
-  #       sha256 = "03q5d9qdv5kmav5jcaz1s94dcmkkw6fdkazk5343w229iqaxxxpj";
-  #     }) { 
-  #       system = prev.system;
-  #       config.allowUnfree = true;  # Add this!
-  #     };
-  #   in {
-  #     osu-lazer-bin = updated-nixpkgs.osu-lazer-bin;
-  #   })
-  # ];
-
-
-  # nixpkgs.overlays = [
-  #   (final: prev: let
-  #     updated-nixpkgs = import (prev.fetchFromGitHub {
-  #       owner = "NixOS";
-  #       repo = "nixpkgs";
-  #       rev = "32433fc6c958de688770092a5adada94898876ca";
-  #       sha256 = "sha256-ysivbzjsbL9QIaKeF6849X4mzISg45HhGBgtVmf6B0I=";
-  #     }) { 
-  #       system = prev.system;
-  #       config.allowUnfree = true;  # Add this!
-  #     };
-  #   in {
-  #     proton-vpn-cli = updated-nixpkgs.proton-vpn-cli;
-  #   })
-  # ];
-    
   programs.nix-ld = {
     enable = true;
     libraries = pkgs.steam-run.args.multiPkgs pkgs;
