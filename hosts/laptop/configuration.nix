@@ -48,8 +48,9 @@
   # networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  # time.timeZone = "America/Denver";
-  services.automatic-timezoned.enable = true;
+  time.timeZone = "America/Denver";
+  # services.automatic-timezoned.enable = true;
+  # services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
