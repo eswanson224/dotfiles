@@ -37,5 +37,6 @@ in
     protonvpn-gui
     networkmanager-openvpn
     wireguard-tools
+    gimp
   ];
 }

@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
-let
-  wallpaper = "/home/erik/nixconf/wallpaper.png";
-in
 {
   imports =
     [
@@ -41,8 +38,16 @@ in
     enable = true;
     settings = {
       splash = false;
-      preload = wallpaper;
-      wallpaper = ", ${wallpaper}";
+      wallpaper = [
+        {
+          monitor = "eDP-1";
+          path = "/home/erik/nixconf/wallpaper.png";
+        }
+        {
+          monitor = "DP-2";
+          path = "/home/erik/nixconf/oled.png";
+        }
+      ];
     };
   };
 
