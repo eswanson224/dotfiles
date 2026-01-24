@@ -73,7 +73,6 @@ in
           firefox-color
           frankerfacez
           indie-wiki-buddy
-          kagi-translate
           mal-sync
           multi-account-containers
           old-reddit-redirect
