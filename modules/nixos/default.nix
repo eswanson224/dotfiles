@@ -38,5 +38,7 @@ in
     networkmanager-openvpn
     wireguard-tools
     gimp
+    qalculate-qt
+    zotero
   ];
 }

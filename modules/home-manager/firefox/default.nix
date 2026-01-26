@@ -80,6 +80,7 @@ in
           ublock-origin
           vimium
           violentmonkey
+          zotero-connector
         ];
       };
     };

@@ -5,14 +5,14 @@
     enable = true;
     settings = {
       minimizeToTray = false;
-      tray = false;
+      tray = true;
       hardwareAcceleration = true;
       hardwareVideoAcceleration = true;
       arRPC = true;
     };
     vencord = {
       settings = {
-        autoUpdate = false;
+        autoUpdate = true;
         autoUpdateNotification = false;
         plugins = {
           MessageLogger = {
