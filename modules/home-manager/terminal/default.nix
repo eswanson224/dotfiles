@@ -1,18 +1,18 @@
 { ... }:
 
 {
- imports =
-   [
-     ./bat.nix
-     ./btop.nix
-     ./eza.nix
-     ./fish.nix
-     ./ghostty.nix
-     ./git.nix
-     ./helix.nix
-     ./nh.nix
-     ./yazi
-     ./zellij.nix
-     ./zoxide.nix
-   ];
+  imports =
+    [
+      ./bat.nix
+      ./btop.nix
+      ./eza.nix
+      ./fish.nix
+      ./ghostty.nix
+      ./git.nix
+      ./helix.nix
+      ./nh.nix
+      ./yazi
+      ./zellij.nix
+      ./zoxide.nix
+    ];
 }

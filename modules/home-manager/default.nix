@@ -3,23 +3,15 @@
 {
   imports =
     [
-      ./anki.nix
-      ./brave.nix
+      # ./niri.nix
       ./catppuccin.nix
-      ./easyeffects.nix
+      ./desktop
       ./emacs.nix
       ./firefox
       ./fuzzel.nix
       ./hyprland
-      ./lutris.nix
       ./mpv
-      # ./niri.nix
-      ./obs.nix
-      ./obsidian.nix
-      ./prismlauncher.nix
       ./syncthing.nix
       ./terminal
-      ./vesktop.nix
-      ./zathura.nix
     ];
 }
