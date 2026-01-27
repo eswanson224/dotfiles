@@ -9,6 +9,7 @@
       hardwareAcceleration = true;
       hardwareVideoAcceleration = true;
       arRPC = true;
+      enableSplashScreen = false;
     };
     vencord = {
       settings = {
