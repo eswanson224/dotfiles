@@ -94,7 +94,7 @@
       "$mod" = "SUPER";
       exec-once = [
         "systemctl --user enable --now hyprpaper.service"
-        "hyprpaper"
+        # "hyprpaper"
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
@@ -113,7 +113,7 @@
       ];
       monitor = [
         "DP-2, 2560x1440@240, 0x0, 1.25"
-        "eDP-1, 2560x1600@165, auto, 1.6"
+        "eDP-1, 2560x1600@60, auto, 1.6"
         ", preferred, auto, 1"
       ];
       workspace = [

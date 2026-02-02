@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     cmake
     gnumake
+    ispell
     libtool
     multimarkdown
     nil
