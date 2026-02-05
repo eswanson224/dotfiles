@@ -6,7 +6,7 @@
     settings = {
       user = {
         name = "eswanson224";
-        email = "eswanson224@proton.me";
+        email = "erik@swanso.nz";
       };
       extraConfig = {
         init = { defaultBranch = "master"; };
