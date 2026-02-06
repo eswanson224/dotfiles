@@ -7,6 +7,6 @@
 
   programs.java = {
     enable = true;
-    package = pkgs.temurin-jre-bin-17;
+    package = pkgs.graalvmPackages.graalvm-ce;
   };
 }

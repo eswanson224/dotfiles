@@ -3,7 +3,9 @@
 {
   home.packages = with pkgs; [
     libreoffice
+    thunar
   ];
+
   imports = [
     ./anki.nix
     ./brave.nix
