@@ -12,6 +12,9 @@
     nodejs_24
     shellcheck
     tectonic
+    tinymist
+    typst
+    typstyle
   ];
 
   programs = {
