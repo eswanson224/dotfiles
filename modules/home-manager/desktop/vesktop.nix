@@ -8,7 +8,7 @@
       tray = true;
       hardwareAcceleration = true;
       hardwareVideoAcceleration = true;
-      arRPC = true;
+      arRPC = false;
       enableSplashScreen = false;
     };
     vencord = {
