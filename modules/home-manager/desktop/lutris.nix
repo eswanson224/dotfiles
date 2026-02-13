@@ -7,12 +7,12 @@
       mangohud
       umu-launcher
       winetricks
-      wineWowPackages.waylandFull
+      wineWow64Packages.staging
   ];
 
   programs.lutris = {
     enable = true;
     protonPackages = [ pkgs.proton-ge-bin ];
-    winePackages = [ pkgs.wineWowPackages.waylandFull ];
+    winePackages = [ pkgs.wineWow64Packages.staging ];
   };
 }

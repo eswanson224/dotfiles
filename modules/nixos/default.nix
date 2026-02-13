@@ -6,6 +6,7 @@ in
 {
   imports = [
     ./docker.nix
+    ./fonts.nix
     ./langs
     ./mounts.nix
     ./steam.nix
