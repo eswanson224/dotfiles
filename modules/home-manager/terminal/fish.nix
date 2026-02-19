@@ -15,7 +15,6 @@
       set -x EDITOR hx
       set -x PKG_CONFIG_PATH "${pkgs.openssl.dev}/lib/pkgconfig"
       set -e fish_terminal_color_theme
-      fish_config theme choose "Catppuccin Mocha" --color-theme=dark
     '';
     plugins = [
       { name = "tide"; src = pkgs.fishPlugins.tide; }
