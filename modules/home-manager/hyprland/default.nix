@@ -94,7 +94,6 @@
       "$mod" = "SUPER";
       exec-once = [
         "systemctl --user enable --now hyprpaper.service"
-        # "hyprpaper"
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
@@ -104,8 +103,6 @@
         "HYPRCURSOR_SIZE,32"
         "XCURSOR_THEME,Posy_Cursor"
         "XCURSOR_SIZE,32"
-        # "GDK_SCALE,1"
-        "GRIM_DEFAULT_DIR,Pictures/screenshots"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"

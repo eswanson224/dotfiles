@@ -8,7 +8,7 @@
       ./desktop
       ./emacs.nix
       ./firefox
-      ./fuzzel.nix
+      # ./fuzzel.nix
       ./hyprland
       ./mpv
       ./syncthing.nix

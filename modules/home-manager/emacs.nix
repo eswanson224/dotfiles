@@ -2,10 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    cmake
-    gnumake
     ispell
-    libtool
     multimarkdown
     nil
     nixfmt-classic
@@ -29,7 +26,13 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs-pgtk;
-    extraPackages = epkgs: [ epkgs.vterm ];
+    package = pkgs.emacs;
+    extraPackages = epkgs: [
+      epkgs.vterm
+      epkgs.pdf-tools
+      epkgs.tree-sitter-langs
+      epkgs.treesit-grammars.with-all-grammars
+      # (epkgs.treesit-grammars.with-grammars (grammars: [ grammars.tree-sitter-typst ]))
+    ];
   };
 }
