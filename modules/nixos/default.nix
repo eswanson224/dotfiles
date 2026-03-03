@@ -33,6 +33,8 @@ in
     libraries = pkgs.steam-run.args.multiPkgs pkgs;
   };
 
+  catppuccin.cache.enable = true;
+
   users.users.erik.packages = with pkgs; [
     cider
     helium-browser

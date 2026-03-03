@@ -9,6 +9,7 @@
   imports = [
     # ./anki.nix
     # ./brave.nix
+    ./vscodium.nix
     ./easyeffects.nix
     ./lutris.nix
     ./obs.nix
