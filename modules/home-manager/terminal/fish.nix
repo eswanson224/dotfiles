@@ -3,7 +3,6 @@
 {
   home.packages = [
     pkgs.fishPlugins.tide
-    pkgs.python312
   ];
 
   programs.fish = {
