@@ -15,6 +15,6 @@
     ./obsidian.nix
     ./prismlauncher.nix
     ./vesktop.nix
-    # ./zathura.nix
+    ./zathura.nix
   ];
 }
