@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/dd9b079222d43e1943b6ebd802f04fd959dc8e61";
-    # nixpkgs.url = "github:nixos/nixpkgs/pull/494721/head";
+    # nixpkgs.url = "github:nixos/nixpkgs/pull/496847/head";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +16,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     # niri.url = "github:sodiboo/niri-flake";
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, catppuccin, ... }@inputs:
@@ -23,6 +24,7 @@
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {inherit inputs;};
           modules = [
             ./hosts/laptop/configuration.nix
             home-manager.nixosModules.home-manager
