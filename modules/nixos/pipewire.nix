@@ -1,5 +1,8 @@
 { ... }:
 
+let
+  quant = 128;
+in
 {
   security.rtkit.enable = true;
   services.pipewire = {
@@ -16,23 +19,23 @@
           }
         ];
         "pulse.properties" = {
-          "pulse.min.req" = "64/48000";
-          "pulse.default.req" = "64/48000";
-          "pulse.max.req" = "64/48000";
-          "pulse.min.quantum" = "64/48000";
-          "pulse.max.quantum" = "64/48000";
+          "pulse.min.req" = "${toString quant}/48000";
+          "pulse.default.req" = "${toString quant}/48000";
+          "pulse.max.req" = "${toString quant}/48000";
+          "pulse.min.quantum" = "${toString quant}/48000";
+          "pulse.max.quantum" = "${toString quant}/48000";
         };
         "stream.properties" = {
-          "node.latency" = "64/48000";
+          "node.latency" = "${toString quant}/48000";
           "resample.quality" = 1;
         };
       };
       pipewire."92-low-latency" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
-          "default.clock.quantum" = 64;
-          "default.clock.min-quantum" = 64;
-          "default.clock.max-quantum" = 64;
+          "default.clock.quantum" = quant;
+          "default.clock.min-quantum" = quant;
+          "default.clock.max-quantum" = quant;
         };
       };
     };
