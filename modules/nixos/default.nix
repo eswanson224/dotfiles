@@ -37,6 +37,7 @@ in
   catppuccin.cache.enable = true;
 
   environment.systemPackages = with pkgs; [
+    calibre
     cider
     helium-browser
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin

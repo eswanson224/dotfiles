@@ -32,14 +32,14 @@
     };
   };
   home.packages = with pkgs; [
+    nil
+    vale-ls
+    (vale.withStyles (s: [ s.alex s.google ]))
     (writeShellScriptBin "helix-tectonic" ''
       #!/bin/sh
 
       mkdir -p build
       tectonic -X compile --synctex --keep-logs --keep-intermediates --outdir=build --only-cached $1
     '')
-    texlab
-    (vale.withStyles (s: [ s.alex s.google ]))
-    vale-ls
   ];
 }

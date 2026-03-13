@@ -8,7 +8,7 @@
       tray = true;
       hardwareAcceleration = true;
       hardwareVideoAcceleration = true;
-      arRPC = false;
+      arRPC = true;
       enableSplashScreen = false;
     };
     vencord = {
@@ -38,6 +38,7 @@
           NoReplyMention.enabled = true;
           Dearrow.enabled = true;
           YoutubeAdblock.enabled = true;
+          WebScreenShareFixes.enbaled = false;
         };
       };
     };

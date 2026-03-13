@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 let
-  quant = 128;
+  quant = 256;
 in
 {
   imports = [

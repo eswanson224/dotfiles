@@ -4,14 +4,10 @@
   home.packages = with pkgs; [
     ispell
     multimarkdown
-    nil
     nixfmt-classic
     nodejs_24
     shellcheck
     tectonic
-    tinymist
-    typst
-    typstyle
   ];
 
   programs = {
