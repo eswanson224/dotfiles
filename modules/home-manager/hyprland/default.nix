@@ -9,12 +9,10 @@
 
   home.packages = with pkgs; [
     brightnessctl
-    grim
     hyprpicker
     hyprshot
     pavucontrol
     rofimoji
-    slurp
     wl-clipboard
   ];
 
@@ -79,6 +77,7 @@
       };
       input = {
         accel_profile = "flat";
+        sensitivity = -0.5;
         touchpad = {
           tap-to-click = false;
           clickfinger_behavior = true;

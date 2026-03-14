@@ -1,4 +1,4 @@
-{ lib, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   cider = import ./cider { inherit pkgs; };
@@ -6,14 +6,11 @@ let
 in
 {
   imports = [
-    # ./docker.nix
     ./fonts.nix
-    ./langs
     ./mounts.nix
     ./steam.nix
     ./flatpak.nix
     ./ly.nix
-    # ./niri.nix
     ./pipewire.nix
   ];
 
@@ -37,16 +34,10 @@ in
   catppuccin.cache.enable = true;
 
   environment.systemPackages = with pkgs; [
-    calibre
     cider
     helium-browser
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
-    protonvpn-gui
-    networkmanager-openvpn
-    wireguard-tools
-    gimp
     qalculate-qt
-    zotero
   ];
 }

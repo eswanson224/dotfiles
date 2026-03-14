@@ -16,9 +16,9 @@
     fd.enable = true;
   };
 
-  services.emacs = {
-    enable = true;
-  };
+  # services.emacs = {
+  #   enable = true;
+  # };
 
   programs.emacs = {
     enable = true;

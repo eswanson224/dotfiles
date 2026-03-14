@@ -2,12 +2,12 @@
 
 {
   home.packages = with pkgs; [
-      adwaita-icon-theme
-      gamemode
-      mangohud
-      umu-launcher
-      winetricks
-      wineWow64Packages.staging
+    adwaita-icon-theme
+    gamemode
+    mangohud
+    umu-launcher
+    winetricks
+    wineWow64Packages.staging
   ];
 
   programs.lutris = {
