@@ -45,6 +45,7 @@
       "clocksource=hpet"
       "tsc=reliable"
     ];
+    kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
   # networking.hostName = "nixos"; # Define your hostname.

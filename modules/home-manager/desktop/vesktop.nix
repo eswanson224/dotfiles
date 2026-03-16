@@ -6,8 +6,8 @@
     settings = {
       minimizeToTray = false;
       tray = true;
-      hardwareAcceleration = false;
-      hardwareVideoAcceleration = false;
+      hardwareAcceleration = true;
+      hardwareVideoAcceleration = true;
       arRPC = true;
       enableSplashScreen = false;
     };
@@ -38,7 +38,6 @@
           NoReplyMention.enabled = true;
           Dearrow.enabled = true;
           YoutubeAdblock.enabled = true;
-          WebScreenShareFixes.enbaled = true;
         };
       };
     };

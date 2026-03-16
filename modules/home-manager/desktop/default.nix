@@ -9,13 +9,14 @@
   imports = [
     # ./anki.nix
     # ./brave.nix
-    ./vscodium.nix
     ./easyeffects.nix
+    ./emacs.nix
     ./lutris.nix
     ./obs.nix
     ./obsidian.nix
     ./prismlauncher.nix
     ./vesktop.nix
+    ./vscodium.nix
     ./zathura.nix
   ];
 }
