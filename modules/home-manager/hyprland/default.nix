@@ -74,15 +74,19 @@
         "col.active_border" = "$mauve";
         "col.inactive_border" = "$crust";
         layout = "master";
+        allow_tearing = true;
       };
       input = {
         accel_profile = "flat";
-        sensitivity = -0.5;
         touchpad = {
           tap-to-click = false;
           clickfinger_behavior = true;
           scroll_factor = 0.3;
         };
+      };
+      device = {
+        name = "endgame-gear-endgame-gear-op1-8k-gaming-mouse";
+        sensitivity = -0.5;
       };
       misc = {
         vrr = 0;
@@ -165,14 +169,15 @@
       bindm = [
         "$mod, mouse:272, movewindow"
       ];
-      # windowrule = [
-      #   "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-      #   "noanim, class:^(xwaylandvideobridge)$"
-      #   "noinitialfocus, class:^(xwaylandvideobridge)$"
-      #   "maxsize 1 1, class:^(xwaylandvideobridge)$"
-      #   "noblur, class:^(xwaylandvideobridge)$"
-      #   "nofocus, class:^(xwaylandvideobridge)$"
-      # ];
+      windowrule = [
+        "match:class steam_app_0, immediate yes"
+        # "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+        # "noanim, class:^(xwaylandvideobridge)$"
+        # "noinitialfocus, class:^(xwaylandvideobridge)$"
+        # "maxsize 1 1, class:^(xwaylandvideobridge)$"
+        # "noblur, class:^(xwaylandvideobridge)$"
+        # "nofocus, class:^(xwaylandvideobridge)$"
+      ];
       animation = [
         "global, 0"
       ];

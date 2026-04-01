@@ -9,7 +9,7 @@ in
     profiles.${profile} = {
       search = {
         force = true;
-        default = "kagi";
+        default = "ddg";
         engines = {
           kagi = {
             name = "Kagi";
@@ -20,29 +20,13 @@ in
               ];
             }];
           };
+          # searx = {
+          #   name = "SearXNG";
+          #   urls = [{
+              
+          #   }];
+          # };
         };
-      };
-      bookmarks = {
-        force = true;
-        settings = [
-          {
-            toolbar = true;
-            bookmarks = [
-              {
-                name = "home manager";
-                url = "https://home-manager-options.extranix.com/?query=&release=master";
-              }
-              {
-                name = "nixpkgs";
-                url = "https://search.nixos.org/packages?channel=unstable&size=50&sort=relevance&type=packages";
-              }
-              {
-                name = "nixos wiki";
-                url = "https://wiki.nixos.org";
-              }
-            ];
-          }
-        ];
       };
       containersForce = true;
       containers = {

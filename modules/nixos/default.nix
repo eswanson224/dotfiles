@@ -3,6 +3,7 @@
 let
   cider = import ./cider { inherit pkgs; };
   helium-browser = import ./helium-browser.nix { inherit pkgs; };
+  iloader = import ./iloader.nix { inherit pkgs; };
 in
 {
   imports = [
@@ -22,6 +23,8 @@ in
     gamemode.enable = true;
   };
 
+  services.usbmuxd.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   security.pam.services.hyprlock = {};
@@ -36,6 +39,7 @@ in
   environment.systemPackages = with pkgs; [
     cider
     helium-browser
+    iloader
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
     qalculate-qt

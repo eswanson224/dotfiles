@@ -3,13 +3,16 @@
 {
   home.packages = with pkgs; [
     libreoffice
-    thunar
+    libimobiledevice
+    kdePackages.dolphin
+    kdePackages.kio-extras
   ];
 
   imports = [
     # ./anki.nix
     # ./brave.nix
     ./easyeffects.nix
+    ./element.nix
     ./emacs.nix
     ./lutris.nix
     ./obs.nix
