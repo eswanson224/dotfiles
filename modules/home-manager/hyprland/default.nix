@@ -11,6 +11,7 @@
     brightnessctl
     hyprpicker
     hyprshot
+    nvidia-vaapi-driver
     pavucontrol
     rofimoji
     wl-clipboard
@@ -109,6 +110,8 @@
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        # "NVD_BACKEND,direct"
+        "LD_LIBRARY_PATH,/run/opengl-driver/lib"
         "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
       monitor = [

@@ -1,15 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/nixos
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/nixos
+  ];
 
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       substituters = [
         "https://nix-community.cachix.org"
         "https://hyprland.cachix.org"
@@ -81,4 +83,3 @@
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
-
