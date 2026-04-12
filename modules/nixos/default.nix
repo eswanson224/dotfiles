@@ -34,6 +34,10 @@ in
     libraries = pkgs.steam-run.args.multiPkgs pkgs;
   };
 
+  virtualisation.docker = {
+    enable = true;
+  };
+  
   catppuccin.cache.enable = true;
 
   environment.systemPackages = with pkgs; [

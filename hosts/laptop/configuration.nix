@@ -68,6 +68,7 @@
       "wheel"
       "networkmanager"
       "gamemode"
+      "docker"
     ];
   };
 
