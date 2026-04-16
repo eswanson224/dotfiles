@@ -4,7 +4,7 @@ with pkgs;
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs.vscodium-fhs;
 
     profiles.default.extensions = with pkgs.vscode-extensions; [
       reditorsupport.r
@@ -13,6 +13,8 @@ with pkgs;
       jnoortheen.nix-ide
       arrterian.nix-env-selector
       mkhl.direnv
+      ms-python.python
+      ms-pyright.pyright
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "quarto";
