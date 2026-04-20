@@ -15,7 +15,7 @@
     };
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
-    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-gaming.url = "github:eswanson224/nix-gaming";
   };
 
   outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, catppuccin, ... }@inputs:
