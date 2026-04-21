@@ -27,10 +27,20 @@ in
     libimobiledevice
     kdePackages.dolphin
     kdePackages.kio-extras
-    (deadbeef-with-plugins.override {
-      plugins = with deadbeefPlugins; [
-        musical-spectrum
+    (pkgs.symlinkJoin {
+      name = "deadbeef-wrapped";
+      paths = [
+        (deadbeef-with-plugins.override {
+          plugins = with deadbeefPlugins; [
+            musical-spectrum
+          ];
+        })
       ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram "$out/bin/deadbeef" \
+          --set PIPEWIRE_LATENCY "512/48000"
+      '';
     })
   ];
 
