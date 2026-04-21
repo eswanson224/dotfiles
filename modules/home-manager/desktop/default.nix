@@ -6,6 +6,11 @@
     libimobiledevice
     kdePackages.dolphin
     kdePackages.kio-extras
+    (deadbeef-with-plugins.override {
+      plugins = with deadbeefPlugins; [
+        musical-spectrum
+      ];
+    })
   ];
 
   imports = [
