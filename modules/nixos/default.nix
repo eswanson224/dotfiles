@@ -23,7 +23,11 @@ in
     gamemode.enable = true;
   };
 
-  services.usbmuxd.enable = true;
+  services = {
+    desktopManager.plasma6.enable = true;
+    usbmuxd.enable = true;
+  };
+  
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
