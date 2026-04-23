@@ -15,35 +15,6 @@ in
     ./pipewire.nix
   ];
 
-  programs = {
-    appimage.enable = true;
-    dconf.enable = true;
-    fish.enable = true;
-    hyprland.enable = true;
-    gamemode.enable = true;
-  };
-
-  services = {
-    desktopManager.plasma6.enable = true;
-    usbmuxd.enable = true;
-  };
-  
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  security.pam.services.hyprlock = {};
-
-  programs.nix-ld = {
-    enable = true;
-    libraries = pkgs.steam-run.args.multiPkgs pkgs;
-  };
-
-  virtualisation.docker = {
-    enable = true;
-  };
-  
-  catppuccin.cache.enable = true;
-
   environment.systemPackages = with pkgs; [
     cider
     helium-browser
@@ -52,4 +23,50 @@ in
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
     qalculate-qt
   ];
+
+  programs = {
+    appimage.enable = true;
+    dconf.enable = true;
+    fish.enable = true;
+    hyprland.enable = true;
+    gamemode.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = pkgs.steam-run.args.multiPkgs pkgs;
+    };
+  };
+
+  services = {
+    # desktopManager.plasma6.enable = true;
+    usbmuxd.enable = true;
+    libinput.enable = true;
+    # printing.enable = true;
+    tailscale = {
+      enable = true;
+      extraSetFlags = [
+        "--operator=erik"
+        "--accept-routes"
+      ];
+    };
+  };
+
+  # networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+
+  time.timeZone = "America/Denver";
+  # services.automatic-timezoned.enable = true;
+  # services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+
+  nixpkgs.config.allowUnfree = true;
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  security.pam.services.hyprlock = {};
+
+  virtualisation.docker = {
+    enable = true;
+  };
+  
+  catppuccin.cache.enable = true;
+
 }

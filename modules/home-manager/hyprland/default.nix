@@ -9,8 +9,7 @@
 
   home.packages = with pkgs; [
     brightnessctl
-    hyprpicker
-    hyprshot
+    grimblast
     nvidia-vaapi-driver
     pavucontrol
     rofimoji
@@ -44,6 +43,10 @@
         }
         {
           monitor = "DP-2";
+          path = "/home/erik/nixconf/oled.png";
+        }
+        {
+          monitor = "";
           path = "/home/erik/nixconf/oled.png";
         }
       ];
@@ -102,7 +105,7 @@
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
       env = [
-        "HYPRSHOT_DIR,Pictures/screenshots"
+        "DEFAULT_TARGET_DIR,Pictures/screenshots"
         "HYPRCURSOR_THEME,Posy_Cursor"
         "HYPRCURSOR_SIZE,32"
         "XCURSOR_THEME,Posy_Cursor"
@@ -127,7 +130,7 @@
         "CTRL ALT, L, exec, hyprlock"
         "$mod, period, exec, rofimoji"
         "$mod, return, exec, ghostty"
-        ", Print, exec, hyprshot -m region --freeze"
+        ", Print, exec, grimblast -fn copysave area"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreenstate, 2, 0"
         "$mod SHIFT, F, fullscreen,"
@@ -145,8 +148,6 @@
         "$mod, R, submap, resize"
       ]
       ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
         builtins.concatLists (builtins.genList (i:
             let ws = i + 1;
             in [
@@ -173,12 +174,6 @@
       ];
       windowrule = [
         "match:class steam_app_0, immediate yes"
-        # "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        # "noanim, class:^(xwaylandvideobridge)$"
-        # "noinitialfocus, class:^(xwaylandvideobridge)$"
-        # "maxsize 1 1, class:^(xwaylandvideobridge)$"
-        # "noblur, class:^(xwaylandvideobridge)$"
-        # "nofocus, class:^(xwaylandvideobridge)$"
       ];
       animation = [
         "global, 0"

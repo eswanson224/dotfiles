@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -50,18 +50,6 @@
     kernelPackages = pkgs.linuxPackages_xanmod;
   };
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "America/Denver";
-  # services.automatic-timezoned.enable = true;
-  # services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  services.libinput.enable = true;
-
   users.users.erik = {
     isNormalUser = true;
     extraGroups = [
@@ -71,16 +59,6 @@
       "docker"
     ];
   };
-
-  services.tailscale = {
-    enable = true;
-    extraSetFlags = [
-      "--operator=erik"
-      "--accept-routes"
-    ];
-  };
-
-  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
