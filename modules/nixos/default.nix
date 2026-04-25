@@ -18,7 +18,7 @@ in
   environment.systemPackages = with pkgs; [
     cider
     helium-browser
-    iloader
+    # iloader
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
     qalculate-qt
@@ -41,13 +41,13 @@ in
     usbmuxd.enable = true;
     libinput.enable = true;
     # printing.enable = true;
-    tailscale = {
-      enable = true;
-      extraSetFlags = [
-        "--operator=erik"
-        "--accept-routes"
-      ];
-    };
+    # tailscale = {
+    #   enable = true;
+    #   extraSetFlags = [
+    #     "--operator=erik"
+    #     "--accept-routes"
+    #   ];
+    # };
   };
 
   # networking.hostName = "nixos";
@@ -68,5 +68,4 @@ in
   };
   
   catppuccin.cache.enable = true;
-
 }

@@ -8,7 +8,7 @@
       ./firefox
       ./hyprland
       ./mpv
-      ./syncthing.nix
+      # ./syncthing.nix
       ./terminal
     ];
 }

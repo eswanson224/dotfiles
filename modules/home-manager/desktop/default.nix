@@ -11,7 +11,6 @@ in
     # ./anki.nix
     # ./brave.nix
     ./easyeffects.nix
-    ./element.nix
     ./emacs.nix
     ./lutris.nix
     ./obs.nix

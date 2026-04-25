@@ -13,7 +13,7 @@
       ./helix.nix
       ./nh.nix
       ./yazi
-      ./zellij.nix
+      # ./zellij.nix
       ./zoxide.nix
     ];
 }
