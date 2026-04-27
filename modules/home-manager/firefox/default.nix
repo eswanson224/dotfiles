@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   profile = "default";
@@ -6,6 +6,7 @@ in
 {
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles.${profile} = {
       search = {
         force = true;
@@ -20,12 +21,6 @@ in
               ];
             }];
           };
-          # searx = {
-          #   name = "SearXNG";
-          #   urls = [{
-              
-          #   }];
-          # };
         };
       };
       containersForce = true;
