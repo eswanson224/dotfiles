@@ -18,7 +18,7 @@ in
   environment.systemPackages = with pkgs; [
     cider
     helium-browser
-    # iloader
+    iloader
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
     qalculate-qt
@@ -30,6 +30,7 @@ in
     fish.enable = true;
     hyprland.enable = true;
     gamemode.enable = true;
+    niri.enable = true;
     nix-ld = {
       enable = true;
       libraries = pkgs.steam-run.args.multiPkgs pkgs;
@@ -37,17 +38,17 @@ in
   };
 
   services = {
-    # desktopManager.plasma6.enable = true;
+    desktopManager.plasma6.enable = true;
     usbmuxd.enable = true;
     libinput.enable = true;
     # printing.enable = true;
-    # tailscale = {
-    #   enable = true;
-    #   extraSetFlags = [
-    #     "--operator=erik"
-    #     "--accept-routes"
-    #   ];
-    # };
+    tailscale = {
+      enable = true;
+      extraSetFlags = [
+        "--operator=erik"
+        "--accept-routes"
+      ];
+    };
   };
 
   # networking.hostName = "nixos";

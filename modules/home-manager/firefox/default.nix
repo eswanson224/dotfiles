@@ -64,5 +64,6 @@ in
       };
     };
   };
-  home.file.".mozilla/firefox/${profile}/user.js".source = ./user.js;
+  home.file."${config.xdg.configHome}/mozilla/firefox/${profile}/user.js".source = ./user.js;
+  home.file.".mozilla/native-messaging-hosts".enable = false;
 }

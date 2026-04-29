@@ -2,10 +2,10 @@
 
 pkgs.appimageTools.wrapType2 rec {
   pname = "iloader";
-  version = "2.0.10";
+  version = "2.2.5";
   src = pkgs.fetchurl {
     url = "https://github.com/nab138/iloader/releases/download/v${version}/iloader-linux-amd64.AppImage";
-    sha256 = "sha256-ENhpG8My9AJ3JQbhb77K+95RGB7LodYXmnzZzWorNyQ=";
+    sha256 = "sha256-19PzDGn/Sq10xzY1HDwyo02yFrfGRD+0w56OWL1vArg=";
   };
 
   extraInstallCommands =

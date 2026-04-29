@@ -45,6 +45,7 @@
     };
     kernelParams = [
       "clocksource=hpet"
+      # "hpet=disable"
       "tsc=reliable"
     ];
     kernelPackages = pkgs.linuxPackages_xanmod;
