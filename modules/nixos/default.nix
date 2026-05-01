@@ -30,7 +30,7 @@ in
     fish.enable = true;
     hyprland.enable = true;
     gamemode.enable = true;
-    niri.enable = true;
+    # niri.enable = true;
     nix-ld = {
       enable = true;
       libraries = pkgs.steam-run.args.multiPkgs pkgs;
@@ -38,7 +38,7 @@ in
   };
 
   services = {
-    desktopManager.plasma6.enable = true;
+    # desktopManager.plasma6.enable = true;
     usbmuxd.enable = true;
     libinput.enable = true;
     # printing.enable = true;
