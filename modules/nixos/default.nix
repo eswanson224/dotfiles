@@ -62,15 +62,15 @@ in
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.hyprland = {
-      default = [ "hyprland" "gtk" ];
-      "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-    };
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #   config.hyprland = {
+  #     default = [ "hyprland" "gtk" ];
+  #     "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
+  #     "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+  #   };
+  # };
 
   security.pam.services.hyprlock = {};
 
