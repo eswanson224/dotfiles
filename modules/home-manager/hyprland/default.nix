@@ -115,13 +115,16 @@
         "XCURSOR_SIZE,32"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "NVD_BACKEND,direct"
+        "__GL_VRR_ALLOWED,0"
+        "__GL_GSYNC_ALLOWED,0"
+        "__GL_SYNC_TO_VBLANK,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        # "NVD_BACKEND,direct"
-        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+        # "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
       monitor = [
-        "DP-2, 2560x1440@240, 0x0, 1.25"
-        "eDP-1, 2560x1600@60, auto, 1.6"
+        "DP-2, 2560x1440@240, 0x0, 1"
+        "eDP-1, 2560x1600@60, auto, 1"
         ", preferred, auto, 1"
       ];
       workspace = [

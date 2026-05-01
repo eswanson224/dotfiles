@@ -4,6 +4,7 @@ let
   cider = import ./cider { inherit pkgs; };
   helium-browser = import ./helium-browser.nix { inherit pkgs; };
   iloader = import ./iloader.nix { inherit pkgs; };
+  athas = import ./athas.nix { inherit pkgs; };
 in
 {
   imports = [
@@ -18,7 +19,8 @@ in
   environment.systemPackages = with pkgs; [
     cider
     helium-browser
-    iloader
+    # iloader
+    athas
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
     qalculate-qt
@@ -61,6 +63,16 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.hyprland = {
+      default = [ "hyprland" "gtk" ];
+      "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+    };
+  };
 
   security.pam.services.hyprlock = {};
 
