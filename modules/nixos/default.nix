@@ -1,10 +1,8 @@
 { pkgs, inputs, ... }:
 
 let
-  cider = import ./cider { inherit pkgs; };
-  helium-browser = import ./helium-browser.nix { inherit pkgs; };
-  iloader = import ./iloader.nix { inherit pkgs; };
-  athas = import ./athas.nix { inherit pkgs; };
+  customPkgs = import ./packages { inherit pkgs; };
+  inherit (customPkgs) cider helium-browser iloader athas;
 in
 {
   imports = [

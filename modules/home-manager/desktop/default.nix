@@ -12,6 +12,7 @@ in
     # ./brave.nix
     ./easyeffects.nix
     ./emacs.nix
+    ./firefox
     ./lutris.nix
     ./obs.nix
     ./obsidian.nix
@@ -19,6 +20,7 @@ in
     ./vesktop.nix
     ./vscodium.nix
     ./zathura.nix
+    ./zed.nix
   ];
 
   home.packages = with pkgs; [
