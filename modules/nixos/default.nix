@@ -38,7 +38,7 @@ in
   };
 
   services = {
-    # desktopManager.plasma6.enable = true;
+    desktopManager.plasma6.enable = true;
     usbmuxd.enable = true;
     libinput.enable = true;
     # printing.enable = true;
