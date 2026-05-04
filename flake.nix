@@ -39,7 +39,7 @@
               };
             }
             nur.modules.nixos.default
-            nixos-hardware.nixosModules.lenovo-legion-16ach6h-nvidia
+            nixos-hardware.nixosModules.lenovo-legion-16ach6h
             catppuccin.nixosModules.catppuccin
           ];
         };
