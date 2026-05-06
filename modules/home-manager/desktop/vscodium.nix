@@ -7,21 +7,17 @@ with pkgs;
     package = pkgs.vscodium-fhs;
 
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      reditorsupport.r
-      reditorsupport.r-syntax
       myriad-dreamin.tinymist
       jnoortheen.nix-ide
       arrterian.nix-env-selector
       mkhl.direnv
       ms-python.python
       ms-pyright.pyright
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "quarto";
-        publisher = "quarto";
-        version = "1.130.0";
-        sha256 = "sha256-3jbQ2IemKCSD4mzNA5zxAn5pYxglJ51fyM/1kMEfApM=";
-      }
+      ms-toolsai.jupyter
+      ms-toolsai.jupyter-renderers
+      ms-toolsai.jupyter-keymap
+      ms-toolsai.vscode-jupyter-cell-tags
+      ms-toolsai.vscode-jupyter-slideshow
     ];
   };
 }
