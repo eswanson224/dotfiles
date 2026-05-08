@@ -10,7 +10,7 @@ in
     ./mounts.nix
     ./steam.nix
     ./flatpak.nix
-    ./ly.nix
+    # ./ly.nix
     ./pipewire.nix
   ];
 
@@ -42,6 +42,9 @@ in
     usbmuxd.enable = true;
     libinput.enable = true;
     # printing.enable = true;
+    displayManager = {
+      plasma-login-manager.enable = true;
+    };
     tailscale = {
       enable = true;
       extraSetFlags = [

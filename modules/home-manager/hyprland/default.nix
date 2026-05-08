@@ -96,7 +96,7 @@
         vrr = 0;
       };
       render = {
-        cm_enabled = false;
+        # cm_enabled = false;
       };
       xwayland = {
         force_zero_scaling = true;
