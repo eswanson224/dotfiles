@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports =
@@ -53,6 +53,8 @@
     };
   };
 
+  systemd.user.services.hyprpaper.Install.WantedBy = lib.mkForce [ ];
+
   home.file.".icons/Posy_Cursor" = {
     source = ./Posy_Cursor;
     recursive = true;
@@ -103,7 +105,7 @@
       };
       "$mod" = "SUPER";
       exec-once = [
-        "systemctl --user enable --now hyprpaper.service"
+        "hyprpaper"
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
