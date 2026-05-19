@@ -12,6 +12,7 @@ in
     ./flatpak.nix
     # ./ly.nix
     ./pipewire.nix
+    # ./xremap.nix
   ];
 
   environment.systemPackages = with pkgs; [
