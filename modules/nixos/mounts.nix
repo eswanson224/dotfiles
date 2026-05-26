@@ -1,12 +1,15 @@
 { pkgs, ... }:
 
+let
+  nas-ip = "192.168.0.84";
+in
 {
   users.users.erik.packages = with pkgs; [
     cifs-utils
   ];
 
   fileSystems."/mnt/media" = {
-    device = "//192.168.4.23/media";
+    device = "//${nas-ip}/media";
     fsType = "cifs";
     options = let
       automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
@@ -14,7 +17,7 @@
   };
 
   fileSystems."/mnt/erik" = {
-    device = "//192.168.4.23/erik";
+    device = "//${nas-ip}/erik";
     fsType = "cifs";
     options = let
       automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";

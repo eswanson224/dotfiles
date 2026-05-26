@@ -15,7 +15,8 @@
     };
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
-    nix-gaming.url = "github:eswanson224/nix-gaming";
+    # nix-gaming.url = "github:eswanson224/nix-gaming";
+    nix-gaming.url = "github:fufexan/nix-gaming";
     xremap = {
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +35,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bak";
               home-manager.users.erik = {
                 imports = [
                   ./hosts/laptop/home.nix

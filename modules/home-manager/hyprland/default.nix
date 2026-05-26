@@ -64,7 +64,6 @@
     enable = true;
     package = null;
     portalPackage = null;
-    configType = "lua";
     submaps.resize.settings = {
       binde = [
        ", L, resizeactive, 10 0"
