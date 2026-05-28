@@ -66,6 +66,12 @@ in
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  qt = {
+    enable = true;
+    platformTheme = "kde";
+    style = "breeze";
+  };
+
   # xdg.portal = {
   #   enable = true;
   #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
