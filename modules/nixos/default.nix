@@ -82,5 +82,8 @@ in
     enable = true;
   };
   
-  catppuccin.cache.enable = true;
+  catppuccin = {
+    enable = true;
+    cache.enable = true;
+  };
 }

@@ -61,6 +61,7 @@
     enable = true;
     package = null;
     portalPackage = null;
+    configType = "hyprlang";
     submaps.resize.settings = {
       binde = [
        ", L, resizeactive, 10 0"

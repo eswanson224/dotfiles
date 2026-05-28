@@ -194,6 +194,7 @@ user_pref("browser.newtabpage.activity-stream.default.sites", "");
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("browser.newtabpage.activity-stream.widgets.weatherForecast.enabled", false);
 
 /** POCKET ***/
 user_pref("extensions.pocket.enabled", false);
