@@ -59,11 +59,9 @@ in
           ublock-origin
           vimium
           violentmonkey
-          zotero-connector
         ];
       };
     };
   };
   home.file."${config.xdg.configHome}/mozilla/firefox/${profile}/user.js".source = ./user.js;
-  home.file.".mozilla/native-messaging-hosts".enable = false;
 }

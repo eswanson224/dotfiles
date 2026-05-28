@@ -10,9 +10,7 @@
   home.packages = with pkgs; [
     brightnessctl
     grimblast
-    nvidia-vaapi-driver
     pavucontrol
-    rofimoji
     wl-clipboard
   ];
 
@@ -29,31 +27,30 @@
         };
       };
     };
+    hyprpaper = {
+      enable = true;
+      settings = {
+        splash = false;
+        wallpaper = [
+          {
+            monitor = "eDP-1";
+            path = "/home/erik/nixconf/wallpaper.png";
+          }
+          {
+            monitor = "DP-2";
+            path = "/home/erik/nixconf/oled.png";
+          }
+          {
+            monitor = "";
+            path = "/home/erik/nixconf/oled.png";
+          }
+        ];
+      };
+    };
     playerctld.enable = true;
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      splash = false;
-      wallpaper = [
-        {
-          monitor = "eDP-1";
-          path = "/home/erik/nixconf/wallpaper.png";
-        }
-        {
-          monitor = "DP-2";
-          path = "/home/erik/nixconf/oled.png";
-        }
-        {
-          monitor = "";
-          path = "/home/erik/nixconf/oled.png";
-        }
-      ];
-    };
-  };
-
-  systemd.user.services.hyprpaper.Install.WantedBy = lib.mkForce [ ];
+  systemd.user.services.hyprpaper.Install.WantedBy = lib.mkForce [ "hyprland-session.target" ];
 
   home.file.".icons/Posy_Cursor" = {
     source = ./Posy_Cursor;
@@ -76,6 +73,7 @@
       ];
     };
     settings = {
+      source = [ "${pkgs.catppuccin-hyprland}/share/themes/catppuccin-hyprland-themes/mocha.conf" ];
       general = {
         "col.active_border" = "$mauve";
         "col.inactive_border" = "$crust";
@@ -98,14 +96,13 @@
         vrr = 0;
       };
       render = {
-        # cm_enabled = false;
+        cm_enabled = false;
       };
       xwayland = {
         force_zero_scaling = true;
       };
       "$mod" = "SUPER";
       exec-once = [
-        "hyprpaper"
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
       ];
@@ -118,9 +115,6 @@
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "NVD_BACKEND,direct"
-        "__GL_VRR_ALLOWED,0"
-        "__GL_GSYNC_ALLOWED,0"
-        "__GL_SYNC_TO_VBLANK,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         # "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
@@ -136,7 +130,6 @@
         "$mod, Q, killactive,"
         "$mod, D, exec, rofi -show drun"
         "CTRL ALT, L, exec, hyprlock"
-        "$mod, period, exec, rofimoji"
         "$mod, return, exec, ghostty"
         ", Print, exec, grimblast -fn copysave area"
         "$mod, V, togglefloating,"
