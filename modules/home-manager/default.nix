@@ -7,6 +7,7 @@
       ./desktop
       ./hyprland
       ./mpv
+      ./services
       ./terminal
     ];
 }
