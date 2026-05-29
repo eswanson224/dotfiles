@@ -1,5 +1,50 @@
 { pkgs, lib, ... }:
 
+let
+  # HACK: replacement for kanshi until https://github.com/hyprwm/Hyprland/pull/14547 fixed
+  # upstream. Toggles eDP-1 based on DP-2 presence via hyprctl.
+  monitorHotplug = pkgs.writeShellScript "monitor-hotplug" ''
+    export PATH=${lib.makeBinPath (with pkgs; [ socat jq hyprland coreutils util-linux ])}:$PATH
+    log=/tmp/monitor-hotplug.log
+    exec >>"$log" 2>&1
+    exec 9>>/tmp/monitor-hotplug.lock
+    flock -n 9 || { echo "[$(date)] already running, exit"; exit 0; }
+    echo "[$(date)] start pid=$$"
+
+    sock="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+
+    dock() {
+      echo "[$(date)] dock"
+      hyprctl keyword monitor "DP-2, 2560x1440@240, 0x0, 1"
+      hyprctl keyword monitor "eDP-1, disable"
+    }
+
+    undock() {
+      echo "[$(date)] undock"
+      sleep 0.3
+      hyprctl reload
+      sleep 0.1
+      hyprctl keyword monitor "eDP-1, 2560x1600@60, 0x0, 1.6"
+    }
+
+    # At startup, eDP-1 already enabled by hyprland catchall — set scale
+    # without reload (reload causes screen flash). Only dock if DP-2 already
+    # present.
+    if hyprctl monitors -j | jq -e '.[] | select(.name=="DP-2")' >/dev/null; then
+      dock
+    else
+      hyprctl keyword monitor "eDP-1, 2560x1600@60, 0x0, 1.6"
+    fi
+
+    socat -U - "UNIX-CONNECT:$sock" | while read -r event; do
+      echo "[$(date)] event: $event"
+      case "$event" in
+        monitoradded*DP-2*) dock ;;
+        monitorremoved*DP-2*) undock ;;
+      esac
+    done
+  '';
+in
 {
   imports =
     [
@@ -106,6 +151,9 @@
       exec-once = [
         "waybar"
         "gsettings set org.gnome.desktop.interface cursor-theme 'Posy_Cursor'"
+        # HACK: kanshi broken with hyprland wlr-output-management (misses
+        # unplug events). Listen to hyprland socket2 + drive hyprctl directly.
+        "${monitorHotplug}"
       ];
       env = [
         "DEFAULT_TARGET_DIR,Pictures/screenshots"
@@ -120,12 +168,9 @@
         # "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
       monitor = [
-        "DP-2, 2560x1440@240, 0x0, 1"
-        "eDP-1, 2560x1600@60, auto, 1"
+        # "DP-2, 2560x1440@240, 0x0, 1"
+        # "eDP-1, 2560x1600@60, auto, 1"
         ", preferred, auto, 1"
-      ];
-      workspace = [
-        "9, monitor:eDP-1, default:true"
       ];
       bind = [
         "$mod, Q, killactive,"

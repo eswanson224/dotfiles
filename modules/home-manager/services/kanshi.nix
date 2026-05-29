@@ -24,8 +24,8 @@
         profile.outputs = [
           {
             criteria = "eDP-1";
+            staus = "enable";
             mode = "2560x1600@60Hz";
-            position = "0,0";
           }
         ];
       }
