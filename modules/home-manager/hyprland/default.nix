@@ -169,7 +169,7 @@ in
       ];
       monitor = [
         # "DP-2, 2560x1440@240, 0x0, 1"
-        # "eDP-1, 2560x1600@60, auto, 1"
+        "eDP-1, 2560x1600@60, auto, 1.6"
         ", preferred, auto, 1"
       ];
       bind = [
@@ -219,8 +219,16 @@ in
       bindm = [
         "$mod, mouse:272, movewindow"
       ];
+      workspace = [
+        "w[tv1], gapsout:0, gapsin:0"
+        "f[1], gapsout:0, gapsin:0"
+      ];
       windowrule = [
         "match:class steam_app_0, immediate yes"
+        "border_size 0, match:float 0, match:workspace w[tv1]"
+        "rounding 0, match:float 0, match:workspace w[tv1]"
+        "border_size 0, match:float 0, match:workspace f[1]"
+        "rounding 0, match:float 0, match:workspace f[1]"
       ];
       animation = [
         "global, 0"
