@@ -141,6 +141,11 @@ in
       misc = {
         vrr = 0;
       };
+      # HACK: plasma login manager cursor would stick around on hyprland when
+      # dual gpu and this was set to the default of auto
+      cursor = {
+        no_hardware_cursors = false;
+      };
       render = {
         cm_enabled = false;
       };
