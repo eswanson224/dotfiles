@@ -64,14 +64,6 @@ in
   };
 
   services = {
-    dunst = {
-      enable = true;
-      settings = {
-        global = {
-          follow = "mouse";
-        };
-      };
-    };
     hyprpaper = {
       enable = true;
       settings = {

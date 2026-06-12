@@ -1,13 +1,20 @@
 { ... }:
 
 {
+  services = {
+    mako = {
+      enable = true;
+    };
+  };
   programs.niri = {
     settings = {
       input = {
         keyboard.xkb.layout = "us";
         touchpad = {
-          tap = true;
-          natural-scroll = true;
+          accel-profile = "flat";
+          dwt = true;
+          natural-scroll = false;
+          tap = false;
         };
         mouse.accel-profile = "flat";
       };
