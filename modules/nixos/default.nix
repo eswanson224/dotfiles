@@ -31,7 +31,7 @@ in
     fish.enable = true;
     hyprland.enable = true;
     gamemode.enable = true;
-    # niri.enable = true;
+    niri.enable = true;
     nix-ld = {
       enable = true;
       libraries = pkgs.steam-run.args.multiPkgs pkgs;
