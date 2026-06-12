@@ -12,6 +12,7 @@
         keyboard.xkb.layout = "us";
         touchpad = {
           accel-profile = "flat";
+          click-method = "clickfinger";
           dwt = true;
           natural-scroll = false;
           tap = false;
