@@ -31,6 +31,10 @@
         scale = 1.6;
       };
 
+      spawn-at-startup = [
+        { argv = ["waybar"]; }
+      ];
+
       binds = {
         "Mod+Return".action.spawn = "ghostty";
         "Mod+D".action.spawn = "fuzzel";
