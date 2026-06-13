@@ -69,7 +69,7 @@
         format = "{:%I:%M %p}";
       };
       "niri/workspaces" = {
-        format = " {icon} ";
+        format = "{icon}";
         format-icons = {
           default = "";
         };
