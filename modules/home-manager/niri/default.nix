@@ -4,13 +4,9 @@
   imports =
   [
     ./waybar.nix
+    ../ultils/fuzzel.nix
+    ../services/mako.nix
   ];
-
-  services = {
-    mako = {
-      enable = true;
-    };
-  };
 
   programs.niri = {
     settings = {
@@ -37,7 +33,7 @@
 
       binds = {
         "Mod+Return".action.spawn = "ghostty";
-        "Mod+D".action.spawn-sh = "rofi -show drun";
+        "Mod+D".action.spawn = "fuzzel";
         "Mod+Q".action.close-window = [ ];
         "Mod+F".action.maximize-column = [ ];
         "Mod+Shift+F".action.fullscreen-window = [ ];

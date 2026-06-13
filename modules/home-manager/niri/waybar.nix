@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    pavucontrol
     nerd-fonts.fantasque-sans-mono
   ];
 
