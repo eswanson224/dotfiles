@@ -42,6 +42,12 @@
         format-alt = "{time} {icon}";
         format-icons = [ "" "" "" "" "" ];
       };
+      clock = {
+        timezone = "America/Denver";
+        tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        format-alt = "{:%a, %b %d}";
+        format = "{:%I:%M %p}";
+      };
       "niri/workspaces" = {
         format = " {icon} ";
         format-icons = {
