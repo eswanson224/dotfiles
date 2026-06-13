@@ -41,11 +41,19 @@
 #clock,
 #battery,
 #pulseaudio,
+#network,
 #custom-lock,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
   margin: 5px 0;
+}
+
+/* net group: own pill, leftmost of right side */
+#network {
+  color: @teal;
+  border-radius: 1rem;
+  margin-right: 1rem;
 }
 
 #clock {

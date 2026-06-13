@@ -16,12 +16,32 @@
       modules-left = [ "niri/workspaces" ];
       modules-center = [ ];
       modules-right = [
-        "pulseaudio"
-        "backlight"
-        "battery"
-        "clock"
+        "group/sysinfo"
+        "group/net"
         "tray"
       ];
+      "group/net" = {
+        orientation = "horizontal";
+        modules = [
+          "network"
+        ];
+      };
+      "group/sysinfo" = {
+        orientation = "horizontal";
+        modules = [
+          "pulseaudio"
+          "backlight"
+          "battery"
+          "clock"
+        ];
+      };
+      network = {
+        format-wifi = "  {essid} {signalStrength}%";
+        format-ethernet = "󰈁 {ipaddr}";
+        format-disconnected = "󰤭 off";
+        tooltip-format = "{ifname} via {gwaddr}";
+        on-click = "nm-connection-editor";
+      };
       pulseaudio = {
         format = "{icon} {volume}%";
         format-muted = "";
