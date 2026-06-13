@@ -1,11 +1,17 @@
 { ... }:
 
 {
+  imports =
+  [
+    ./waybar.nix
+  ];
+
   services = {
     mako = {
       enable = true;
     };
   };
+
   programs.niri = {
     settings = {
       input = {

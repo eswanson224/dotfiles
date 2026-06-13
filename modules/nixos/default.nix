@@ -90,6 +90,7 @@ in
   
   catppuccin = {
     enable = true;
+    autoEnable = true;
     cache.enable = true;
   };
 }

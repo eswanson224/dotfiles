@@ -5,8 +5,8 @@
     [
       ./catppuccin.nix
       ./desktop
-      ./hyprland
-      ./niri.nix
+      # ./hyprland
+      ./niri
       ./mpv
       ./services
       ./terminal

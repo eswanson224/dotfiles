@@ -1,8 +1,12 @@
 { ... }:
 
+let
+  enable = true;
+in
 {
   catppuccin = {
-    enable = true;
+    inherit enable;
+    autoEnable = enable;
     flavor = "mocha";
     hyprland.enable = false;
   };
