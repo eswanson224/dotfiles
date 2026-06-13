@@ -30,6 +30,10 @@
         };
         on-click = "pavucontrol";
       };
+      backlight = {
+        format = "{icon}";
+        format-icons = [ "" "" "" "" "" "" "" "" "" ];
+      };
       battery = {
         format = "{capacity}% {icon}";
         format-full = "{capacity}% {icon}";
