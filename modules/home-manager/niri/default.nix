@@ -23,7 +23,10 @@
           natural-scroll = false;
           tap = false;
         };
-        mouse.accel-profile = "flat";
+        mouse = {
+          accel-profile = "flat";
+          accel-speed = -0.5;
+        };
       };
 
       # nvidia DDG (dGPU-only): Mesa has no HW driver -> GL apps (osu-lazer)
