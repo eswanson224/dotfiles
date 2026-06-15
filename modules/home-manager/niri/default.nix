@@ -3,13 +3,13 @@
 {
   imports =
   [
-    ./waybar.nix
-    ../ultils/fuzzel.nix
     ../services/mako.nix
-    ../ultils/xwayland-satellite.nix
-    ../ultils/swaylock.nix
     ../services/swayidle.nix
     ../services/wpaperd.nix
+    ../ultils/fuzzel.nix
+    ../ultils/swaylock.nix
+    ../ultils/xwayland-satellite.nix
+    ./waybar.nix
   ];
 
   programs.niri = {
@@ -69,6 +69,7 @@
       binds = {
         "Mod+Return".action.spawn = "ghostty";
         "Mod+D".action.spawn = "fuzzel";
+        "Super+Alt+L".action.spawn = "swaylock";
         "Mod+Q".action.close-window = [ ];
         "Mod+F".action.maximize-column = [ ];
         "Mod+Shift+F".action.fullscreen-window = [ ];
