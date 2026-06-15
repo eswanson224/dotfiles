@@ -5,6 +5,7 @@
     pavucontrol
     nerd-fonts.fantasque-sans-mono
   ];
+  services.playerctld.enable = true;
 
   catppuccin.waybar.mode = "createLink";
 
@@ -14,7 +15,7 @@
       layer = "top";
       position = "top";
       modules-left = [ "niri/workspaces" ];
-      modules-center = [ ];
+      modules-center = [ "custom/music" ];
       modules-right = [
         "group/sysinfo"
         "group/net"
@@ -35,8 +36,17 @@
           "clock"
         ];
       };
+      "custom/music" = {
+        format = "  {}";
+        escape = true;
+        interval = 5;
+        tooltip = false;
+        exec = "playerctl metadata --format='{{ title }}'";
+        on-click = "playerctl play-pause";
+        max-length = 50;
+      };
       network = {
-        format-wifi = "  {essid} {signalStrength}%";
+        format-wifi = "{essid} {signalStrength}%";
         format-ethernet = "󰈁 {ipaddr}";
         format-disconnected = "󰤭 off";
         tooltip-format = "{ifname} via {gwaddr}";
