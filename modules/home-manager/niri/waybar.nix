@@ -61,7 +61,7 @@
         on-click = "pavucontrol";
       };
       backlight = {
-        format = "{icon}";
+        format = "{icon} {percent}%";
         format-icons = [ "" "" "" "" "" "" "" "" "" ];
       };
       battery = {
