@@ -29,7 +29,7 @@ in
     appimage.enable = true;
     dconf.enable = true;
     fish.enable = true;
-    hyprland.enable = true;
+    # hyprland.enable = true;
     gamemode.enable = true;
     niri.enable = true;
     nix-ld = {

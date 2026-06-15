@@ -6,6 +6,8 @@
     ./waybar.nix
     ../ultils/fuzzel.nix
     ../services/mako.nix
+    ../ultils/xwayland-satellite.nix
+    ../services/wpaperd.nix
   ];
 
   programs.niri = {
