@@ -72,15 +72,29 @@
 
         "Mod+H".action.focus-column-left = [ ];
         "Mod+L".action.focus-column-right = [ ];
-        "Mod+J".action.focus-window-down = [ ];
-        "Mod+K".action.focus-window-up = [ ];
+        "Mod+J".action.focus-window-or-workspace-down = [ ];
+        "Mod+K".action.focus-window-or-workspace-up = [ ];
 
         "Mod+Shift+H".action.move-column-left = [ ];
         "Mod+Shift+L".action.move-column-right = [ ];
-        "Mod+Shift+J".action.move-window-down = [ ];
-        "Mod+Shift+K".action.move-window-up = [ ];
+        "Mod+Shift+J".action.move-window-down-or-to-workspace-down = [ ];
+        "Mod+Shift+K".action.move-window-up-or-to-workspace-up = [ ];
+
+        "Mod+Home".action.focus-column-first = [ ];
+        "Mod+End".action.focus-column-last = [ ];
+        "Mod+Shift+Home".action.move-column-to-first = [ ];
+        "Mod+Shift+End".action.move-column-to-last = [ ];
+
+        "Mod+U".action.focus-workspace-down = [ ];
+        "Mod+I".action.focus-workspace-up = [ ];
+        "Mod+Shift+U".action.move-column-to-workspace-down = [ ];
+        "Mod+Shift+I".action.move-column-to-workspace-up = [ ];
+
+        "Mod+Shift+P".action.power-off-monitors = [ ];
 
         "Print".action.screenshot = [ ];
+        "Ctrl+Print".action.screenshot-screen = [ ];
+        "Alt+Print".action.screenshot-window = [ ];
 
         "XF86AudioRaiseVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
         "XF86AudioLowerVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
