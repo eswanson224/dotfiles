@@ -7,6 +7,8 @@
     ../ultils/fuzzel.nix
     ../services/mako.nix
     ../ultils/xwayland-satellite.nix
+    ../ultils/swaylock.nix
+    ../services/swayidle.nix
     ../services/wpaperd.nix
   ];
 
