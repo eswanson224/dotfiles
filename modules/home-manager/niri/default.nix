@@ -8,6 +8,7 @@
     ../services/wpaperd.nix
     ../ultils/fuzzel.nix
     ../ultils/swaylock.nix
+    ../ultils/wl-clipboard.nix
     ../ultils/xwayland-satellite.nix
     ./waybar.nix
   ];
@@ -65,6 +66,10 @@
       spawn-at-startup = [
         { argv = ["waybar"]; }
       ];
+
+      clipboard = {
+        disable-primary = true;
+      };
 
       binds = {
         "Mod+Return".action.spawn = "ghostty";
