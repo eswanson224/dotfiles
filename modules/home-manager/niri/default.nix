@@ -31,13 +31,14 @@
         };
       };
 
-      # nvidia DDG (dGPU-only): Mesa has no HW driver -> GL apps (osu-lazer)
-      # fall back to llvmpipe (CPU software render). Force the nvidia GL/EGL
-      # stack so they use the dGPU. Only correct in dGPU-only; scope per-app
-      # if niri is ever run in dual-GPU mode (would force everything off iGPU).
+      # Match hyprland's GL setup. __GLX_VENDOR_LIBRARY_NAME only affects GLX
+      # (X11) and is ignored by Wayland EGL apps -> harmless in both GPU modes.
+      # Do NOT set __EGL_VENDOR_LIBRARY_FILENAMES: it hard-overrides glvnd to
+      # the nvidia EGL vendor only, hiding mesa. In hybrid mode niri composites
+      # on the iGPU, so nvidia EGL can't make a context -> GL apps (ghostty)
+      # fail with "unable to acquire an opengl context for rendering".
       environment = {
         __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-        __EGL_VENDOR_LIBRARY_FILENAMES = "/run/opengl-driver/share/glvnd/egl_vendor.d/10_nvidia.json";
       };
 
       # Direct scanout (exclusive fullscreen, integer-scaled output) flips the
