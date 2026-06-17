@@ -7,6 +7,7 @@
     ../services/swayidle.nix
     ../services/wpaperd.nix
     ../ultils/fuzzel.nix
+    ../ultils/nautilus.nix
     ../ultils/swaylock.nix
     ../ultils/wl-clipboard.nix
     ../ultils/xwayland-satellite.nix
