@@ -57,6 +57,9 @@ in
 
   # networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  # WiFi radio powersave stalls large CDN downloads (nix cache, discord cdn)
+  # after lock/display-off; small requests survive. Independent of platform profile.
+  networking.networkmanager.wifi.powersave = false;
 
   time.timeZone = "America/Denver";
   # services.automatic-timezoned.enable = true;
