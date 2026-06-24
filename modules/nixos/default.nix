@@ -2,7 +2,7 @@
 
 let
   customPkgs = import ./packages { inherit pkgs; };
-  inherit (customPkgs) cider helium-browser iloader athas;
+  inherit (customPkgs) cider helium-browser iloader athas onthespot;
 in
 {
   imports = [
@@ -20,6 +20,7 @@ in
     helium-browser
     # iloader
     athas
+    onthespot
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable
     qalculate-qt
