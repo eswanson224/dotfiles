@@ -45,7 +45,7 @@
       # app buffer straight to the display synced to vblank -> caps fps to
       # refresh. Disable so the render loop runs uncapped (osu input latency).
       # Tradeoff: fullscreen video composites instead of scanning out (power).
-      debug.disable-direct-scanout = [ ];
+      # debug.disable-direct-scanout = [ ];
 
       outputs."eDP-1" = {
         mode = {
