@@ -42,7 +42,7 @@
       # "hpet=disable"
       "tsc=reliable"
     ];
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_xanmod_stable;
   };
 
   users.users.erik = {
