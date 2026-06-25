@@ -14,7 +14,8 @@
     niri-flake.url = "github:sodiboo/niri-flake/main";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
-    nix-gaming.url = "github:fufexan/nix-gaming";
+    # nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-gaming.url = "github:eswanson224/nix-gaming";
     xremap = {
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
