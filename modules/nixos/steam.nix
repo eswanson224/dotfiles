@@ -15,4 +15,13 @@
     enable = true;
     # capSysNice = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    curl
+    inotify-tools
+    libnotify
+    parallel
+    rsync
+    unzip
+  ];
 }
