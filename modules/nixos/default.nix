@@ -26,11 +26,25 @@ in
     qalculate-qt
   ];
 
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [
+        "https://nix-community.cachix.org"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+  };
+
   programs = {
     appimage.enable = true;
     dconf.enable = true;
     fish.enable = true;
-    # hyprland.enable = true;
     gamemode.enable = true;
     niri.enable = true;
     nix-ld = {
@@ -43,7 +57,6 @@ in
     desktopManager.plasma6.enable = true;
     usbmuxd.enable = true;
     libinput.enable = true;
-    # printing.enable = true;
     displayManager = {
       plasma-login-manager.enable = true;
     };
@@ -56,15 +69,14 @@ in
     };
   };
 
-  # networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   # WiFi radio powersave stalls large CDN downloads (nix cache, discord cdn)
   # after lock/display-off; small requests survive. Independent of platform profile.
   networking.networkmanager.wifi.powersave = false;
 
-  time.timeZone = "America/Denver";
-  # services.automatic-timezoned.enable = true;
-  # services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+  # time.timeZone = "America/Denver";
+  services.automatic-timezoned.enable = true;
+  services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -76,22 +88,6 @@ in
     style = "breeze";
   };
 
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #   config.hyprland = {
-  #     default = [ "hyprland" "gtk" ];
-  #     "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
-  #     "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-  #   };
-  # };
-
-  security.pam.services.hyprlock = {};
-
-  virtualisation.docker = {
-    enable = true;
-  };
-  
   catppuccin = {
     enable = true;
     autoEnable = true;
