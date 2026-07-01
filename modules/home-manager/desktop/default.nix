@@ -8,7 +8,6 @@ let
 in
 {
   imports = [
-    # ./brave.nix
     ./easyeffects.nix
     ./emacs.nix
     ./firefox
