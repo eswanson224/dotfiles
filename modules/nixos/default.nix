@@ -10,7 +10,6 @@ in
     ./mounts.nix
     ./steam.nix
     ./flatpak.nix
-    # ./ly.nix
     ./pipewire.nix
     # ./xremap.nix
   ];
