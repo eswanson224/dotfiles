@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Pinned for vesktop pnpm CVE fix (upstream unstable still broken)
+    nixpkgs-vesktop.url = "github:nixos/nixpkgs/4b3d28a42057784ce6513bdd37694f91857b2e6e";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +32,13 @@
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/laptop/configuration.nix
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  vesktop = inputs.nixpkgs-vesktop.legacyPackages.${prev.stdenv.hostPlatform.system}.vesktop;
+                })
+              ];
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
