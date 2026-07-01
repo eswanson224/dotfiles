@@ -14,7 +14,6 @@
       ./helix.nix
       ./nh.nix
       ./yazi
-      # ./zellij.nix
       ./zoxide.nix
     ];
 }
