@@ -8,7 +8,6 @@ let
 in
 {
   imports = [
-    # ./anki.nix
     # ./brave.nix
     ./easyeffects.nix
     ./emacs.nix
