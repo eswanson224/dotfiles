@@ -8,6 +8,5 @@ in
     inherit enable;
     autoEnable = enable;
     flavor = "mocha";
-    hyprland.enable = false;
   };
 }

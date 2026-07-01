@@ -5,7 +5,6 @@
     [
       ./catppuccin.nix
       ./desktop
-      # ./hyprland
       ./niri
       ./mpv
       ./services
