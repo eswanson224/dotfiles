@@ -19,7 +19,6 @@ in
     ./prismlauncher.nix
     ./vesktop.nix
     ./vscodium.nix
-    ./zathura.nix
     ./zed.nix
   ];
 
