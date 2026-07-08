@@ -9,6 +9,9 @@ pkgs.appimageTools.wrapType2 rec {
     message = ''
       Cider AppImage not in nix store. Download cider-v${version}-linux-x64.AppImage, then run:
         nix-store --add-fixed sha256 cider-v${version}-linux-x64.AppImage
+      If it still fails, the sha256 in this module is stale. Get the correct hash with:
+        nix hash file --sri cider-v${version}-linux-x64.AppImage
+      and paste it into modules/nixos/packages/cider/default.nix.
     '';
   };
 
