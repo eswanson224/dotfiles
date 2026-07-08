@@ -53,11 +53,20 @@ in
   };
 
   services = {
+    xserver.enable = true;
     desktopManager.plasma6.enable = true;
     usbmuxd.enable = true;
     libinput.enable = true;
     displayManager = {
-      plasma-login-manager.enable = true;
+      sddm = {
+        enable = true;
+        # X11 greeter: the kwin wayland greeter races niri for DRM state on
+        # NVIDIA hybrid at handoff, corrupting scanout on a random output
+        # (see sddm/sddm#2142)
+        wayland.enable = false;
+        settings.General.InputMethod = "";
+      };
+      defaultSession = "niri";
     };
     tailscale = {
       enable = true;
