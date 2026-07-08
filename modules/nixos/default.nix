@@ -11,7 +11,7 @@ in
     ./steam.nix
     ./flatpak.nix
     ./pipewire.nix
-    # ./xremap.nix
+    ./xremap.nix
   ];
 
   environment.systemPackages = with pkgs; [
