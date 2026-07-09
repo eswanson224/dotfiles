@@ -10,6 +10,7 @@
     ../utils/swaylock.nix
     ../utils/wl-clipboard.nix
     ../utils/xwayland-satellite.nix
+    ./cursor.nix
     ./waybar.nix
   ];
 
