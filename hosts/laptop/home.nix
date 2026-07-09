@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ../../modules/home-manager
+    ../../modules/home-manager/base
+    ../../modules/home-manager/profiles/desktop
   ];
 
   programs.home-manager.enable = true;
