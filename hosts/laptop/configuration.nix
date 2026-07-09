@@ -3,7 +3,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos
+    ./mounts.nix
+    ./packages.nix
+    ../../modules/nixos/base
+    ../../modules/nixos/profiles/desktop
   ];
 
   nix = {
@@ -41,11 +44,24 @@
       "wheel"
       "networkmanager"
       "gamemode"
-      "docker"
     ];
   };
 
   networking.hostName = "teacherbearcat";
+  # WiFi radio powersave stalls large CDN downloads (nix cache, discord cdn)
+  # after lock/display-off; small requests survive. Independent of platform profile.
+  networking.networkmanager.wifi.powersave = false;
+
+  services.automatic-timezoned.enable = true;
+  services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+
+  services.tailscale = {
+    enable = true;
+    extraSetFlags = [
+      "--operator=erik"
+      "--accept-routes"
+    ];
+  };
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }

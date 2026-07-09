@@ -13,7 +13,6 @@
     userName = "erik";
     watch = true;
     config = {
-      # modmap: key -> keys held together while the input key is held
       modmap = [
         {
           name = "SDV animation cancel";
@@ -25,7 +24,6 @@
           ];
         }
       ];
-      # keymap: sequences, launch commands, modes (AHK-style macros) go here
     };
   };
 
