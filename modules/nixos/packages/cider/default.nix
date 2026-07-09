@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-pkgs.appimageTools.wrapType2 rec {
+let
   pname = "Cider";
   version = "4.0.9";
   src = pkgs.requireFile {
@@ -14,15 +14,26 @@ pkgs.appimageTools.wrapType2 rec {
       and paste it into modules/nixos/packages/cider/default.nix.
     '';
   };
+in
+{
+  # True once the AppImage has actually been added to the store (see the
+  # requireFile message above) — lets callers include this package
+  # optionally instead of failing the build on hosts that haven't done
+  # the manual step yet.
+  available = builtins.pathExists (builtins.toString src);
 
-  extraInstallCommands =
-    let
-      contents = pkgs.appimageTools.extract { inherit pname version src; };
-    in
-    ''
-      install -m 444 -D ${contents}/${pname}.desktop -t $out/share/applications
-      substituteInPlace $out/share/applications/${pname}.desktop \
-        --replace 'Exec=AppRun' 'Exec=${pname}'
-      cp -r ${contents}/usr/share/icons $out/share
-    '';
+  package = pkgs.appimageTools.wrapType2 {
+    inherit pname version src;
+
+    extraInstallCommands =
+      let
+        contents = pkgs.appimageTools.extract { inherit pname version src; };
+      in
+      ''
+        install -m 444 -D ${contents}/${pname}.desktop -t $out/share/applications
+        substituteInPlace $out/share/applications/${pname}.desktop \
+          --replace 'Exec=AppRun' 'Exec=${pname}'
+        cp -r ${contents}/usr/share/icons $out/share
+      '';
+  };
 }

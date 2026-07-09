@@ -3,8 +3,6 @@
 let
   customPkgs = import ../../modules/nixos/packages { inherit pkgs; };
   inherit (customPkgs)
-    cider
-    helium-browser
     iloader
     athas
     onthespot
@@ -12,8 +10,6 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    cider
-    helium-browser
     # iloader
     athas
     onthespot
