@@ -3,7 +3,7 @@
 let
   ddbDiscordPlugin = pkgs.fetchzip {
     url = "https://github.com/kuba160/ddb_discord_presence/releases/download/v1.7/linux-7550631.zip";
-    sha256 = "sha256-X+G5DpI3RUg8Dn0gwXqhI4pVfx7seBf06iptU4TG6HA="; 
+    sha256 = "sha256-X+G5DpI3RUg8Dn0gwXqhI4pVfx7seBf06iptU4TG6HA=";
   };
 in
 {

@@ -14,12 +14,17 @@ in
         engines = {
           kagi = {
             name = "Kagi";
-            urls = [{
-              template = "https://kagi.com/search";
-              params = [
-                { name = "q"; value = "{searchTerms}"; }
-              ];
-            }];
+            urls = [
+              {
+                template = "https://kagi.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
           };
         };
       };

@@ -56,13 +56,27 @@
         format = "{icon} {volume}%";
         format-muted = "";
         format-icons = {
-          default = [ "" "" " " ];
+          default = [
+            ""
+            ""
+            " "
+          ];
         };
         on-click = "pavucontrol";
       };
       backlight = {
         format = "{icon} {percent}%";
-        format-icons = [ "" "" "" "" "" "" "" "" "" ];
+        format-icons = [
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
       battery = {
         format = "{capacity}% {icon}";
@@ -70,7 +84,13 @@
         format-charging = "{capacity}% 󰃨";
         format-plugged = "{capacity}% ";
         format-alt = "{time} {icon}";
-        format-icons = [ "" "" "" "" "" ];
+        format-icons = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
       clock = {
         timezone = "America/Denver";

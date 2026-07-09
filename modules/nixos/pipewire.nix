@@ -4,7 +4,7 @@
   imports = [
     inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
-  
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

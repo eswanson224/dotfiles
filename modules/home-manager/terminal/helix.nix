@@ -4,11 +4,16 @@
   programs.helix = {
     enable = true;
     languages = {
-      language = [{
-        name = "latex";
-        soft-wrap.enable = true;
-        language-servers = [ "texlab" "vale" ];
-      }];
+      language = [
+        {
+          name = "latex";
+          soft-wrap.enable = true;
+          language-servers = [
+            "texlab"
+            "vale"
+          ];
+        }
+      ];
       language-server.vale = {
         command = "vale-ls";
       };
@@ -18,7 +23,11 @@
       };
       language-server.texlab.config.texlab.forwardSearch = {
         executable = "zathura";
-        args = [ "--synctex-forward" "%l:1:%f" "%p" ];
+        args = [
+          "--synctex-forward"
+          "%l:1:%f"
+          "%p"
+        ];
       };
       language-server.texlab.config.texlab.build = {
         forwardSearchAfter = true;
@@ -34,7 +43,10 @@
   home.packages = with pkgs; [
     nil
     vale-ls
-    (vale.withStyles (s: [ s.alex s.google ]))
+    (vale.withStyles (s: [
+      s.alex
+      s.google
+    ]))
     (writeShellScriptBin "helix-tectonic" ''
       #!/bin/sh
 

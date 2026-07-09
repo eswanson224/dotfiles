@@ -1,8 +1,7 @@
 { ... }:
 
 {
-  imports =
-  [
+  imports = [
     ../services/mako.nix
     ../services/swayidle.nix
     ../services/wpaperd.nix
@@ -66,7 +65,7 @@
       };
 
       spawn-at-startup = [
-        { argv = ["waybar"]; }
+        { argv = [ "waybar" ]; }
       ];
 
       clipboard = {

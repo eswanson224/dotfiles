@@ -22,14 +22,34 @@
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, catppuccin, niri-flake, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nur,
+      nixos-hardware,
+      catppuccin,
+      niri-flake,
+      treefmt-nix,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
+    in
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {inherit inputs;};
+          inherit system;
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration.nix
             {
@@ -58,5 +78,8 @@
           ];
         };
       };
+
+      formatter.${system} = treefmtEval.config.build.wrapper;
+      checks.${system}.formatting = treefmtEval.config.build.check self;
     };
 }

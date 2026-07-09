@@ -2,7 +2,13 @@
 
 let
   customPkgs = import ./packages { inherit pkgs; };
-  inherit (customPkgs) cider helium-browser iloader athas onthespot;
+  inherit (customPkgs)
+    cider
+    helium-browser
+    iloader
+    athas
+    onthespot
+    ;
 in
 {
   imports = [

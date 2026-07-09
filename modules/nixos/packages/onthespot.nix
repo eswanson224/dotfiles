@@ -53,14 +53,19 @@ let
       sha256 = "1cji1sm3dif753p7ii68s3fzq7qqngph04zb2d45lz3rzpsxlhk7";
     };
     build-system = [ py.poetry-core ];
-    dependencies = (with py; [
-      protobuf
-      pycryptodome
-      click
-      requests
-      unidecode
-      pyyaml
-    ]) ++ [ pymp4 construct288 ];
+    dependencies =
+      (with py; [
+        protobuf
+        pycryptodome
+        click
+        requests
+        unidecode
+        pyyaml
+      ])
+      ++ [
+        pymp4
+        construct288
+      ];
     pythonRelaxDeps = true;
     doCheck = false;
     pythonImportsCheck = [ "pywidevine" ];

@@ -9,8 +9,12 @@
         email = "erik@swanso.nz";
       };
       extraConfig = {
-        init = { defaultBranch = "master"; };
-        push = { autoSetupRemote = true; };
+        init = {
+          defaultBranch = "master";
+        };
+        push = {
+          autoSetupRemote = true;
+        };
       };
     };
   };

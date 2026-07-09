@@ -16,7 +16,10 @@
       set -e fish_terminal_color_theme
     '';
     plugins = [
-      { name = "tide"; src = pkgs.fishPlugins.tide; }
+      {
+        name = "tide";
+        src = pkgs.fishPlugins.tide;
+      }
     ];
   };
 

@@ -18,7 +18,11 @@
         {
           name = "SDV animation cancel";
           application.only = [ "Stardew Valley" ];
-          remap.KEY_SPACE = [ "KEY_RIGHTSHIFT" "KEY_R" "KEY_DELETE" ];
+          remap.KEY_SPACE = [
+            "KEY_RIGHTSHIFT"
+            "KEY_R"
+            "KEY_DELETE"
+          ];
         }
       ];
       # keymap: sequences, launch commands, modes (AHK-style macros) go here

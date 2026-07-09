@@ -1,13 +1,12 @@
 { ... }:
 
 {
-  imports =
-    [
-      ./catppuccin.nix
-      ./desktop
-      ./niri
-      ./mpv
-      ./services
-      ./terminal
-    ];
+  imports = [
+    ./catppuccin.nix
+    ./desktop
+    ./niri
+    ./mpv
+    ./services
+    ./terminal
+  ];
 }

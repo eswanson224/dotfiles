@@ -5,23 +5,20 @@
   programs.waybar = {
     enable = true;
     settings.mainBar = {
-      modules-left =
-        [
-          "hyprland/submap"
-          "hyprland/workspaces"
-        ];
-      modules-center =
-        [
-          "clock"
-        ];
-      modules-right =
-        [
-          "pulseaudio"
-          "network"
-          "backlight"
-          "battery"
-          "tray"
-        ];
+      modules-left = [
+        "hyprland/submap"
+        "hyprland/workspaces"
+      ];
+      modules-center = [
+        "clock"
+      ];
+      modules-right = [
+        "pulseaudio"
+        "network"
+        "backlight"
+        "battery"
+        "tray"
+      ];
       tray.spacing = 10;
       clock = {
         format = "{:%a, %b %d  %r}";

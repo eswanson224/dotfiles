@@ -4,7 +4,18 @@ let
   # HACK: replacement for kanshi until https://github.com/hyprwm/Hyprland/pull/14547 fixed
   # upstream. Toggles eDP-1 based on DP-2 presence via hyprctl.
   monitorHotplug = pkgs.writeShellScript "monitor-hotplug" ''
-    export PATH=${lib.makeBinPath (with pkgs; [ socat jq hyprland coreutils util-linux ])}:$PATH
+    export PATH=${
+      lib.makeBinPath (
+        with pkgs;
+        [
+          socat
+          jq
+          hyprland
+          coreutils
+          util-linux
+        ]
+      )
+    }:$PATH
     log=/tmp/monitor-hotplug.log
     exec >>"$log" 2>&1
     exec 9>>/tmp/monitor-hotplug.lock
@@ -46,11 +57,10 @@ let
   '';
 in
 {
-  imports =
-    [
-      ./hyprlock.nix
-      ./waybar.nix
-    ];
+  imports = [
+    ./hyprlock.nix
+    ./waybar.nix
+  ];
 
   home.packages = with pkgs; [
     brightnessctl
@@ -101,10 +111,10 @@ in
     configType = "hyprlang";
     submaps.resize.settings = {
       binde = [
-       ", L, resizeactive, 10 0"
-       ", H, resizeactive, -10 0"
-       ", K, resizeactive, 0 -10"
-       ", J, resizeactive, 0 10"
+        ", L, resizeactive, 10 0"
+        ", H, resizeactive, -10 0"
+        ", K, resizeactive, 0 -10"
+        ", J, resizeactive, 0 10"
       ];
       bind = [
         ", escape, submap, reset"
@@ -191,16 +201,18 @@ in
         "$mod SHIFT, S, movetoworkspace, special:magic"
         "$mod, R, submap, resize"
       ]
-      ++ (
-        builtins.concatLists (builtins.genList (i:
-            let ws = i + 1;
-            in [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-            ]
-          )
-          9)
-      );
+      ++ (builtins.concatLists (
+        builtins.genList (
+          i:
+          let
+            ws = i + 1;
+          in
+          [
+            "$mod, code:1${toString i}, workspace, ${toString ws}"
+            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+          ]
+        ) 9
+      ));
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
