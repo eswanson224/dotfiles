@@ -5,11 +5,11 @@
     ../services/mako.nix
     ../services/swayidle.nix
     ../services/wpaperd.nix
-    ../ultils/fuzzel.nix
-    ../ultils/nautilus.nix
-    ../ultils/swaylock.nix
-    ../ultils/wl-clipboard.nix
-    ../ultils/xwayland-satellite.nix
+    ../utils/fuzzel.nix
+    ../utils/nautilus.nix
+    ../utils/swaylock.nix
+    ../utils/wl-clipboard.nix
+    ../utils/xwayland-satellite.nix
     ./waybar.nix
   ];
 
