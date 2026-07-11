@@ -3,8 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Pinned for vesktop pnpm CVE fix (upstream unstable still broken)
-    nixpkgs-vesktop.url = "github:nixos/nixpkgs/4b3d28a42057784ce6513bdd37694f91857b2e6e";
+    # Pinned for deadbeef: swift fails to build on unstable after the
+    # cc-wrapper tlsdesc change (nixpkgs#540320); drop once that closes
+    nixpkgs-deadbeef.url = "github:nixos/nixpkgs/e8273b29fe1390ec8d4603f2477357555291432e";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,7 +56,11 @@
             {
               nixpkgs.overlays = [
                 (final: prev: {
-                  vesktop = inputs.nixpkgs-vesktop.legacyPackages.${prev.stdenv.hostPlatform.system}.vesktop;
+                  inherit (inputs.nixpkgs-deadbeef.legacyPackages.${prev.stdenv.hostPlatform.system})
+                    deadbeef
+                    deadbeef-with-plugins
+                    deadbeefPlugins
+                    ;
                 })
               ];
             }
