@@ -6,6 +6,7 @@
     ./easyeffects.nix
     ./emacs.nix
     ./firefox
+    ./gtk-theme.nix
     ./lutris.nix
     ./obs.nix
     ./obsidian.nix
