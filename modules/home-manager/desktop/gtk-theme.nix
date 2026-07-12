@@ -7,6 +7,7 @@
     name = "adw-gtk3-dark";
     package = pkgs.adw-gtk3;
   };
+  gtk.gtk4.theme = null;
 
   # On Wayland GDK reads org/gnome/desktop/interface from dconf, which
   # overrides settings.ini — the hm gtk module mirrors gtk-theme/icon/cursor
