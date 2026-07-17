@@ -47,6 +47,12 @@
       # Tradeoff: fullscreen video composites instead of scanning out (power).
       # debug.disable-direct-scanout = [ ];
 
+      # Clicking a mako notification should focus the sending app. The
+      # activation token that reaches niri carries a serial niri rejects,
+      # so it only marks the window urgent. Honor those tokens anyway.
+      # Tradeoff: apps can steal focus with self-made tokens.
+      debug.honor-xdg-activation-with-invalid-serial = [ ];
+
       outputs."eDP-1" = {
         mode = {
           width = 2560;
