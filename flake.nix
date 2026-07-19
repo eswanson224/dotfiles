@@ -3,9 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Pinned for deadbeef: swift fails to build on unstable after the
-    # cc-wrapper tlsdesc change (nixpkgs#540320); drop once that closes
-    nixpkgs-deadbeef.url = "github:nixos/nixpkgs/e8273b29fe1390ec8d4603f2477357555291432e";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,17 +50,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration.nix
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  inherit (inputs.nixpkgs-deadbeef.legacyPackages.${prev.stdenv.hostPlatform.system})
-                    deadbeef
-                    deadbeef-with-plugins
-                    deadbeefPlugins
-                    ;
-                })
-              ];
-            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
