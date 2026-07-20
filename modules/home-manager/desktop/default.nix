@@ -3,6 +3,7 @@
 {
   imports = [
     ./deadbeef.nix
+    ./default-apps.nix
     ./easyeffects.nix
     ./emacs.nix
     ./firefox
