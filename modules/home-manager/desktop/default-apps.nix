@@ -15,10 +15,14 @@ let
   impress = "impress.desktop";
 
   # Assign the same handler to a whole list of MIME types.
-  forEach = app: types: builtins.listToAttrs (map (t: {
-    name = t;
-    value = app;
-  }) types);
+  forEach =
+    app: types:
+    builtins.listToAttrs (
+      map (t: {
+        name = t;
+        value = app;
+      }) types
+    );
 in
 {
   xdg.mimeApps = {
