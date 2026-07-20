@@ -1,3 +1,6 @@
 smb-secrets
 todo.org
 modules/nixos/packages/cider/*.AppImage
+
+.claude
+CLAUDE.md
