@@ -45,11 +45,11 @@
     in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
+        teacherbearcat = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/laptop/configuration.nix
+            ./hosts/teacherbearcat/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -57,7 +57,7 @@
               home-manager.backupFileExtension = "bak";
               home-manager.users.erik = {
                 imports = [
-                  ./hosts/laptop/home.nix
+                  ./hosts/teacherbearcat/home.nix
                   catppuccin.homeModules.catppuccin
                 ];
               };
