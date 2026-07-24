@@ -84,10 +84,6 @@ in
         scale = 1.0;
       };
 
-      spawn-at-startup = [
-        { argv = [ "waybar" ]; }
-      ];
-
       clipboard = {
         disable-primary = true;
       };
