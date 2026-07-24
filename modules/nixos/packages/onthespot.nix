@@ -77,6 +77,7 @@ let
     version = "0.0.10-unstable-2025";
     pyproject = true;
     src = pkgs.fetchFromGitHub {
+      # update-git-srcs: skip — pinned to a specific fork rev OnTheSpot depends on
       owner = "justin025";
       repo = "librespot-python";
       rev = "4e70bc40b7a64f522a90c9e9026326ffa9d1580c";
