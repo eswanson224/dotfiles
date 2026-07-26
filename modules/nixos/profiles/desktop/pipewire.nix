@@ -55,7 +55,7 @@ in
           matches = [ { "node.name" = dacNode; } ];
           actions.update-props = {
             "api.alsa.period-size" = 48;
-            "api.alsa.period-num" = 6;
+            "api.alsa.period-num" = 4;
             "api.alsa.headroom" = 48;
           };
         }
