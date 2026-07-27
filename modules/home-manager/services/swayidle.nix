@@ -1,5 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  # the niri-flake package the compositor actually runs — pkgs.niri is a
+  # second, unrelated build (and currently broken in nixpkgs).
+  niri = config.programs.niri.package;
+in
 {
   services.swayidle = {
     enable = true;
@@ -10,8 +15,8 @@
       }
       {
         timeout = 360;
-        command = "${pkgs.niri}/bin/niri msg action power-off-monitors";
-        resumeCommand = "${pkgs.niri}/bin/niri msg action power-on-monitors";
+        command = "${niri}/bin/niri msg action power-off-monitors";
+        resumeCommand = "${niri}/bin/niri msg action power-on-monitors";
       }
     ];
     events = {
