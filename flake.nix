@@ -45,6 +45,29 @@
     in
     {
       nixosConfigurations = {
+        maniceraser = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/maniceraser/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bak";
+              home-manager.users.erik = {
+                imports = [
+                  ./hosts/maniceraser/home.nix
+                  catppuccin.homeModules.catppuccin
+                ];
+              };
+            }
+            nur.modules.nixos.default
+            catppuccin.nixosModules.catppuccin
+            niri-flake.nixosModules.niri
+          ];
+        };
+
         teacherbearcat = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
