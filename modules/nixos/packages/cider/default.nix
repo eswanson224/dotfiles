@@ -16,11 +16,10 @@ let
   };
 in
 {
-  # True once the AppImage has actually been added to the store (see the
-  # requireFile message above) — lets callers include this package
-  # optionally instead of failing the build on hosts that haven't done
-  # the manual step yet.
-  available = builtins.pathExists (builtins.toString src);
+  # Check the fixed-output store path without realising the requireFile
+  # derivation. On a new machine, realising it would fail before callers get a
+  # chance to skip the package.
+  available = builtins.pathExists (builtins.unsafeDiscardStringContext (builtins.toString src));
 
   package = pkgs.appimageTools.wrapType2 {
     inherit pname version src;
