@@ -1,38 +1,53 @@
 { pkgs, ... }:
 
 let
-  pname = "Cider";
-  version = "4.0.9";
-  src = pkgs.requireFile {
-    name = "cider-v${version}-linux-x64.AppImage";
-    sha256 = "sha256-iUHoBpP8RlUD4+5K7/14FRBhbhY8JbKG1NrOPyEFmCU=";
-    message = ''
-      Cider AppImage not in nix store. Download cider-v${version}-linux-x64.AppImage, then run:
-        nix-store --add-fixed sha256 cider-v${version}-linux-x64.AppImage
-      If it still fails, the sha256 in this module is stale. Get the correct hash with:
-        nix hash file --sri cider-v${version}-linux-x64.AppImage
-      and paste it into modules/nixos/packages/cider/default.nix.
-    '';
-  };
-in
-{
-  # Check the fixed-output store path without realising the requireFile
-  # derivation. On a new machine, realising it would fail before callers get a
-  # chance to skip the package.
-  available = builtins.pathExists (builtins.unsafeDiscardStringContext (builtins.toString src));
+  pname = "cider";
+  version = "4.0.9.1";
 
-  package = pkgs.appimageTools.wrapType2 {
+  src = pkgs.fetchurl {
+    url = "https://repo.cider.sh/apt/pool/main/cider-v${version}-linux-x64.deb";
+    hash = "sha256-MsA6lK3PsyOEx938FgJFx8l9oqwoM3FzIK5goF73lTs=";
+  };
+
+  unwrapped = pkgs.stdenvNoCC.mkDerivation {
     inherit pname version src;
 
-    extraInstallCommands =
-      let
-        contents = pkgs.appimageTools.extract { inherit pname version src; };
-      in
-      ''
-        install -m 444 -D ${contents}/${pname}.desktop -t $out/share/applications
-        substituteInPlace $out/share/applications/${pname}.desktop \
-          --replace 'Exec=AppRun' 'Exec=${pname}'
-        cp -r ${contents}/usr/share/icons $out/share
-      '';
+    nativeBuildInputs = [ pkgs.dpkg ];
+    dontUnpack = true;
+
+    installPhase = ''
+      runHook preInstall
+      mkdir -p "$out"
+      dpkg-deb --fsys-tarfile "$src" \
+        | tar --extract --directory "$out" --no-same-owner --no-same-permissions
+      runHook postInstall
+    '';
   };
-}
+
+  fhs = pkgs.appimageTools.defaultFhsEnvArgs;
+in
+pkgs.buildFHSEnv (
+  fhs
+  // {
+    name = pname;
+    targetPkgs = p: (fhs.targetPkgs p) ++ [ unwrapped ];
+    runScript = "${unwrapped}/usr/lib/cider/Cider";
+
+    extraInstallCommands = ''
+      install -m 444 -D \
+        ${unwrapped}/usr/share/applications/cider.desktop \
+        $out/share/applications/Cider.desktop
+      install -m 444 -D \
+        ${unwrapped}/usr/share/pixmaps/cider.png \
+        $out/share/pixmaps/cider.png
+    '';
+
+    meta = {
+      description = "Apple Music client";
+      homepage = "https://cider.sh";
+      license = pkgs.lib.licenses.unfree;
+      mainProgram = pname;
+      platforms = [ "x86_64-linux" ];
+    };
+  }
+)
