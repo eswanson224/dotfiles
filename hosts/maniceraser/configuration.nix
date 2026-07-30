@@ -36,6 +36,7 @@
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+    timeout = 1;
   };
 
   system.stateVersion = "26.05";

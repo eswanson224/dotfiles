@@ -15,4 +15,11 @@
   # Plasma-era dconf values win (deadbeef went light when a Dolphin launch
   # dbus-activated kded6 and it clobbered the leftover gtk.css/dconf theming).
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
+  # Dolphin starts kded6 even outside Plasma. Its gtkconfig module then copies
+  # Plasma's default light appearance into dconf, overriding the settings above.
+  xdg.configFile."kded6rc".text = ''
+    [Module-gtkconfig]
+    autoload=false
+  '';
 }
