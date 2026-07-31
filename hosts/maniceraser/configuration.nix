@@ -8,12 +8,10 @@ in
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
     ./hardware-configuration.nix
+    ./storage.nix
   ];
 
-  # TODO: Add teacherbearcat's public key in hosts/ssh-public-keys.nix.
-  users.users.erik.openssh.authorizedKeys.keys = lib.optional (
-    sshPublicKeys.teacherbearcat != null
-  ) sshPublicKeys.teacherbearcat;
+  users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.teacherbearcat ];
 
   services.hardware.openrgb = {
     enable = true;
