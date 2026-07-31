@@ -8,10 +8,10 @@ in
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
     ./hardware-configuration.nix
-    ./storage.nix
+    ./nfs.nix
   ];
 
-  users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.teacherbearcat ];
+  users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.teacherbearcat sshPublicKeys.moshi ];
 
   services.hardware.openrgb = {
     enable = true;
