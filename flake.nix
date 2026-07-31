@@ -42,53 +42,49 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
-    in
-    {
-      nixosConfigurations = {
-        maniceraser = nixpkgs.lib.nixosSystem {
+
+      mkNixosConfiguration =
+        {
+          hostConfiguration,
+          homeConfiguration,
+          extraModules ? [ ],
+        }:
+        nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/maniceraser/configuration.nix
+            hostConfiguration
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
-              home-manager.users.erik = {
-                imports = [
-                  ./hosts/maniceraser/home.nix
-                  catppuccin.homeModules.catppuccin
-                ];
-              };
+              home-manager.users.erik.imports = [
+                homeConfiguration
+                catppuccin.homeModules.catppuccin
+              ];
             }
             nur.modules.nixos.default
+          ]
+          ++ extraModules
+          ++ [
             catppuccin.nixosModules.catppuccin
             niri-flake.nixosModules.niri
           ];
         };
+    in
+    {
+      nixosConfigurations = {
+        maniceraser = mkNixosConfiguration {
+          hostConfiguration = ./hosts/maniceraser/configuration.nix;
+          homeConfiguration = ./hosts/maniceraser/home.nix;
+        };
 
-        teacherbearcat = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/teacherbearcat/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "bak";
-              home-manager.users.erik = {
-                imports = [
-                  ./hosts/teacherbearcat/home.nix
-                  catppuccin.homeModules.catppuccin
-                ];
-              };
-            }
-            nur.modules.nixos.default
+        teacherbearcat = mkNixosConfiguration {
+          hostConfiguration = ./hosts/teacherbearcat/configuration.nix;
+          homeConfiguration = ./hosts/teacherbearcat/home.nix;
+          extraModules = [
             nixos-hardware.nixosModules.lenovo-legion-16ach6h
-            catppuccin.nixosModules.catppuccin
-            niri-flake.nixosModules.niri
           ];
         };
       };

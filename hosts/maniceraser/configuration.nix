@@ -1,21 +1,19 @@
 { lib, ... }:
 
+let
+  sshPublicKeys = import ../ssh-public-keys.nix;
+in
 {
   imports = [
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
     ./hardware-configuration.nix
   ];
-  # ++ lib.optional (builtins.pathExists ./hardware-configuration.nix) ./hardware-configuration.nix;
 
-  users.users.erik = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "gamemode"
-    ];
-  };
+  # TODO: Add teacherbearcat's public key in hosts/ssh-public-keys.nix.
+  users.users.erik.openssh.authorizedKeys.keys = lib.optional (
+    sshPublicKeys.teacherbearcat != null
+  ) sshPublicKeys.teacherbearcat;
 
   services.hardware.openrgb = {
     enable = true;

@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  sshPublicKeys = import ../ssh-public-keys.nix;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -38,14 +41,7 @@
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
   };
 
-  users.users.erik = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "gamemode"
-    ];
-  };
+  users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.maniceraser ];
 
   networking.hostName = "teacherbearcat";
   # WiFi radio powersave stalls large CDN downloads (nix cache, discord cdn)
