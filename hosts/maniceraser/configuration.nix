@@ -7,7 +7,7 @@ in
   imports = [
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
-    ../../modules/nixos/profiles/desktop/kde
+    ../../modules/nixos/profiles/kde
     ./hardware-configuration.nix
     ./nfs.nix
   ];

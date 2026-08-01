@@ -13,6 +13,10 @@ in
     ../../modules/nixos/profiles/niri
   ];
 
+  # Laptop-specific hybrid graphics topology; this does not apply to the
+  # desktop host.
+  hardware.nvidia.prime.amdgpuBusId = "PCI:6:0:0";
+
   nix = {
     settings = {
       trusted-users = [
