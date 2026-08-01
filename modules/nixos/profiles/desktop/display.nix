@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  programs.niri.enable = true;
   programs.dconf.enable = true;
 
   # nixos-hardware's 16ach6h hybrid config defaults amdgpuBusId to PCI:5:0:0,
@@ -11,7 +10,6 @@
   hardware.nvidia.prime.amdgpuBusId = "PCI:6:0:0";
 
   services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   systemd.user.units = {
     "drkonqi-coredump-launcher.socket".enable = false;

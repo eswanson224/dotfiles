@@ -7,6 +7,7 @@ in
   imports = [
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
+    ../../modules/nixos/profiles/desktop/kde
     ./hardware-configuration.nix
     ./nfs.nix
   ];
@@ -23,6 +24,8 @@ in
   networking.hostName = "maniceraser";
 
   boot.kernelParams = [ "acpi_enforce_resources=lax" ];
+
+  nixpkgs.config.rocmSupport = true;
 
   hardware.graphics = {
     enable = true;

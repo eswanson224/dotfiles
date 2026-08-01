@@ -10,6 +10,5 @@
     ./theming.nix
     ./appimage-nix-ld.nix
     ./gaming.nix
-    ./xremap.nix
   ];
 }

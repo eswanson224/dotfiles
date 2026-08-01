@@ -10,6 +10,7 @@ in
     ./packages.nix
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
+    ../../modules/nixos/profiles/niri
   ];
 
   nix = {
