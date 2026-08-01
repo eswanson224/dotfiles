@@ -11,6 +11,7 @@ in
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
     ../../modules/nixos/profiles/niri
+    ./nfs.nix
   ];
 
   # Laptop-specific hybrid graphics topology; this does not apply to the
