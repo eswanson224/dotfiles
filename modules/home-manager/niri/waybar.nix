@@ -94,7 +94,6 @@
         ];
       };
       clock = {
-        timezone = "America/Denver";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt = "{:%a, %b %d}";
         format = "{:%I:%M %p}";

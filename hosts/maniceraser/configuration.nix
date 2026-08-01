@@ -12,7 +12,10 @@ in
     ./nfs.nix
   ];
 
-  users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.teacherbearcat sshPublicKeys.moshi ];
+  users.users.erik.openssh.authorizedKeys.keys = [
+    sshPublicKeys.teacherbearcat
+    sshPublicKeys.moshi
+  ];
 
   services.hardware.openrgb = {
     enable = true;
