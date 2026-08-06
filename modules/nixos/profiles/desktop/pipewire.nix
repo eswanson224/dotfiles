@@ -49,17 +49,17 @@ in
     #  - The graph quantum is capped at buffer_size / 2, for every app on the device.
     #  - This is a batch device, so PipeWire silently adds one period to headroom:
     #    the 48 below lands as an effective 96.
-    wireplumber.extraConfig."99-apple-dac-lowlatency" = {
-      "monitor.alsa.rules" = [
-        {
-          matches = [ { "node.name" = dacNode; } ];
-          actions.update-props = {
-            "api.alsa.period-size" = 48;
-            "api.alsa.period-num" = 4;
-            "api.alsa.headroom" = 48;
-          };
-        }
-      ];
-    };
+    # wireplumber.extraConfig."99-apple-dac-lowlatency" = {
+    #   "monitor.alsa.rules" = [
+    #     {
+    #       matches = [ { "node.name" = dacNode; } ];
+    #       actions.update-props = {
+    #         "api.alsa.period-size" = 48;
+    #         "api.alsa.period-num" = 4;
+    #         "api.alsa.headroom" = 48;
+    #       };
+    #     }
+    #   ];
+    # };
   };
 }
