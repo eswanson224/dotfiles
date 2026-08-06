@@ -25,6 +25,8 @@ in
 
   # hardware.i2c.enable = true;
 
+  services.tailscale.enable = true;
+
   networking.hostName = "maniceraser";
 
   # boot.kernelParams = [ "acpi_enforce_resources=lax" ];
