@@ -1,7 +1,7 @@
-{ ... }:
+{ niriEnabled, ... }:
 
 {
   imports = [ ./xremap.nix ];
-  programs.niri.enable = true;
-  services.displayManager.defaultSession = "niri";
+  programs.niri.enable = niriEnabled;
+  services.displayManager.defaultSession = if niriEnabled then "niri" else null;
 }

@@ -1,7 +1,5 @@
-{ ... }:
+{ lib, niriEnabled, ... }:
 
 {
-  imports = [
-    ../../niri
-  ];
+  imports = lib.optionals niriEnabled [ ../../niri ];
 }

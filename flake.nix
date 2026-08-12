@@ -11,7 +11,7 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri-flake.url = "github:sodiboo/niri-flake/main";
+    niri-flake.url = "github:epireyn/niri-flake/main";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     # nix-gaming.url = "github:fufexan/nix-gaming";
@@ -47,11 +47,12 @@
         {
           hostConfiguration,
           homeConfiguration,
+          niriEnabled ? true,
           extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs niriEnabled; };
           modules = [
             hostConfiguration
             home-manager.nixosModules.home-manager
@@ -59,6 +60,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
+              home-manager.extraSpecialArgs = { inherit inputs niriEnabled; };
               home-manager.users.erik.imports = [
                 homeConfiguration
                 catppuccin.homeModules.catppuccin
@@ -83,6 +85,7 @@
         teacherbearcat = mkNixosConfiguration {
           hostConfiguration = ./hosts/teacherbearcat/configuration.nix;
           homeConfiguration = ./hosts/teacherbearcat/home.nix;
+          niriEnabled = true;
           extraModules = [
             nixos-hardware.nixosModules.lenovo-legion-16ach6h
           ];
