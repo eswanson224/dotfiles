@@ -38,6 +38,7 @@
           NoReplyMention.enabled = true;
           Dearrow.enabled = true;
           YoutubeAdblock.enabled = true;
+          NoTypingAnimation.enabled = true;
         };
       };
     };
