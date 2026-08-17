@@ -18,18 +18,9 @@ in
     sshPublicKeys.moshi
   ];
 
-  # services.hardware.openrgb = {
-  #   enable = true;
-  #   motherboard = "amd";
-  # };
-
-  # hardware.i2c.enable = true;
-
   services.tailscale.enable = true;
 
   networking.hostName = "maniceraser";
-
-  # boot.kernelParams = [ "acpi_enforce_resources=lax" ];
 
   nixpkgs.config.rocmSupport = true;
 
@@ -42,7 +33,6 @@ in
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      # timeout = 1;
     };
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
   };
