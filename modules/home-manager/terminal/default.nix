@@ -12,6 +12,7 @@
     ./git.nix
     ./helix.nix
     ./nh.nix
+    ./tmux.nix
     ./yazi
     ./zoxide.nix
   ];
