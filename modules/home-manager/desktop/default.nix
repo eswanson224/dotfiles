@@ -14,6 +14,7 @@
     ./prismlauncher.nix
     ./vesktop.nix
     ./vscodium.nix
+    ./qalculate.nix
     ./zed.nix
   ];
 
