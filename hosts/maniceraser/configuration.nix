@@ -19,6 +19,7 @@ in
   ];
 
   services.tailscale.enable = true;
+  networking.firewall.allowedTCPPorts = [ 8188 ];
 
   networking.hostName = "maniceraser";
 
