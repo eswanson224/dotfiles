@@ -21,6 +21,12 @@ in
   services.tailscale.enable = true;
   networking.firewall.allowedTCPPorts = [ 8188 ];
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
+  users.users.erik.extraGroups = [ "docker" ];
+
   networking.hostName = "maniceraser";
 
   nixpkgs.config.rocmSupport = true;
