@@ -54,6 +54,15 @@ in
   # after lock/display-off; small requests survive. Independent of platform profile.
   networking.networkmanager.wifi.powersave = false;
 
+  # Persist the measured battery-video winners across boot and AC/battery
+  # transitions. TLP remains the only policy manager on this laptop.
+  services.tlp.settings = {
+    PLATFORM_PROFILE_ON_AC = "performance";
+    PLATFORM_PROFILE_ON_BAT = "low-power";
+    CPU_BOOST_ON_AC = 1;
+    CPU_BOOST_ON_BAT = 0;
+  };
+
   services.automatic-timezoned.enable = true;
   services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
 
