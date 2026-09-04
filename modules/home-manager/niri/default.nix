@@ -66,22 +66,14 @@ in
       # Tradeoff: apps can steal focus with self-made tokens.
       debug.honor-xdg-activation-with-invalid-serial = [ ];
 
+      # 1920x1200@165.019
       outputs."eDP-1" = {
         mode = {
-          width = 2560;
-          height = 1600;
-          refresh = 60.008;
+          width = 1920;
+          height = 1200;
+          refresh = 165.019;
         };
-        scale = 1.6;
-      };
-
-      outputs."DP-2" = {
-        mode = {
-          width = 2560;
-          height = 1440;
-          refresh = 239.972;
-        };
-        scale = 1.0;
+        scale = 1.25;
       };
 
       clipboard = {
