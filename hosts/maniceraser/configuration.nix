@@ -36,9 +36,31 @@ in
     enable32Bit = true;
   };
 
+    nix = {
+    settings = {
+      trusted-users = [
+        "root"
+        "@wheel"
+        "erik"
+      ];
+    };
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
+  
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        windows."11" = {
+          title = "Windows 11";
+          efiDeviceHandle = "HD1b";
+        };
+      };
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
@@ -49,11 +71,11 @@ in
     "uas"
   ];
 
-  boot.initrd.luks.devices."cryptroot" = {
-    keyFile = "/dev/disk/by-partuuid/951ad3ca-5d76-47a2-92a0-d10d057b9bce";
-    keyFileSize = 4096;
-    keyFileTimeout = 30;
-  };
+  # boot.initrd.luks.devices."cryptroot" = {
+  #   keyFile = "/dev/disk/by-partuuid/951ad3ca-5d76-47a2-92a0-d10d057b9bce";
+  #   keyFileSize = 4096;
+  #   keyFileTimeout = 30;
+  # };
 
   system.stateVersion = "26.05";
 }
