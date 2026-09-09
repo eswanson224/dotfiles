@@ -63,7 +63,7 @@ in
       };
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_xanmod_stable;
+    # kernelPackages = pkgs.linuxPackages_xanmod_stable;
   };
 
   boot.initrd.availableKernelModules = [
