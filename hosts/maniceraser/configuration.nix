@@ -36,7 +36,7 @@ in
     enable32Bit = true;
   };
 
-    nix = {
+  nix = {
     settings = {
       trusted-users = [
         "root"
@@ -51,7 +51,7 @@ in
       options = "--delete-older-than 7d";
     };
   };
-  
+
   boot = {
     loader = {
       systemd-boot = {

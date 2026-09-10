@@ -27,14 +27,19 @@
     serviceMode = "user";
     userName = "erik";
     config = {
-      modmap = [
+      keymap = [
         {
           name = "SDV animation cancel";
+          exact_match = true;
           application.only = [ "Stardew Valley" ];
           remap.KEY_SPACE = [
-            "KEY_RIGHTSHIFT"
-            "KEY_R"
-            "KEY_DELETE"
+            { press = "KEY_RIGHTSHIFT"; }
+            { press = "KEY_R"; }
+            { press = "KEY_DELETE"; }
+            { sleep = 100; }
+            { release = "KEY_DELETE"; }
+            { release = "KEY_R"; }
+            { release = "KEY_RIGHTSHIFT"; }
           ];
         }
       ];
