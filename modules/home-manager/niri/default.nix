@@ -69,11 +69,11 @@ in
       # 1920x1200@165.019
       outputs."eDP-1" = {
         mode = {
-          width = 1920;
-          height = 1200;
-          refresh = 165.019;
+          width = 2560;
+          height = 1600;
+          refresh = 60.008;
         };
-        scale = 1.25;
+        scale = 1.6;
       };
 
       clipboard = {
