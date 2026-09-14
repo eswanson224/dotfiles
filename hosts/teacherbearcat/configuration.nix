@@ -39,7 +39,7 @@ in
       # "hpet=disable"
       "tsc=reliable"
     ];
-    kernelPackages = pkgs.linuxPackages_xanmod_stable;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.maniceraser ];
