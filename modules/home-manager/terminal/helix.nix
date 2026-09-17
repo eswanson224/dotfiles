@@ -41,7 +41,6 @@
     };
   };
   home.packages = with pkgs; [
-    nil
     vale-ls
     (vale.withStyles (s: [
       s.alex

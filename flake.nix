@@ -92,6 +92,13 @@
         };
       };
 
+      devShells.${system}.default = pkgs.mkShellNoCC {
+        packages = with pkgs; [
+          nixd
+          nixfmt
+        ];
+      };
+
       formatter.${system} = treefmtEval.config.build.wrapper;
       checks.${system}.formatting = treefmtEval.config.build.check self;
     };
