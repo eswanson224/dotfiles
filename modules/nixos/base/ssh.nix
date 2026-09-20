@@ -14,4 +14,5 @@
       PermitRootLogin = "no";
     };
   };
+  programs.mosh.enable = true;
 }
