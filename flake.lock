@@ -216,11 +216,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1790037298,
-        "narHash": "sha256-1YOQ8lINVxBF3wNZFEu4hEvlp9A7dDj0ybIoVC295Ks=",
+        "lastModified": 1790037633,
+        "narHash": "sha256-yASXa68R0gUxvB6/dKCfTgza5H/J+ETDDpLX6ZA/Nsc=",
         "owner": "eswanson224",
         "repo": "nix-gaming",
-        "rev": "a0daf36e30ed40095af5ad75821de27ad92d4e99",
+        "rev": "9ec781446d9a65c20e971328421db66006e624a6",
         "type": "github"
       },
       "original": {
