@@ -21,12 +21,6 @@ in
   services.tailscale.enable = true;
   networking.firewall.allowedTCPPorts = [ 8188 ];
 
-  virtualisation.docker = {
-    enable = true;
-  };
-
-  users.users.erik.extraGroups = [ "docker" ];
-
   networking.hostName = "maniceraser";
 
   # Keep ordinary system audio at the lowest quantum tested stable on this host.

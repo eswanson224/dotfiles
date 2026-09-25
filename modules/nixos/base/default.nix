@@ -4,6 +4,7 @@
   time.timeZone = lib.mkDefault "America/Denver";
 
   imports = [
+    ./docker.nix
     ./nfs.nix
     ./nix.nix
     ./overlays.nix
