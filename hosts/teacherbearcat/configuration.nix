@@ -36,7 +36,6 @@ in
     };
     kernelParams = [
       "clocksource=hpet"
-      # "hpet=disable"
       "tsc=reliable"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
@@ -45,12 +44,7 @@ in
   users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.maniceraser ];
 
   networking.hostName = "teacherbearcat";
-  # WiFi radio powersave stalls large CDN downloads (nix cache, discord cdn)
-  # after lock/display-off; small requests survive. Independent of platform profile.
-  networking.networkmanager.wifi.powersave = false;
 
-  # Persist the measured battery-video winners across boot and AC/battery
-  # transitions. TLP remains the only policy manager on this laptop.
   services.tlp.settings = {
     PLATFORM_PROFILE_ON_AC = "performance";
     PLATFORM_PROFILE_ON_BAT = "low-power";
@@ -69,5 +63,5 @@ in
     ];
   };
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 }
