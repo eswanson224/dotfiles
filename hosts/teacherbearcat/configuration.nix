@@ -13,6 +13,24 @@ in
     ./nfs.nix
   ];
 
+  systemd.services.invidious-hourly-restart = {
+    description = "Restart Invidious hourly";
+    after = [ "docker.service" ];
+    wants = [ "docker.service" ];
+
+    # NixOS creates the corresponding systemd timer.
+    startAt = "hourly";
+
+    serviceConfig = {
+      Type = "oneshot";
+      WorkingDirectory = "/home/erik/projects/invidious";
+      ExecStart = "${pkgs.docker}/bin/docker compose restart invidious";
+    };
+  };
+
+  # Optional: run once after boot if a scheduled restart was missed.
+  systemd.timers.invidious-hourly-restart.timerConfig.Persistent = true;
+
   nix = {
     settings = {
       trusted-users = [
