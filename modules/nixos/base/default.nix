@@ -5,7 +5,7 @@
 
   imports = [
     ./docker.nix
-    ./nfs.nix
+    ./samba.nix
     ./nix.nix
     ./overlays.nix
     ./shell.nix

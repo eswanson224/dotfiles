@@ -9,7 +9,7 @@ in
     ../../modules/nixos/profiles/desktop
     ../../modules/nixos/profiles/kde
     ./hardware-configuration.nix
-    ./nfs.nix
+    ./samba.nix
     ./packages.nix
   ];
 

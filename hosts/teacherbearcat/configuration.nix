@@ -10,7 +10,7 @@ in
     ../../modules/nixos/base
     ../../modules/nixos/profiles/desktop
     ../../modules/nixos/profiles/niri
-    ./nfs.nix
+    ./samba.nix
   ];
 
   systemd.services.invidious-hourly-restart = {
