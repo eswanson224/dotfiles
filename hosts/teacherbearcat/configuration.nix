@@ -24,8 +24,19 @@ in
     serviceConfig = {
       Type = "oneshot";
       WorkingDirectory = "/home/erik/projects/invidious";
-      ExecStart = "${pkgs.docker}/bin/docker compose restart invidious";
+      ExecStart = "${pkgs.docker}/bin/docker compose restart invidious invidious-db companion";
     };
+  };
+
+  services.suwayomi-server = {
+    enable = true;
+    settings.server.localSourcePath = "/var/lib/suwayomi-server/local";
+  };
+
+  services.adguardhome = {
+    enable = true;
+    port = 3003;
+    settings = {};
   };
 
   # Optional: run once after boot if a scheduled restart was missed.
@@ -59,7 +70,10 @@ in
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  users.users.erik.openssh.authorizedKeys.keys = [ sshPublicKeys.maniceraser ];
+  users.users.erik.openssh.authorizedKeys.keys = [
+    sshPublicKeys.maniceraser
+    sshPublicKeys.moshi
+  ];
 
   networking.hostName = "teacherbearcat";
 
