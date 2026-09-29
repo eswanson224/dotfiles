@@ -55,6 +55,9 @@
           specialArgs = { inherit inputs niriEnabled; };
           modules = [
             hostConfiguration
+            {
+              nixpkgs.overlays = [ (import ./modules/nixos/packages/codex-overlay.nix) ];
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

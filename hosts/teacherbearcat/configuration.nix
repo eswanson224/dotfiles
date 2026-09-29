@@ -36,7 +36,7 @@ in
   services.adguardhome = {
     enable = true;
     port = 3003;
-    settings = {};
+    settings = { };
   };
 
   # Optional: run once after boot if a scheduled restart was missed.
