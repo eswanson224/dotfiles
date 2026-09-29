@@ -8,12 +8,18 @@ _final: prev: {
       hash = "sha256-Ndpl1+hkTijqCk1OPYwVtAxrSSNW1M8hmGx+NB+Dok4=";
     };
 
+    nativeBuildInputs = [ prev.makeWrapper ];
+
     dontUnpack = true;
     installPhase = ''
       runHook preInstall
       mkdir -p "$out"
       tar -xzf "$src" -C "$out"
       runHook postInstall
+    '';
+
+    postFixup = ''
+      wrapProgram "$out/bin/codex" --prefix PATH : ${prev.lib.makeBinPath [ prev.bubblewrap ]}
     '';
 
     meta = prev.codex.meta // {
