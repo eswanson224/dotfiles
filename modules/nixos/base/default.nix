@@ -7,7 +7,6 @@
     ./docker.nix
     ./samba.nix
     ./nix.nix
-    ./overlays.nix
     ./shell.nix
     ./ssh.nix
     ./users.nix
