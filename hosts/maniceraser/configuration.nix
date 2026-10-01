@@ -19,7 +19,6 @@ in
   ];
 
   services.tailscale.enable = true;
-  networking.firewall.allowedTCPPorts = [ 8188 ];
 
   networking.hostName = "maniceraser";
 
@@ -67,7 +66,7 @@ in
       };
       efi.canTouchEfiVariables = true;
     };
-    # kernelPackages = pkgs.linuxPackages_xanmod_stable;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   boot.initrd.availableKernelModules = [
