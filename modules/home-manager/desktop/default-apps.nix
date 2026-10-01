@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  browser = "firefox.desktop";
+  browser = "helium.desktop";
   image = "org.kde.gwenview.desktop";
   video = "mpv.desktop";
   audio = "deadbeef.desktop";
