@@ -5,23 +5,23 @@
     ./deadbeef.nix
     ./default-apps.nix
     ./easyeffects.nix
-    ./emacs.nix
-    ./firefox
+    # ./emacs.nix
+    # ./firefox
     ./gtk-theme.nix
     ./lutris.nix
     ./obs.nix
     ./obsidian.nix
     ./prismlauncher.nix
     ./vesktop.nix
-    ./vscodium.nix
+    # ./vscodium.nix
     ./qalculate.nix
     ./zed.nix
   ];
 
   home.packages = with pkgs; [
-    libreoffice
-    libimobiledevice
+    # libreoffice
+    # libimobiledevice
     kdePackages.dolphin
-    kdePackages.kio-extras
+    # kdePackages.kio-extras
   ];
 }

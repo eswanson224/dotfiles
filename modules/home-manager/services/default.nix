@@ -2,6 +2,5 @@
 
 {
   imports = [
-    ./syncthing.nix
   ];
 }
