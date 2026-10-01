@@ -1,11 +1,11 @@
 _final: prev: {
   codex = prev.stdenvNoCC.mkDerivation (finalAttrs: {
     pname = "codex";
-    version = "0.159.0";
+    version = "0.159.3";
 
     src = prev.fetchurl {
       url = "https://github.com/openai/codex/releases/download/rust-v${finalAttrs.version}/codex-package-x86_64-unknown-linux-musl.tar.gz";
-      hash = "sha256-Ndpl1+hkTijqCk1OPYwVtAxrSSNW1M8hmGx+NB+Dok4=";
+      hash = "sha256-OTDzGsX8qGHqPkROJoPyYRkNlrY/uljgpAqHkXQ2nN8=";
     };
 
     nativeBuildInputs = [ prev.makeWrapper ];
