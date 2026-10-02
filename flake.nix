@@ -56,7 +56,9 @@
           modules = [
             hostConfiguration
             {
-              nixpkgs.overlays = [ (import ./modules/nixos/packages/codex-overlay.nix) ];
+              nixpkgs.overlays = [
+                # (import ./modules/nixos/packages/codex-overlay.nix)
+              ];
             }
             home-manager.nixosModules.home-manager
             {
