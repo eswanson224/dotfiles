@@ -4,7 +4,7 @@
   programs = {
     steam.enable = true;
     gamescope = {
-      enable = true
+      enable = true;
       # capSysNice = true;
     };
     gamemode.enable = true;

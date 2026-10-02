@@ -43,13 +43,15 @@
   #     };
   #   };
   # };
-  programs.discord = {
-    enable = true;
-    package = (
-      pkgs.discord.override {
-        withOpenASAR = true;
-        withVencord = true;
-      }
-    );
-  };
+  # Discord rewrites settings.json, so install the package without the
+  # programs.discord module's managed settings file and backup collisions.
+  home.packages = [
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+      # Native Wayland crashes during accelerated media playback in this build.
+      # Use XWayland for Discord while retaining hardware acceleration.
+      commandLineArgs = "--ozone-platform=x11";
+    })
+  ];
 }
