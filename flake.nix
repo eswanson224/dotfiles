@@ -104,6 +104,7 @@
 
       devShells.${system}.default = pkgs.mkShellNoCC {
         packages = with pkgs; [
+          nil
           nixd
           nixfmt
         ];
