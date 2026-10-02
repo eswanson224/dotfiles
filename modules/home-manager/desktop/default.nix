@@ -18,6 +18,8 @@
     ./zed.nix
   ];
 
+  programs.nix-osu-lazer.enable = true;
+  
   home.packages = with pkgs; [
     # libreoffice
     # libimobiledevice

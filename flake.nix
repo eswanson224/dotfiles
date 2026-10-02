@@ -15,7 +15,9 @@
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     # nix-gaming.url = "github:fufexan/nix-gaming";
-    nix-gaming.url = "github:eswanson224/nix-gaming";
+    # nix-gaming.url = "github:eswanson224/nix-gaming";
+    nix-osu-lazer.url = "github:gaavin/nix-osu-lazer";
+    nix-osu-lazer.inputs.nixpkgs.follows = "nixpkgs";
     xremap = {
       url = "github:xremap/nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +38,7 @@
       catppuccin,
       niri-flake,
       treefmt-nix,
+      nix-osu-lazer,
       ...
     }@inputs:
     let
@@ -58,6 +61,7 @@
             {
               nixpkgs.overlays = [
                 # (import ./modules/nixos/packages/codex-overlay.nix)
+                nix-osu-lazer.overlays.default
               ];
             }
             home-manager.nixosModules.home-manager
@@ -66,6 +70,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
               home-manager.extraSpecialArgs = { inherit inputs niriEnabled; };
+              home-manager.sharedModules = [ nix-osu-lazer.homeModules.nix-osu-lazer ];
               home-manager.users.erik.imports = [
                 homeConfiguration
                 catppuccin.homeModules.catppuccin
