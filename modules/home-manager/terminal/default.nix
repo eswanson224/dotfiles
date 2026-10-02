@@ -16,4 +16,9 @@
     ./yazi
     ./zoxide.nix
   ];
+
+  programs = {
+    fd.enable = true;
+    ripgrep.enable = true;
+  };
 }
