@@ -6,6 +6,8 @@
     mangohud
   ];
 
+  programs.nix-osu-lazer.enable = true;
+
   programs.lutris = {
     enable = true;
     protonPackages = [ pkgs.proton-ge-bin ];
