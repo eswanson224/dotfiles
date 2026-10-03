@@ -87,13 +87,5 @@ in
   services.automatic-timezoned.enable = true;
   services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
 
-  services.tailscale = {
-    enable = true;
-    extraSetFlags = [
-      "--operator=erik"
-      "--accept-routes"
-    ];
-  };
-
   system.stateVersion = "24.11";
 }

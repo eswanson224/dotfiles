@@ -18,13 +18,8 @@ in
     sshPublicKeys.moshi
   ];
 
-  services.tailscale.enable = true;
-
   networking.hostName = "maniceraser";
 
-  # Keep ordinary system audio at the lowest quantum tested stable on this host.
-  # This is only the default: clients such as osu! may still request a different
-  # latency, and the ALSA device buffer remains independently managed.
   services.pipewire.extraConfig.pipewire."92-system-latency" = {
     "context.properties" = {
       "default.clock.rate" = 48000;
