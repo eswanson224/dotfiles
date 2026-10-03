@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 let
   sshPublicKeys = import ../ssh-public-keys.nix;
