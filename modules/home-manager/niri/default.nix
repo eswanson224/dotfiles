@@ -25,13 +25,16 @@ in
     ../utils/fuzzel.nix
     ../utils/nautilus.nix
     ../utils/swaylock.nix
-    ../utils/wl-clipboard.nix
-    ../utils/xwayland-satellite.nix
     ./cursor.nix
     ./waybar.nix
   ];
 
-  home.packages = [ pkgs.brightnessctl ];
+  home.packages = with pkgs; [
+    brightnessctl
+    wl-clipboard
+    xwayland-satellite
+    nautilus
+  ];
 
   programs.niri = {
     settings = {
