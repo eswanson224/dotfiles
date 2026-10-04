@@ -1,9 +1,20 @@
 { pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.prismlauncher
-  ];
+  programs.prismlauncher = {
+    enable = true;
+    settings = {
+      ApplicationTheme = "Breeze";
+      IconTheme = "breeze_dark";
+      LaunchMaximized = true;
+      AutomaticJavaDownload = false;
+      EnableFeralGamemode = true;
+      UseDiscreteGpu = true;
+      JvmArgs = "-XX:+UseZGC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC";
+      MaxMemAlloc = 16384;
+      MinMemAlloc = 1024;
+    };
+  };
 
   programs.java = {
     enable = true;
