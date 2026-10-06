@@ -97,7 +97,7 @@
           homeConfiguration = ./hosts/teacherbearcat/home.nix;
           niriEnabled = true;
           extraModules = [
-            nixos-hardware.nixosModules.lenovo-legion-16ach6h
+            nixos-hardware.nixosModules.lenovo-legion-16ach6h-hybrid
           ];
         };
       };
