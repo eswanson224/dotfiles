@@ -9,7 +9,6 @@
       LaunchMaximized = true;
       AutomaticJavaDownload = false;
       EnableFeralGamemode = true;
-      UseDiscreteGpu = true;
       JvmArgs = "-XX:+UseZGC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC";
       MaxMemAlloc = 16384;
       MinMemAlloc = 1024;
