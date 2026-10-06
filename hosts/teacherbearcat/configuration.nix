@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   sshPublicKeys = import ../ssh-public-keys.nix;
@@ -66,6 +66,7 @@ in
     kernelParams = [
       "clocksource=hpet"
       "tsc=reliable"
+      "consoleblank=60"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
   };
@@ -76,6 +77,23 @@ in
   ];
 
   networking.hostName = "teacherbearcat";
+
+  services.xserver.autorun = false;
+  services.xserver.displayManager.lightdm.enable = false;
+
+  hardware.nvidia = {
+    dynamicBoost.enable = true;
+    powerManagement.finegrained = true;
+  };
+
+  # Keep Dynamic Boost available on demand, but don't let nvidia-powerd
+  # prevent the discrete GPU from suspending during headless boots.
+  systemd.services.nvidia-powerd.wantedBy = lib.mkForce [ ];
+
+  # Let the NVIDIA HDMI audio PCI function runtime-suspend with the GPU.
+  services.udev.extraRules = ''
+    ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", TEST=="power/control", ATTR{power/control}="auto"
+  '';
 
   services.tlp.settings = {
     PLATFORM_PROFILE_ON_AC = "performance";

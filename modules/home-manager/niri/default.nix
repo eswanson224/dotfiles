@@ -23,7 +23,6 @@ in
     ../services/swayidle.nix
     ../services/wpaperd.nix
     ../utils/fuzzel.nix
-    ../utils/nautilus.nix
     ../utils/swaylock.nix
     ./cursor.nix
     ./waybar.nix
