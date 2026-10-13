@@ -4,7 +4,6 @@
 #   customPkgs = import ../../modules/nixos/packages { inherit pkgs; };
 #   inherit (customPkgs)
 #     iloader
-#     onthespot
 #     ;
 # in
 {
