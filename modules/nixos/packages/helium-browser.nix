@@ -1,21 +1,40 @@
-{ pkgs, ... }:
+{
+  lib,
+  fetchurl,
+  appimageTools,
+  ...
+}:
 
-pkgs.appimageTools.wrapType2 rec {
+let
   pname = "helium";
-  version = "0.19.2.1";
-  src = pkgs.fetchurl {
+  version = "0.19.3.1";
+
+  src = fetchurl {
     url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64.AppImage";
-    sha256 = "sha256-oEVQo8fHC9rTrNOkQw7ajSr8C/cXOpxYpAP+q5UXCH8=";
+    hash = "sha256-Rg5tKlyG0DkhYkItGyF6NmMb2DD40h5WUYyWAgl5eQY=";
   };
 
-  extraInstallCommands =
-    let
-      contents = pkgs.appimageTools.extract { inherit pname version src; };
-    in
-    ''
-      install -m 444 -D ${contents}/${pname}.desktop -t $out/share/applications
-      substituteInPlace $out/share/applications/${pname}.desktop \
-        --replace 'Exec=AppRun' 'Exec=${pname}'
-      cp -r ${contents}/usr/share/icons $out/share
-    '';
+  contents = appimageTools.extract { inherit pname version src; };
+in
+
+appimageTools.wrapType2 {
+  inherit pname version src;
+
+  extraPkgs = pkgs: [ pkgs.libva ];
+
+  extraInstallCommands = ''
+    install -m 444 -D ${contents}/helium.desktop $out/share/applications/helium.desktop
+    install -m 444 -D ${contents}/usr/share/icons/hicolor/256x256/apps/helium.png \
+      $out/share/icons/hicolor/256x256/apps/helium.png
+  '';
+
+  meta = {
+    mainProgram = "helium";
+    description = "Helium Browser for Linux";
+    homepage = "https://github.com/imputnet/helium-linux";
+    changelog = "https://github.com/imputnet/helium-linux/releases/tag/V${version}";
+    license = lib.licenses.gpl3Only;
+    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+    platforms = [ "x86_64-linux" ];
+  };
 }
