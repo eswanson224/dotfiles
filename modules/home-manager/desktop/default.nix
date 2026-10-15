@@ -5,13 +5,14 @@
     ./deadbeef.nix
     ./default-apps.nix
     ./easyeffects.nix
-    ./gtk-theme.nix
+    ./firefox
     ./gaming.nix
+    ./gtk-theme.nix
     ./obs.nix
     ./obsidian.nix
     ./prismlauncher.nix
-    ./vesktop.nix
     ./qalculate.nix
+    ./vesktop.nix
     ./zed.nix
   ];
 }

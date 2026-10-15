@@ -1,13 +1,17 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
-let
-  profile = "default";
-in
 {
   programs.firefox = {
     enable = true;
-    configPath = "${config.xdg.configHome}/mozilla/firefox";
-    profiles.${profile} = {
+    profiles."default" = {
+      id = 0;
+      isDefault = true;
+      preConfig = builtins.readFile (
+        builtins.fetchurl {
+          url = "https://raw.githubusercontent.com/arkenfox/user.js/bb45863/user.js";
+          sha256 = "0gp3wyxljzly37qmgyfqhz48mw6pl9bhwph3yxf1g6a8j7337az4";
+        }
+      );
       search = {
         force = true;
         default = "ddg";
@@ -53,20 +57,22 @@ in
         force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
-          dearrow
-          firefox-color
-          frankerfacez
-          indie-wiki-buddy
-          mal-sync
-          multi-account-containers
           old-reddit-redirect
-          sponsorblock
+          proton-vpn
           ublock-origin
-          vimium
-          violentmonkey
         ];
+      };
+      settings = {
+        "browser.nova.enabled" = false;
+        "browser.safebrowsing.downloads.remote.enabled" = true;
+        "browser.ai.control.default" = "blocked";
+        "browser.uidensity" = 1;
+        "network.trr.mode" = 3;
+        "network.trr.uri" = "https://dns.nextdns.io/c1241c";
+        "network.trr.custom_uri" = "https://dns.nextdns.io/c1241c";
+        "signon.rememberSignons" = false;
+        "permissions.default.desktop-notification" = 2;
       };
     };
   };
-  home.file."${config.xdg.configHome}/mozilla/firefox/${profile}/user.js".source = ./user.js;
 }
