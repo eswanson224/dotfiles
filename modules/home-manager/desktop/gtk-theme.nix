@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  gtk.enable = true;
+
   # adw-gtk3 is GTK3-only; GTK4/libadwaita apps ignore gtk-theme-name and
   # go dark via the color-scheme key below instead.
   gtk.theme = {
