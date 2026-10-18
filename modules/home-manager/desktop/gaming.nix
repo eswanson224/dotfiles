@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    r2modman
+  ];
+
   programs.nix-osu-lazer.enable = true;
 
   catppuccin.mangohud.enable = false;
