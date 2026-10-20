@@ -2,11 +2,11 @@
 
 let
   pname = "cider";
-  version = "4.0.9.1";
+  version = "4.0.17";
 
   src = pkgs.fetchurl {
     url = "https://repo.cider.sh/apt/pool/main/cider-v${version}-linux-x64.deb";
-    hash = "sha256-MsA6lK3PsyOEx938FgJFx8l9oqwoM3FzIK5goF73lTs=";
+    hash = "sha256-CanpS0yydWOkGKp/8SIVSJ7EavFUs9xBxUgmL9AUXJU=";
   };
 
   unwrapped = pkgs.stdenvNoCC.mkDerivation {
