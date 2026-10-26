@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Keep the package set tested by llm-agents CI for binary-cache reuse.
+    llm-agents.url = "github:numtide/llm-agents.nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -60,7 +62,6 @@
             hostConfiguration
             {
               nixpkgs.overlays = [
-                # (import ./modules/nixos/packages/codex-overlay.nix)
                 nix-osu-lazer.overlays.default
               ];
             }

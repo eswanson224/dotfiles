@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
-  programs.codex.enable = true;
-  # home.packages = [ pkgs.bubblewrap ];
+  programs.codex = {
+    enable = true;
+    package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex;
+  };
 }
