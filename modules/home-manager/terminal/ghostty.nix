@@ -13,6 +13,7 @@
         })
       ];
     });
+    # package = pkgs.ghostty;
     settings = {
       gtk-single-instance = true;
       window-decoration = "auto";
