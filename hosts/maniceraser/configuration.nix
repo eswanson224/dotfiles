@@ -67,11 +67,14 @@ in
     "uas"
   ];
 
-  # boot.initrd.luks.devices."cryptroot" = {
-  #   keyFile = "/dev/disk/by-partuuid/951ad3ca-5d76-47a2-92a0-d10d057b9bce";
-  #   keyFileSize = 4096;
-  #   keyFileTimeout = 30;
-  # };
+  # Raw key partition on the SanDisk USB; the remaining partition is for storage.
+  # Only reference the device here: key material must stay out of the Nix store.
+  boot.initrd.luks.devices."cryptroot" = {
+    keyFile = "/dev/disk/by-partuuid/e3e3cb12-bf51-4fb7-8191-cf2857f18e29";
+    keyFileSize = 4096;
+    # systemd initrd prompts for a password if the USB key is unavailable.
+    keyFileTimeout = 10;
+  };
 
   system.stateVersion = "26.05";
 }
