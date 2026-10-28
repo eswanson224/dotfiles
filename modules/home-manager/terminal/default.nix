@@ -4,7 +4,8 @@
   imports = [
     ./bat.nix
     ./btop.nix
-    ./codex.nix
+    # ./codex.nix
+    ./agents.nix
     ./direnv.nix
     ./eza.nix
     ./fish.nix
