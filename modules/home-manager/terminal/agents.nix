@@ -1,10 +1,16 @@
 { pkgs, inputs, ... }:
 
+let
+  herdr = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.herdr;
+  herdrSkill = pkgs.runCommand "herdr-skill" { } ''
+    ${herdr}/bin/herdr --skill > $out
+  '';
+in
 {
   programs = {
     herdr = {
       enable = true;
-      package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.herdr;
+      package = herdr;
     };
     codex = {
       enable = true;
@@ -13,8 +19,6 @@
     pi-coding-agent = {
       enable = true;
       package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi;
-      # pi-sandbox uses bubblewrap and a network proxy on Linux. Node supplies
-      # npm for Pi's package manager; packages must be installed with pi update.
       extraPackages = with pkgs; [
         nodejs
         bubblewrap
@@ -22,15 +26,14 @@
         ripgrep
       ];
       settings = {
-        # Built-in codemode can batch tool calls and filter results before they
-        # enter the model context; ordinary tools remain available too.
         defaultTools = [ "+codemode" ];
-        packages = [ "npm:pi-sandbox@0.7.2" ];
+        packages = [ "npm:pi-sandbox@0.7.3" "npm:@ff-labs/pi-fff@0.11.0" ];
       };
     };
     claude-code = {
       enable = true;
       package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.claude-code;
+      skills.herdr = herdrSkill;
     };
   };
 }
