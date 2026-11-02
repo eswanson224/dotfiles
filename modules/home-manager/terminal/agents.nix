@@ -7,6 +7,11 @@ let
   '';
 in
 {
+  home.file.".claude/statusline-command.sh" = {
+    source = ./claude-statusline.sh;
+    executable = true;
+  };
+
   programs = {
     herdr = {
       enable = true;
