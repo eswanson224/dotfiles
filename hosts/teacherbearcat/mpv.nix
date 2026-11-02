@@ -8,7 +8,6 @@
     gpu-api = lib.mkForce "opengl";
     gpu-context = lib.mkForce "wayland";
     hwdec = lib.mkForce "vaapi";
-    vaapi-device = lib.mkForce "/dev/dri/renderD129";
 
     # Avoid the desktop's shader chain and expensive scaling filters. These
     # defaults are intentionally simple for 1080p video on the laptop panel.

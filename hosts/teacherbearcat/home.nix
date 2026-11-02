@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -7,8 +7,6 @@
     ../../modules/home-manager/profiles/niri
     ./mpv.nix
   ];
-
-  programs.btop.package = pkgs.btop-cuda;
 
   programs.fish.functions.power-mode = ''
     if test (count $argv) -ne 1

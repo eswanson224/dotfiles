@@ -63,9 +63,10 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    # No clocksource=/tsc=reliable overrides: CPU0's TSC boots ~2.3 s out of
+    # sync with the other cores and the 5800H has no TSC_ADJUST to fix it, so
+    # the kernel's boot-time sync check must stay on to fall back to HPET.
     kernelParams = [
-      "clocksource=hpet"
-      "tsc=reliable"
       "consoleblank=60"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
@@ -100,6 +101,9 @@ in
     PLATFORM_PROFILE_ON_BAT = "low-power";
     CPU_BOOST_ON_AC = 1;
     CPU_BOOST_ON_BAT = 0;
+    # RUNTIME_PM_ON_AC="on" would pin the dGPU's HDMI audio function awake,
+    # which blocks the whole dGPU from reaching D3cold.
+    RUNTIME_PM_ENABLE = "01:00.1";
   };
 
   services.automatic-timezoned.enable = true;

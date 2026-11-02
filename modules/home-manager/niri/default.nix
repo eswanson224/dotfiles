@@ -52,16 +52,6 @@ in
         };
       };
 
-      # Match hyprland's GL setup. __GLX_VENDOR_LIBRARY_NAME only affects GLX
-      # (X11) and is ignored by Wayland EGL apps -> harmless in both GPU modes.
-      # Do NOT set __EGL_VENDOR_LIBRARY_FILENAMES: it hard-overrides glvnd to
-      # the nvidia EGL vendor only, hiding mesa. In hybrid mode niri composites
-      # on the iGPU, so nvidia EGL can't make a context -> GL apps (ghostty)
-      # fail with "unable to acquire an opengl context for rendering".
-      environment = {
-        __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      };
-
       # Clicking a mako notification should focus the sending app. The
       # activation token that reaches niri carries a serial niri rejects,
       # so it only marks the window urgent. Honor those tokens anyway.
