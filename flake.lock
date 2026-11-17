@@ -233,15 +233,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1790304433,
-        "narHash": "sha256-hW7iTNTUVFE/tWKYOr9J8YCT+Saw0f61vUkrizxvWvo=",
-        "owner": "gaavin",
+        "lastModified": 1794808285,
+        "narHash": "sha256-mPgctpTDJFMqgOb3XwjQ4/SUlz8N8r7wNohyVJ9GL84=",
+        "owner": "eswanson224",
         "repo": "nix-osu-lazer",
-        "rev": "d31661769b16e3ec46631d80d5144a3bd65d3a32",
+        "rev": "eda900fa5deb817a90b8593565eb97b7c501cd7c",
         "type": "github"
       },
       "original": {
-        "owner": "gaavin",
+        "owner": "eswanson224",
         "repo": "nix-osu-lazer",
         "type": "github"
       }

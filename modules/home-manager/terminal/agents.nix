@@ -32,7 +32,10 @@ in
       ];
       settings = {
         defaultTools = [ "+codemode" ];
-        packages = [ "npm:pi-sandbox@0.7.3" "npm:@ff-labs/pi-fff@0.11.0" ];
+        packages = [
+          "npm:pi-sandbox@0.7.3"
+          "npm:@ff-labs/pi-fff@0.11.0"
+        ];
       };
     };
     claude-code = {

@@ -58,15 +58,25 @@ in
       # Tradeoff: apps can steal focus with self-made tokens.
       debug.honor-xdg-activation-with-invalid-serial = [ ];
 
-      # 1920x1200@165.019
       outputs."eDP-1" = {
         mode = {
           width = 2560;
           height = 1600;
-          refresh = 60.008;
+          refresh = 165.019;
         };
         scale = 1.6;
+        variable-refresh-rate = "on-demand";
       };
+
+      window-rules = [
+        {
+          matches = [
+            { app-id = "^osu!$"; }
+            { app-id = "^steam_app_"; }
+          ];
+          variable-refresh-rate = true;
+        }
+      ];
 
       clipboard = {
         disable-primary = true;

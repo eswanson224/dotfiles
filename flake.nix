@@ -18,7 +18,7 @@
     catppuccin.url = "github:catppuccin/nix";
     # nix-gaming.url = "github:fufexan/nix-gaming";
     # nix-gaming.url = "github:eswanson224/nix-gaming";
-    nix-osu-lazer.url = "github:gaavin/nix-osu-lazer";
+    nix-osu-lazer.url = "github:eswanson224/nix-osu-lazer";
     nix-osu-lazer.inputs.nixpkgs.follows = "nixpkgs";
     xremap = {
       url = "github:xremap/nix-flake";
