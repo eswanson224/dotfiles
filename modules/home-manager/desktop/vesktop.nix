@@ -3,6 +3,7 @@
 {
   programs.vesktop = {
     enable = true;
+    mutableSettings = true;
     settings = {
       minimizeToTray = false;
       tray = true;

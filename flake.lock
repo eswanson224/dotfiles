@@ -233,11 +233,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794808285,
-        "narHash": "sha256-mPgctpTDJFMqgOb3XwjQ4/SUlz8N8r7wNohyVJ9GL84=",
+        "lastModified": 1794955647,
+        "narHash": "sha256-hCm4k/wO+Oxprft6xLDsUBAbeye9Kbymu93yFdYRAiA=",
         "owner": "eswanson224",
         "repo": "nix-osu-lazer",
-        "rev": "eda900fa5deb817a90b8593565eb97b7c501cd7c",
+        "rev": "004eb71857deabccdf871287e8160dc0c45b4512",
         "type": "github"
       },
       "original": {
