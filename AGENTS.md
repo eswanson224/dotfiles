@@ -38,6 +38,12 @@ attribute matches the machine's `networking.hostName`:
 
 - Validate NixOS service and option recommendations against current official
   NixOS documentation and, when relevant, the upstream project's documentation.
+- Rely on official documentation and evaluation checks rather than reading
+  `/nix/store` sources unless debugging an evaluation or build failure.
+- Source CLI AI coding agents in `modules/home-manager/terminal/agents.nix`
+  from `inputs.llm-agents` (for faster upstream updates and `cache.numtide.com`
+  binary-cache reuse) rather than `nixpkgs` unless there is a specific reason
+  not to.
 - Avoid editing generated hardware configuration unless the change genuinely
   describes hardware, filesystems, or boot-time mounts. Keep intentional manual
   additions clearly structured so regeneration risk is apparent.
@@ -58,6 +64,9 @@ attribute matches the machine's `networking.hostName`:
 - Run `nix flake check` for the broader flake checks, including formatting.
 - Prefer checking only the affected host first when that provides faster,
   useful feedback, then run the broader check when warranted.
+- For small, localized edits (such as adding a package or toggling an existing
+  Home Manager option), `nix fmt` plus a focused evaluation or host build is
+  sufficient; reserve `nix flake check` for broader or multi-host changes.
 
 ## Formatting
 
