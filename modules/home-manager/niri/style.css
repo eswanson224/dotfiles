@@ -17,22 +17,38 @@
   margin: 5px;
   background-color: @surface0;
   margin-left: 1rem;
+  padding: 0 8px;
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 1rem;
-  padding: 0.4rem 0.7rem 0.4rem 0.3rem;
+  background-color: @lavender;
+  color: transparent;
+  font-size: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 999px;
+  min-width: 17px;
+  min-height: 17px;
+  padding: 0;
+  margin: 10px 6px;
+  transition: all 0.2s ease;
+}
+
+#workspaces button label {
+  font-size: 0;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #workspaces button.active {
-  color: @sky;
-  border-radius: 1rem;
+  background-color: @sky;
+  min-width: 38px;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+  background-color: @sapphire;
 }
 
 #custom-music,
@@ -64,6 +80,7 @@
 
 #battery {
   color: @green;
+  padding: 0.5rem 1rem 0.5rem 0.65rem;
 }
 
 #battery.charging {
@@ -76,6 +93,7 @@
 
 #backlight {
   color: @yellow;
+  padding: 0.5rem 0.65rem;
 }
 
 #backlight, #battery {
@@ -86,6 +104,7 @@
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
+  padding: 0.5rem 0.65rem 0.5rem 1rem;
 }
 
 #custom-music {

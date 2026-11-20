@@ -99,10 +99,7 @@
         format = "{:%I:%M %p}";
       };
       "niri/workspaces" = {
-        format = "{icon}";
-        format-icons = {
-          default = "";
-        };
+        format = "";
       };
     };
 
